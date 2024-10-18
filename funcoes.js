@@ -77,3 +77,4 @@ $('.cards1').slick({
       // instead of a settings object
     ]
   });
+
