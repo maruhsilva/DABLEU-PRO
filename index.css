@@ -210,7 +210,7 @@ header p {
     align-items: center;
     justify-content: center;
     /* flex-direction: column; */
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     margin-inline: auto;
     max-width: 71%;
 }
