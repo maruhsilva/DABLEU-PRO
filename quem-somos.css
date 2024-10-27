@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: white;
+    height: 10px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding: var(--scroll-padding, 5rem);
+}
+
+header {
+    background-color: #000;
+    text-align: center;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+header p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: .8rem;
+    letter-spacing: .02rem;
+    padding: .55%;
+    margin: 0;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons ul {
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+}
+
+.icons li {
+    list-style: none;
+    flex-direction: row;
+}
+
+.icons a {
+    color: black;
+    letter-spacing: 1rem;
+    font-size: 1.2rem;
+}
+
+/* ACORDEÃO */
+
+.acordeao {
+    min-width: 25%;
+}
+
+.accordion-body a {
+    text-decoration: none;
+    color: black;
+}
+
+.accordion-body a:hover {
+    text-decoration: underline;
+    transition: 1s ease-in-out;
+}
+
+.content {
+    max-width: 71.5%;
+    margin-inline: auto;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.conteudo-quemsomos .titulo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.conteudo-quemsomos {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    flex-direction: column;
+    border: 1px solid hsl(0, 0%, 0%, .2);
+    max-width: 60%;
+    padding: 1rem;
+}
+
+.conteudo-quemsomos ul {
+    padding: 0;
+}
+
+.conteudo-quemsomos li {
+    list-style: none;
+}
+
+.conteudo1 {
+    display: flex;
+    align-items: center;
+    justify-content: baseline;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.conteudo2 {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.conteudo2 p {
+    /* max-width: 60%; */
+}
+
+.conteudo-quemsomos img {
+    width: 200px;
+}
+
+.conteudo-quemsomos .banner {
+    width: 100%;
+}
+
+.accordion {
+    border: 1px solid hsl(0, 0%, 0%, .2);
+    --bs-accordion-active-bg: hsl(0, 0%, 0%, .03);
+    --bs-accordion-btn-focus-box-shadow: 1px solid black;
+}
+
+
+/* FOOTER */
+
+.top {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 5px;
+    font-size: .8rem;
+    text-decoration: none;
+}
+
+footer {
+    background-color: white;
+    padding: 50px 0;
+    /* border-bottom: 1px solid gray; */
+    padding-bottom: 1rem;
+}
+
+.container-footer {
+    max-width: 1400px;
+    padding: 0 4%;
+    margin: auto;
+    padding-bottom: 2rem;
+}
+
+.row-footer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 20px;
+    font-weight: 500;
+    position: relative;
+    text-align: start;
+    text-transform: uppercase;
+}
+
+.footer-col h4:not(:last-child) {
+    margin-left: 30px;
+}
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin: 10px 0;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: black;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.footer-col ul li a:hover {
+    padding-left: 10px;
+}
+
+.footer-col .medias-socias{
+    margin-top: 30px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-col .medias-socias a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    border-radius: 50%;
+    color: black;
+    border: 1px solid black;
+    transition: all 0.5s ease;
+}
+
+.footer-col .medias-socias a i {
+    font-size: 20px;
+}
+
+.footer-col .medias-socias a:hover {
+    background-color: #000;
+    color: white;
+}
+
+.footer-col .form-sub input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid white;
+    color: white;
+    background-color: black;
+}
+
+.footer-col .form-sub input::placeholder {
+    color: white;
+}
+
+.footer-col .form-sub button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px; 
+    font-size: 17px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;
+    background-color: black;        
+}
+
+.desenvolvedor {
+    border-top: .9px solid hsl(0, 0%, 0%, .1);
+    padding-top: 2rem;
+    font-size: .85rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo-desen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0;
+}
+
+.logo-desen img {
+    width: 80px;
+    
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+    
+    .conteudo1 {
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+
+    .desenvolvedor {
+        font-size: .7rem;
+        padding: .5rem;
+        text-align: center;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .conteudo-quemsomos {
+        min-width: 100%;
+    }
+
+    .content {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+}
+@media (max-width:600px) {
+
+    .footer-col{
+        width: 100%;
+    }
+}

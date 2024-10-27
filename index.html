@@ -15,16 +15,16 @@
     <header>
         <p>FRETE GRÁTIS EM SP PARA COMPRAS À PARTIR DE R$250,00</p>
     </header>
-    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;">
+    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
         <div class="container-fluid justify-content-center" style="gap: 5rem;">
-          <a class="navbar-brand" href="#"><img src="./Capturar.PNG" alt="logo da empresa" style="width: 8rem; padding-top: 0;"></a>
+          <a class="navbar-brand" href="index.html"><img src="./NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
             <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                <ul class="navbar-nav" style="gap: 2rem;">
+                <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                    <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       MASCULINO
@@ -82,13 +82,8 @@
                     </ul>
                   </li>
                     <ul class="icons">
-                      <li>
-                        <a href=""><i class="bi bi-search"></i></a>
-                        <a href=""><i class="bi bi-heart"></i></a>
-                        <a href=""><i class="bi bi-bag"></i></a>
-                      </li>  
-                      <div class="dropdown">
-                        <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" style="border: none; padding-left: 0; font-size: 1.35rem;">
+                      <div class="btn-group dropstart">
+                        <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" style="border: none; padding-right: 1rem; font-size: 1.5rem; align-items: center;">
                           <i class="bi bi-person"></i>
                         </button>
                         <form class="dropdown-menu p-4">
@@ -113,8 +108,12 @@
                           <a class="dropdown-item" style="letter-spacing: 0; font-size: .9rem; padding-left: 0;" href="#">Novo por aqui? Cadastre-se!</a>
                           <a class="dropdown-item" style="letter-spacing: 0; font-size: .9rem; padding-left: 0;" href="#">Esqueceu sua senha?</a>
                         </form>
-                        
                       </div>
+                      <li>
+                        <a href=""><i class="bi bi-search"></i></a>
+                        <a href=""><i class="bi bi-heart"></i></a>
+                        <a href=""><i class="bi bi-bag"></i></a>
+                      </li>  
                     </ul>  
                 </ul>
             </div>
@@ -123,7 +122,7 @@
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./foto-em-preto-e-branco-de-homem-de-construcao-muscular-usando-giz-esportivo-enquanto-antes-de-levantar-uma-barra-no-treinamento-com-pesos-em-uma-academia_637285-2505.avif" class="d-block w-100" style="max-height: 30rem; min-height: 14rem;" alt="...">
+            <img src="./Remove background project.jpeg" class="d-block w-100" style="max-height: 30rem; min-height: 20.6rem;" alt="...">
           </div>
           <div class="carousel-item">
             <img src="./foto-em-preto-e-branco-de-determinado-atleta-levantando-barra-em-uma-academia-enquanto-seus-amigos-atleticos-o-apoiam_637285-2521.avif" class="d-block w-100" style="max-height: 30rem; min-height: 14rem;" alt="...">
@@ -190,8 +189,8 @@
                 <ul class>
                   <i class="bi bi-credit-card"></i>
                   <li>
-                    <h6>PAGAMENTO</h6>
-                    <p>Em 3x sem Juros e PIX</p>
+                    <h6>PAGAMENTOS</h6>
+                    <p>Em até 3x sem juros e PIX</p>
                   </li>
                 </ul>
               </div>
@@ -208,28 +207,30 @@
         </div>
       </section>
       <section class="promo">
-        <ul style="background-image: url(./camiseta-preta-sem-estampa.png);">
-          <li>
-            <p class="titulo">CAMISETAS</p>
-            <p>POR R$99,90</p>
-            <button>COMPRAR</button>
-          </li>
-        </ul>
-        <ul style="background-image: url(./short-fst-100-m-black-s1.png);">
-          <li>
-            <p class="titulo">BERMUDAS</p>
-            <p>POR R$99,90</p>
-            <button>COMPRAR</button>
-          </li>
-          
-        </ul>
-        <ul style="background-image: url(./kit-camiseta-e-bermuda-preto-grafite.png);">
-          <li>
-            <p class="titulo">KITS</p>
-            <p>POR R$99,90</p>
-            <button>COMPRAR</button>
-          </li>
-        </ul>
+        <div class="promo-ctg">
+          <ul style="background-image: url(./camiseta-preta-sem-estampa.png);">
+            <li>
+              <p class="titulo">CAMISETAS</p>
+              <p>POR R$99,90</p>
+              <button>COMPRAR</button>
+            </li>
+          </ul>
+          <ul style="background-image: url(./short-fst-100-m-black-s1.png);">
+            <li>
+              <p class="titulo">BERMUDAS</p>
+              <p>POR R$99,90</p>
+              <button>COMPRAR</button>
+            </li>
+
+          </ul>
+          <ul style="background-image: url(./kit-camiseta-e-bermuda-preto-grafite.png);">
+            <li>
+              <p class="titulo">KITS</p>
+              <p>POR R$99,90</p>
+              <button>COMPRAR</button>
+            </li>
+          </ul>
+        </div>
       </section>
       <div class="frase1">
         <p>CONQUISTE SEU MELHOR DESEMPENHO COM <b>ESTILO, CONFORTO E DETERMINAÇÃO DIÁRIA</b></p>
@@ -423,56 +424,193 @@
           <ul style="background-image: url(./camiseta-preta-sem-estampa.png);">
             <li>
               <p class="titulo">CAMISETAS</p>
-              <p>POR R$99,90</p>
+              <!-- <p>POR R$99,90</p> -->
               <button>CONFIRA</button>
             </li>
           </ul>
           <ul style="background-image: url(./short-fst-100-m-black-s1.png);">
             <li>
               <p class="titulo">BERMUDAS</p>
-              <p>POR R$99,90</p>
+              <!-- <p>POR R$99,90</p> -->
               <button>CONFIRA</button>
             </li>
-            
           </ul>
           <ul style="background-image: url(./kit-camiseta-e-bermuda-preto-grafite.png);">
             <li>
               <p class="titulo">CALÇAS</p>
-              <p>POR R$99,90</p>
+              <!-- <p>POR R$99,90</p> -->
               <button>CONFIRA</button>
             </li>
           </ul>
-        </div>
-        <div class="categorias2">
           <ul style="background-image: url(./camiseta-preta-sem-estampa.png);">
             <li>
               <p class="titulo">KITS</p>
-              <p>POR R$99,90</p>
+              <!-- <p>POR R$99,90</p> -->
               <button>CONFIRA</button>
             </li>
           </ul>
           <ul style="background-image: url(./short-fst-100-m-black-s1.png);">
             <li>
               <p class="titulo">TOPS</p>
-              <p>POR R$99,90</p>
+              <!-- <p>POR R$99,90</p> -->
               <button>CONFIRA</button>
             </li>
-            
           </ul>
           <ul style="background-image: url(./kit-camiseta-e-bermuda-preto-grafite.png);">
             <li>
               <p class="titulo">ACESSÓRIOS</p>
-              <p>POR R$99,90</p>
+              <!-- <p>POR R$99,90</p> -->
               <button>CONFIRA</button>
             </li>
           </ul>
         </div>
       </section>
+      <section class="avaliacao">
+        <h2>VEJA A AVALIAÇÃO DOS NOSSOS CLIENTES</h2>
+        <div class="avaliacao-grid">
+          <ul>
+            <li>
+              <p class="nome">
+                NOME DO CLIENTE
+              </p>
+              <p class="star-avaliacao">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </p>
+              <p class="avali-cliente">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </li>
+            <li class="like-avali">
+              <p>
+              <i class="fa-solid fa-thumbs-up"></i>
+              Compraria novamente
+            </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p class="nome">
+                NOME DO CLIENTE
+              </p>
+              <p class="star-avaliacao">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </p>
+              <p class="avali-cliente">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </li>
+            <li class="like-avali">
+              <p>
+              <i class="fa-solid fa-thumbs-up"></i>
+              Compraria novamente
+            </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p class="nome">
+                NOME DO CLIENTE
+              </p>
+              <p class="star-avaliacao">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </p>
+              <p class="avali-cliente">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <p class="nome">
+                NOME DO CLIENTE
+              </p>
+              <p class="star-avaliacao">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </p>
+              <p class="avali-cliente">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              </p>
+            </li>
+            <li class="like-avali">
+              <p>
+              <i class="fa-solid fa-thumbs-up"></i>
+              Compraria novamente
+            </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <a class="top" href="">VOLTAR AO TOPO</button></a>
+
+      <footer>
+        <div class="container-footer">
+            <div class="row-footer">
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="quem-somos.html">Quem somos </a></li>
+                        <li><a href="nossos-servicos.html"> nossos serviços </a></li>
+                        <li><a href="quem-somos.html"> política de privacidade </a></li>
+                        <!-- <li><a href="quem-somos.html"> programa de afiliados</a></li> -->
+                    </ul>
+                </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Obter ajuda</h4>
+                    <ul>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">devoluções</a></li>
+                        <li><a href="#">Status De Pedido</a></li>
+                        <li><a href="#">Opções De Pagamento</a></li>
+                    </ul>
+                </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#">Camisetas</a></li>
+                        <li><a href="#">Bermudas</a></li>
+                        <li><a href="#">Calças</a></li>
+                        <li><a href="#">Acessórios</a></li>
+                    </ul>
+                </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Se inscreva!</h4>
+                    <div class="form-sub">
+                        <form>
+                            <input type="email" placeholder="Digite o seu e-mail" required>
+                            <button>Inscrever</button>
+                        </form>
+                    </div>
+
+                    <div class="medias-socias">
+                        <a href="#"> <i class="fa fa-facebook"></i> </a>
+                        <a href="#"> <i class="fa fa-instagram"></i> </a>
+                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    </div>
+
+                </div>
+                <!--end footer col-->
+            </div>
+        </div>
+        <div class="desenvolvedor">
+          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
+          <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="Sem título.png" alt="logo do desenvolvedor"></a>
+        </div>
+    </footer>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+       <script src="bootstrap.bundle.js"></script>
       <script src="https://kit.fontawesome.com/43b36f20b7.js" crossorigin="anonymous"></script>
-      <!-- <script src="slick.min.js"></script> -->
-      <!-- <script src="slick.js"></script> -->
+      <script src="slick.min.js"></script>
+      <script src="slick.js"></script>
       <script src="funcoes.js"></script>
   
     </body>

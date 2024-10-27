@@ -57,7 +57,7 @@ $('.cards1').slick({
             }
         },
       {
-        breakpoint: 1440,
+        breakpoint: 1180,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -78,3 +78,29 @@ $('.cards1').slick({
     ]
   });
 
+
+  $('.center').slick({
+    centerMode: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
