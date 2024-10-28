@@ -362,3 +362,15 @@ footer {
         width: 100%;
     }
 }
+
+
+
+.conteudo-quemsomos .accordion-header {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.conteudo-quemsomos .accordion-body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: .8rem;
+}
