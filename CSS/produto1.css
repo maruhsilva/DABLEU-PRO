@@ -64,10 +64,25 @@ header p {
 
 /* PRODUTO */
 
-.produto {
-    max-width: 70.5%;
-    margin-inline: auto;
+.geral-produto {
     display: flex;
+    /* align-items: baseline; */
+    justify-content: center;
+}
+
+.geral-info {
+    max-width: 40.5%;
+    margin-inline: 0;
+    padding-right: 5rem;
+}
+
+.geral-preco {
+    padding-top: 2rem;
+}
+
+.produto {
+    display: flex;
+    flex-direction: column;
     /* align-items: center; */
     justify-content: center;
     padding-top: 3rem;
@@ -85,32 +100,36 @@ header p {
     gap: .5rem;
 }
 
-.informacoes .preco-produto-credito {
+.col-12 {
+    width: 100%;
+}
+
+.informacoes, .informacoes1 .preco-produto-credito {
     font-size: 1.5rem;
     text-decoration: line-through;
     opacity: .6;
 }
 
-.informacoes .preco-produto-pix {
+.informacoes, .informacoes1 .preco-produto-pix {
     font-size: 1.7rem;
     color: red;
     margin-bottom: .75rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.informacoes .preco-pix {
+.informacoes, .informacoes1 .preco-pix {
     color: red;
     margin-bottom: 1.19rem;
     font-size: .9rem;
 }
 
-.informacoes .pagamento-produto {
+.informacoes, .informacoes1 .pagamento-produto {
     font-size: .9rem;
     /* padding-left: .5rem; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.informacoes .titulo-produto {
+.informacoes, .informacoes1 .titulo-produto {
     /* padding-left: .5rem; */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
     font-size: 2rem;
@@ -118,7 +137,7 @@ header p {
     text-transform: uppercase;
 }
 
-.informacoes .pagamento-produto {
+.informacoes, .informacoes1 .pagamento-produto {
     text-transform: uppercase;
 }
 
@@ -155,6 +174,147 @@ header p {
 .quantidade {
     display: inline-block;
     flex-direction: column;
+}
+
+.informacoes {
+    position: sticky;
+    top: 4rem;
+    margin-bottom: auto;
+    transition: 1s ease;
+    padding-bottom: 3rem;
+}
+
+.dicas p {
+    font-size: 1.3rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* border-top: 1px solid black; */
+    text-align: center;
+}
+
+.cards1 {
+    display: flex;
+    padding: 0;
+    /* border: 1px solid hsl(0, 0%, 0%, .1); */
+}
+
+.cards1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cards1 .preco-produto-credito {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    opacity: .6;
+}
+
+.cards1 .preco-produto-pix {
+    font-size: 1.7rem;
+    color: red;
+    margin-bottom: .75rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.cards1 .preco-pix {
+    color: red;
+    margin-bottom: 1.19rem;
+    font-size: .9rem;
+    text-align: justify;
+}
+
+.cards1 .pagamento-produto {
+    font-size: .9rem;
+    text-align: justify;
+    /* padding-left: .5rem; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.cards1 .titulo-produto {
+    /* padding-left: .5rem; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-size: 1.3rem;
+    padding-top: .5rem;
+    /* padding: 0; */
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.cards1 .pagamento-produto {
+    text-transform: uppercase;
+}
+
+.cards1 ul {
+    padding: .5rem;
+    gap: 1.5rem;
+    border: 1px solid hsl(0, 0%, 0%, .1);
+    max-width: 300px;
+}
+
+.cards1 ul img {
+    /* width: 50%; */
+    padding-left: .5rem;
+    padding-top: .5rem;
+    /* margin: 0; */
+    /* width: 400px; */
+}
+
+.cards1 li {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.dicas i {
+    background-color: hsl(0, 0%, 100%);
+    padding: .8rem;
+    margin-right: .2rem;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dicas i:hover {
+    color: red;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+.heart {
+    text-align: end;
+}
+
+.foto-like {
+    max-width: 300px;
+    background-size: cover;
+    height: 300px;
+}
+
+.mais-pedidos {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-right: 2.5rem;
+    /* padding-bottom: 1rem;
+    padding-top: 1rem; */
+}
+
+.mais-pedidos p {
+    text-transform: uppercase;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.4rem;
+}
+
+.dicas {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    /* flex-direction: column; */
+    overflow-x: hidden;
+    margin-inline: auto;
+    max-width: 71%;
+    gap: 1rem;
+    padding-left: 1.5rem;
 }
 
 #quantidade {
@@ -195,6 +355,12 @@ header p {
     padding: .5rem;
     align-items: center;
     justify-content: center;
+}
+
+.descricao {
+    max-width: 70.5%;
+    margin-inline: auto;
+    font-size: 1.2rem;
 }
 
 /* FOOTER */
@@ -356,6 +522,31 @@ footer {
 }
 
 /* Responsivo */
+
+@media (max-width: 1500px) {
+
+    .geral-info {
+        max-width: 100%;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .informacoes1 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .informacoes {
+        display: none;
+    }
+
+    .quantidade {
+        display: inline;
+        flex-direction: column;
+        max-width: 7.8rem;
+    }
+}
+
 @media (max-width: 800px) {
 
     .footer-col{
@@ -371,6 +562,11 @@ footer {
 
     .produto {
         flex-direction: column;
+    }
+
+    .medidas {
+        object-fit: contain;
+        transition: 1s ease-in-out;
     }
 }
 @media (max-width:600px) {

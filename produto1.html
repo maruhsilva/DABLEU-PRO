@@ -122,87 +122,148 @@
         </div>
       </nav>
       
-      <section class="produto">
-        <div class="col-12 col-lg-6" id="productGallery">
-            <script>
-                function imageClick(imageNumber) {
-                    setTimeout(() => {
+      <section class="geral-produto">
+        <div class="geral-info">
+          <div class="produto">
+            <div class="col-12 col-lg-6" id="productGallery">
+                <script>
+                    function imageClick(imageNumber) {
+                        setTimeout(() => {
+                            //Find the slider element
+                            const sliderElement = document.getElementById('pgalleryModal');
+                            //Slide to he right image
+                            swiffyslider.slideTo(sliderElement, imageNumber);
+                            //Listen to slide end and set focus to the container to enable keyboard navigation
+                            swiffyslider.onSlideEnd(sliderElement, () => sliderElement.querySelector(".slider-container").focus());
+                        }, 300)
+                    }
+            
+                    function thumbHover(imageNumber) {
                         //Find the slider element
-                        const sliderElement = document.getElementById('pgalleryModal');
+                        const sliderElement = document.getElementById('pgallery');
                         //Slide to he right image
-                        swiffyslider.slideTo(sliderElement, imageNumber);
-                        //Listen to slide end and set focus to the container to enable keyboard navigation
-                        swiffyslider.onSlideEnd(sliderElement, () => sliderElement.querySelector(".slider-container").focus());
-                    }, 300)
-                }
-        
-                function thumbHover(imageNumber) {
-                    //Find the slider element
-                    const sliderElement = document.getElementById('pgallery');
-                    //Slide to he right image
-                    swiffyslider.slideTo(sliderElement, imageNumber)
-                }
-            </script>
-            <div class="swiffy-slider slider-item-ratio slider-item-ratio-1x1 slider-nav-round slider-nav-nodelay" id="pgallery">
-                <ul class="slider-container">
-                    <li><img src="IMG/camiseta preta.jpg" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(0)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(1)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(2)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(3)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(4)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(5)"></li>
-                </ul>
-        
-                <button type="button" class="slider-nav" aria-label="Go previous"></button>
-                <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
-            </div>
-        
-            <div class="swiffy-slider slider-nav-dark slider-nav-sm slider-nav-chevron slider-item-show4 slider-item-snapstart slider-item-ratio slider-item-ratio-1x1 slider-nav-visible slider-nav-page slider-nav-outside-expand pt-3 d-none d-lg-block">
-                <ul class="slider-container" id="pgallerythumbs" style="cursor:pointer">
-                    <li><img src="IMG/camiseta preta.jpg" loading="lazy" alt="..." onmouseover="thumbHover(0)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(1)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(2)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(3)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(4)"></li>
-                    <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(5)"></li>
-                </ul>
-        
-                <button type="button" class="slider-nav" aria-label="Go previous"></button>
-                <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
-            </div>
-        
-            <div class="modal  fade" id="productGalleryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 99999;">
-                <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-                    <div class="modal-content" style="background-color: transparent;">
-                        <div class="modal-body" style="display: flex; align-items: center; justify-content: center;">
-                            <div class="swiffy-slider w-50 h-70 slider-nav-dark" id="pgalleryModal">
-                                <ul class="slider-container" tabindex="-1">
-                                    <li class="d-flex align-items-center justify-content-center"><img src="IMG/camiseta preta.jpg" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
-                                    <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
-                                    <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
-                                    <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
-                                    <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
-                                    <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
-                                </ul>
-        
-                                <button type="button" class="slider-nav" aria-label="Go previous"></button>
-                                <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
-                                <ul class="slider-indicators slider-indicators-dark slider-indicators-highlight slider-indicators-round">
-                                    <li class="active"></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
+                        swiffyslider.slideTo(sliderElement, imageNumber)
+                    }
+                </script>
+                <div class="swiffy-slider slider-item-ratio slider-item-ratio-1x1 slider-nav-round slider-nav-nodelay" id="pgallery">
+                    <ul class="slider-container">
+                        <li><img src="IMG/camiseta preta.jpg" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(0)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(1)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(2)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(3)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(4)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." data-bs-toggle="modal" data-bs-target="#productGalleryModal" onclick="imageClick(5)"></li>
+                    </ul>
+            
+                    <button type="button" class="slider-nav" aria-label="Go previous"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
+                </div>
+            
+                <div class="swiffy-slider slider-nav-dark slider-nav-sm slider-nav-chevron slider-item-show4 slider-item-snapstart slider-item-ratio slider-item-ratio-1x1 slider-nav-visible slider-nav-page slider-nav-outside-expand pt-3 d-none d-lg-block">
+                    <ul class="slider-container" id="pgallerythumbs" style="cursor:pointer">
+                        <li><img src="IMG/camiseta preta.jpg" loading="lazy" alt="..." onmouseover="thumbHover(0)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(1)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(2)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(3)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(4)"></li>
+                        <li><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" alt="..." onmouseover="thumbHover(5)"></li>
+                    </ul>
+            
+                    <button type="button" class="slider-nav" aria-label="Go previous"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
+                </div>
+            
+                <div class="modal  fade" id="productGalleryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="z-index: 99999;">
+                    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                        <div class="modal-content" style="background-color: transparent;">
+                            <div class="modal-body" style="display: flex; align-items: center; justify-content: center;">
+                                <div class="swiffy-slider w-50 h-70 slider-nav-dark" id="pgalleryModal">
+                                    <ul class="slider-container" tabindex="-1">
+                                        <li class="d-flex align-items-center justify-content-center"><img src="IMG/camiseta preta.jpg" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
+                                        <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
+                                        <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
+                                        <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
+                                        <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
+                                        <li class="d-flex align-items-center justify-content-center"><img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" loading="lazy" class="mw-100 mh-100" alt="..." data-bs-dismiss="modal"></li>
+                                    </ul>
+            
+                                    <button type="button" class="slider-nav" aria-label="Go previous"></button>
+                                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go next"></button>
+                                    <ul class="slider-indicators slider-indicators-dark slider-indicators-highlight slider-indicators-round">
+                                        <li class="active"></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="informacoes1">
+              <p class="titulo-produto">Camiseta Dry Fit Black</p>
+              <div class="precos">
+                <p class="preco-produto-credito">R$99,90</p>
+                <p class="preco-produto-pix">R$95,90</p>
+                <p class="preco-pix">(NO PIX)</p>
+              </div>
+              <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+              <p>Cor selecionada: <b>PRETO</b></p>
+              <img src="IMG/camiseta preta.jpg" alt="" style="width: 80px; border: 2px solid black;">
+              <p style="padding-top: 1rem;">Selecione o tamanho:</p>
+              <ul class="tamanho">
+                  <li>P</li>
+                  <li>M</li>
+                  <li>G</li>
+                  <li>GG</li>
+                  <li>XGG</li>
+              </ul>
+              <p style="padding-top: 1rem;">Quantidade:</p>
+              <div data-app="product.quantity" id="quantidade" class="quantidade">
+                  <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">Selecione uma opção para variação do produto</span>      
+                  <input type="button" id="plus" value='-' onclick="process(-1)" />
+                  <input id="quant" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
+                  <input type="button" id="minus" value='+' onclick="process(1)">
+              </div>
+              <div class="button"><button type="submit">ADICIONAR AO CARRINHO</button></div>    
+            </div>
+            <div class="content">
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Tshirt Dry Fit Black</b> <br>
+              • Tecido: Dry Fit <br>
+              • Modelagem: Raglan <br>
+              • Silk: Halteres e Marca <br>
+              • Modelo veste G <br>
+              • Composição: 100% Poliéster <br><br>
+    
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">TECIDO DRY FIT</b> <br>
+              O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal.
+              <br><br>
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">MODELAGEM</b> <br>
+              As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas.
+              <br><br>
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">TECNOLOGIA</b> <br>
+              O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco.
+            </div>
+            <img class="details" src="IMG/Untitled.png" alt="detalhes da camiseta" style="width: 100%; height: 400px; object-fit: cover;">
+            <div class="content1">
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAMISETA DE ACADEMIA DRY FIT</b> <br>
+              <b style="font-size: 1.4rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">IDEAL PARA SUA PERFORMANCE</b>
+              <br><br>
+              Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu.
+              <br>
+            </div>
+            <div class="medidas">
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">TABELA DE MEDIDAS:</b>
+              <img class="medidas" src="IMG/Sem título-3_Prancheta 1.jpg" alt="" style="width: 100%; height: 400px;">
+            </div>
+          </div>
         </div>
-        <div class="informacoes">
-            <p class="titulo-produto">Camiseta Dry Fit Preta</p>
+        <div class="geral-preco">
+          <div class="informacoes">
+            <p class="titulo-produto">Camiseta Dry Fit Black</p>
             <div class="precos">
               <p class="preco-produto-credito">R$99,90</p>
               <p class="preco-produto-pix">R$95,90</p>
@@ -227,10 +288,102 @@
                 <input type="button" id="minus" value='+' onclick="process(1)">
             </div>
             <div class="button"><button type="submit">ADICIONAR AO CARRINHO</button></div>    
+          </div>
         </div>
       </section>
-
-
+      <section class="dicas">
+        <!-- <p>COMPRE TAMBÉM</p> -->
+        <div class="mais-pedidos">
+          <p>COMPRE TAMBÉM</p>
+          <div class="arrow">
+            <i id="arrow-left" class="fa-solid fa-angle-left" style="font-size: 1.3rem; padding-left: 1rem;"></i>
+            <i id="arrow-right" class="fa-solid fa-angle-right" style="font-size: 1.3rem; padding: 0;"></i>
+          </div>
+        </div>
+        <div class="cards1">
+          <div>
+            <ul>
+              <li>
+                <a href="produto1.html"><ul class="foto-like" style="background-image: url(IMG/camiseta\ preta.jpg);">
+                  <div class="heart"><i class="bi bi-heart"></i></div>
+                </ul></a>
+                <a href="produto1.html"><p class="titulo-produto">Camiseta Dry Fit Preta</p></a>
+                <div class="precos">
+                  <p class="preco-produto-credito">R$99,90</p>
+                  <p class="preco-produto-pix">R$95,90</p>
+                  <p class="preco-pix">(NO PIX)</p>
+                </div>
+                <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+              </li>
+            </ul>
+          </div>  
+          <div>
+            <ul>
+              <li>
+                <a href="produto2.html"><ul class="foto-like" style="background-image: url(IMG/camiseta\ azul.jpg);">
+                  <div class="heart"><i class="bi bi-heart"></i></div>
+                </ul></a>
+                <a href="produto2.html"><p class="titulo-produto">Camiseta Dry Fit Azul</p></a>
+                <div class="precos">
+                  <p class="preco-produto-credito">R$99,90</p>
+                  <p class="preco-produto-pix">R$95,90</p>
+                  <p class="preco-pix">(NO PIX)</p>
+                </div>
+                <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+              </li>
+            </ul>
+          </div> 
+          <div>
+            <ul>
+              <li>
+                <a href="produto3.html"><ul class="foto-like" style="background-image: url(IMG/camiseta\ vermelha.jpg);">
+                  <div class="heart"><i class="bi bi-heart"></i></div>
+                </ul></a>
+                <a href="produto3.html"><p class="titulo-produto">Camiseta Dry Fit Vermelha</p></a>
+                <div class="precos">
+                  <p class="preco-produto-credito">R$99,90</p>
+                  <p class="preco-produto-pix">R$95,90</p>
+                  <p class="preco-pix">(NO PIX)</p>
+                </div>
+                <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+              </li>
+            </ul>
+          </div>  
+          <div>
+            <ul>
+              <li>
+                <a href="produto4.html"><ul class="foto-like" style="background-image: url(IMG/camiseta\ offwhite.jpg);">
+                  <div class="heart"><i class="bi bi-heart"></i></div>
+                </ul></a>
+                <a href="produto4.html"><p class="titulo-produto">Camiseta Dry Fit Offwhite</p></a>
+                <div class="precos">
+                  <p class="preco-produto-credito">R$99,90</p>
+                  <p class="preco-produto-pix">R$95,90</p>
+                  <p class="preco-pix">(NO PIX)</p>
+                </div>
+                <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+              </li>
+            </ul>
+          </div>  
+          <div>
+            <ul>
+              <li>
+                <a href="produto5.html"><ul class="foto-like" style="background-image: url(IMG/camiseta\ bege.jpg);">
+                  <div class="heart"><i class="bi bi-heart"></i></div>
+                </ul></a>
+                <a href="produto5.html"><p class="titulo-produto">Camiseta Dry Fit Bege</p></a>
+                <div class="precos">
+                  <p class="preco-produto-credito">R$99,90</p>
+                  <p class="preco-produto-pix">R$95,90</p>
+                  <p class="preco-pix">(NO PIX)</p>
+                </div>
+                <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      
       <a class="top" href="">VOLTAR AO TOPO</button></a>
 
       <footer>
