@@ -285,7 +285,16 @@ header p {
     display: flex;
     padding: 0;
     /* border: 1px solid hsl(0, 0%, 0%, .1); */
-    
+}
+
+.cards1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.cards2 a {
+    text-decoration: none;
+    color: black;
 }
 
 .promocoes1 ul {
@@ -374,7 +383,7 @@ header p {
 
 .foto-like {
     max-width: 300px;
-    background-size: cover;
+    background-size: contain;
     height: 300px;
 }
 
@@ -580,6 +589,15 @@ header p {
         width: 400px;
         height: 300px;
         background-size: auto;
+    }
+
+    .promocoes1 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mais-pedidos {
+        padding: 0;
     }
 }
 
