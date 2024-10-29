@@ -104,32 +104,32 @@ header p {
     width: 100%;
 }
 
-.informacoes, .informacoes1 .preco-produto-credito {
+.informacoes1 .preco-produto-credito {
     font-size: 1.5rem;
     text-decoration: line-through;
     opacity: .6;
 }
 
-.informacoes, .informacoes1 .preco-produto-pix {
+.informacoes1 .preco-produto-pix {
     font-size: 1.7rem;
     color: red;
     margin-bottom: .75rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-.informacoes, .informacoes1 .preco-pix {
+.informacoes1 .preco-pix {
     color: red;
     margin-bottom: 1.19rem;
     font-size: .9rem;
 }
 
-.informacoes, .informacoes1 .pagamento-produto {
+.informacoes1 .pagamento-produto {
     font-size: .9rem;
     /* padding-left: .5rem; */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-.informacoes, .informacoes1 .titulo-produto {
+.informacoes1 .titulo-produto {
     /* padding-left: .5rem; */
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
     font-size: 2rem;
@@ -137,8 +137,49 @@ header p {
     text-transform: uppercase;
 }
 
-.informacoes, .informacoes1 .pagamento-produto {
+.informacoes1 .pagamento-produto {
     text-transform: uppercase;
+}
+
+.informacoes .preco-produto-credito {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+    opacity: .6;
+}
+
+.informacoes .preco-produto-pix {
+    font-size: 1.7rem;
+    color: red;
+    margin-bottom: .75rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.informacoes .preco-pix {
+    color: red;
+    margin-bottom: 1.19rem;
+    font-size: .9rem;
+}
+
+.informacoes .pagamento-produto {
+    font-size: .9rem;
+    /* padding-left: .5rem; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.informacoes .titulo-produto {
+    /* padding-left: .5rem; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-size: 2rem;
+    padding-top: .5rem;
+    text-transform: uppercase;
+}
+
+.informacoes .pagamento-produto {
+    text-transform: uppercase;
+}
+
+.informacoes1 {
+    display: none;
 }
 
 .tamanho {
@@ -523,7 +564,7 @@ footer {
 
 /* Responsivo */
 
-@media (max-width: 1500px) {
+@media (max-width: 1200px) {
 
     .geral-info {
         max-width: 100%;
@@ -544,6 +585,15 @@ footer {
         display: inline;
         flex-direction: column;
         max-width: 7.8rem;
+    }
+
+    .dicas {
+        width: 100%;
+        padding: 0;
+    }
+
+    .mais-pedidos {
+        padding: 0;
     }
 }
 
@@ -567,6 +617,10 @@ footer {
     .medidas {
         object-fit: contain;
         transition: 1s ease-in-out;
+    }
+
+    .swiffy-slider {
+        min-width: 100%;
     }
 }
 @media (max-width:600px) {
