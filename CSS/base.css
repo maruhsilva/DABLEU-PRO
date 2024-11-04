@@ -62,105 +62,6 @@ header p {
     font-size: 1.2rem;
 }
 
-/* ACORDEÃO */
-
-.acordeao {
-    min-width: 25%;
-}
-
-.accordion-body a {
-    text-decoration: none;
-    color: black;
-}
-
-.accordion-body a:hover {
-    text-decoration: underline;
-    transition: 1s ease-in-out;
-}
-
-.content {
-    max-width: 71.5%;
-    margin-inline: auto;
-    padding-top: 3rem !important;
-    padding-bottom: 3rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-}
-
-.conteudo-quemsomos .titulo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    display: flex;
-    align-items: baseline;
-    justify-content: baseline;
-}
-
-.conteudo-quemsomos {
-    display: flex;
-    align-items: baseline;
-    justify-content: baseline;
-    flex-direction: column;
-    border: 1px solid hsl(0, 0%, 0%, .2);
-    width: 60%;
-    padding: 1rem;
-}
-
-
-.conteudo-quemsomos ul {
-    padding: 0;
-}
-
-.conteudo-quemsomos li {
-    list-style: none;
-}
-
-.conteudo1 {
-    display: flex;
-    align-items: center;
-    justify-content: baseline;
-    gap: 1rem;
-    padding: 0;
-    margin: 0;
-}
-
-.conteudo2 {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.conteudo-quemsomos p {
-    font-weight: bold;
-    margin-bottom: .5rem;
-    padding-top: 2rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.1rem;
-}
-
-.conteudo-quemsomos img {
-    width: 200px;
-}
-
-.conteudo-quemsomos .banner {
-    width: 100%;
-}
-
-.accordion {
-    border: 1px solid hsl(0, 0%, 0%, .2);
-    --bs-accordion-active-bg: hsl(0, 0%, 0%, .03);
-    --bs-accordion-btn-focus-box-shadow: 1px solid black;
-    --bs-accordion-border-radius: none;
-    width: 100%;
-}
-
-/* .accordion-collapse {
-    max-width: 90%;
-} */
-
-
 /* FOOTER */
 
 .top {
@@ -362,8 +263,6 @@ footer {
         width: 100%;
     }
 }
-
-
 
 .conteudo-quemsomos .accordion-header {
     font-family: Georgia, 'Times New Roman', Times, serif;

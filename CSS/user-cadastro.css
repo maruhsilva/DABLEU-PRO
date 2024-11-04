@@ -62,104 +62,45 @@ header p {
     font-size: 1.2rem;
 }
 
-/* ACORDEÃO */
+/* LOGIN */
 
-.acordeao {
-    min-width: 25%;
-}
-
-.accordion-body a {
-    text-decoration: none;
-    color: black;
-}
-
-.accordion-body a:hover {
-    text-decoration: underline;
-    transition: 1s ease-in-out;
-}
-
-.content {
-    max-width: 71.5%;
+.forms {
+    width: 70%;
     margin-inline: auto;
-    padding-top: 3rem !important;
-    padding-bottom: 3rem;
-    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     justify-content: center;
-    gap: 2rem;
+    align-items: center;
 }
 
-.conteudo-quemsomos .titulo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    display: flex;
-    align-items: baseline;
-    justify-content: baseline;
-}
-
-.conteudo-quemsomos {
-    display: flex;
-    align-items: baseline;
-    justify-content: baseline;
+.formulario-cadastro {
+    display: grid;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    border: 1px solid hsl(0, 0%, 0%, .2);
-    width: 60%;
-    padding: 1rem;
 }
 
-
-.conteudo-quemsomos ul {
-    padding: 0;
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 1px solid hsl(0, 0%, 0%, .2);
 }
 
-.conteudo-quemsomos li {
-    list-style: none;
+.column.g-3 {
+    padding-top: 1.5rem;
 }
 
-.conteudo1 {
+.col-12 {
     display: flex;
     align-items: center;
-    justify-content: baseline;
     gap: 1rem;
-    padding: 0;
-    margin: 0;
 }
 
-.conteudo2 {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.conteudo-quemsomos p {
-    font-weight: bold;
-    margin-bottom: .5rem;
-    padding-top: 2rem;
+.col-12 a {
+    color: black;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.1rem;
 }
-
-.conteudo-quemsomos img {
-    width: 200px;
-}
-
-.conteudo-quemsomos .banner {
-    width: 100%;
-}
-
-.accordion {
-    border: 1px solid hsl(0, 0%, 0%, .2);
-    --bs-accordion-active-bg: hsl(0, 0%, 0%, .03);
-    --bs-accordion-btn-focus-box-shadow: 1px solid black;
-    --bs-accordion-border-radius: none;
-    width: 100%;
-}
-
-/* .accordion-collapse {
-    max-width: 90%;
-} */
-
 
 /* FOOTER */
 
@@ -362,8 +303,6 @@ footer {
         width: 100%;
     }
 }
-
-
 
 .conteudo-quemsomos .accordion-header {
     font-family: Georgia, 'Times New Roman', Times, serif;
