@@ -67,15 +67,90 @@
       <section class="forms">
           <h1>ÁREA DE CADASTRO</h1>
         <div class="formulario-cadastro">
-            <form action="#" onsubmit="return false">
-                CEP: <input type="text" id="cep" maxlength="9" placeholder="13483-000" autofocus><br><br>
-                UF: <input type="text" id="uf"><br>
-                Cidade: <input type="text" id="cidade"><br>
-                Bairro: <input type="text" id="bairro"><br>
-                Endereço: <input type="text" id="endereco">
-            </form>
-            <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-        </div>
+          <form class="column g-3 align-items-center">
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+                <label for="inputName4" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="inputName4" required>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+                <label for="inputCPF4" class="form-label">CPF</label>
+                <input type="text" class="form-control" id="inputCPF4" required>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" required>
+            </div>
+            <div class="column g-3 align-items-center" style="margin: 0; padding: 0;">
+                <div class="col-6">
+                  <label for="inputPassword6" class="col-form-label">Senha</label>
+                </div>
+                <div class="col-md-12">
+                  <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-12" style="padding-bottom: 1rem;">
+                  <span id="passwordHelpInline" class="form-text" >
+                    Deve ter de 8 a 20 caracteres.
+                  </span>
+                </div>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+                <label for="inputTel4" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="inputTel4" required>
+              </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+              <label for="inputAddress" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="Rua/Av." required>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+              <label for="inputAddress2" class="form-label">Bairro</label>
+              <input type="text" class="form-control" id="inputAddress2" required>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+              <label for="inputCity" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1rem;">
+              <label for="inputState" class="form-label">Estado</label>
+              <select id="inputState" class="form-select">
+                <option selected>Selecione...</option>
+                <option value="AC">Acre</option>
+			    <option value="AL">Alagoas</option>
+			    <option value="AP">Amapá</option>
+			    <option value="AM">Amazonas</option>
+			    <option value="BA">Bahia</option>
+			    <option value="CE">Ceará</option>
+		    	<option value="DF">Distrito Federal</option>
+			    <option value="ES">Espírito Santo</option>
+			    <option value="GO">Goiás</option>
+			    <option value="MA">Maranhão</option>
+			    <option value="MT">Mato Grosso</option>
+			    <option value="MS">Mato Grosso do Sul</option>
+			    <option value="MG">Minas Gerais</option>
+			    <option value="PA">Pará</option>
+			    <option value="PB">Paraíba</option>
+			    <option value="PR">Paraná</option>
+			    <option value="PE">Pernambuco</option>
+			    <option value="PI">Piauí</option>
+			    <option value="RJ">Rio de Janeiro</option>
+			    <option value="RN">Rio Grande do Norte</option>
+			    <option value="RS">Rio Grande do Sul</option>
+			    <option value="RO">Rondônia</option>
+			    <option value="RR">Roraima</option>
+			    <option value="SC">Santa Catarina</option>
+			    <option value="SP">São Paulo</option>
+			    <option value="SE">Sergipe</option>
+			    <option value="TO">Tocantins</option>
+            </select>
+            </div>
+            <div class="col-md-12" style="padding-bottom: 1.5rem;">
+              <label for="inputZip" class="form-label">CEP</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12" style="padding-bottom: 1rem;">
+              <button type="submit" class="btn btn-dark">Cadastrar</button>
+              <a href="user-login.html">Já possui conta? Clique aqui!</a>
+            </div>
+          </form>
       </section>
 
 
