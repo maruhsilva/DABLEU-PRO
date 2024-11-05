@@ -1,3 +1,8 @@
+<?php
+  require_once 'CLASSES/usuarios.php';
+  $u = new Usuario;
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -66,87 +71,94 @@
 
       <section class="forms">
           <h1>ÁREA DE CADASTRO</h1>
-        <div class="formulario-cadastro">
-          <form class="column g-3 align-items-center">
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+          <div class="formulario-cadastro">
+          <h2>Dados Pessoais</h2>
+          <form class="row g-3 align-items-center" action="CLASSES/cadastro.php" method="post">
+            <div class="col-md-6" >
                 <label for="inputName4" class="form-label">Nome Completo</label>
-                <input type="text" class="form-control" id="inputName4" required>
+                <input type="text" name="nome" class="form-control" id="inputName4" maxlength="30" required>
             </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" >
                 <label for="inputCPF4" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="inputCPF4" required>
+                <input type="text" name="cpf" class="form-control" id="inputCPF4" maxlength="16" required>
             </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" >
               <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" required>
+              <input type="email" name="email" class="form-control" id="inputEmail4" maxlength="30" required>
             </div>
-            <div class="column g-3 align-items-center" style="margin: 0; padding: 0;">
-                <div class="col-6">
-                  <label for="inputPassword6" class="col-form-label">Senha</label>
-                </div>
-                <div class="col-md-12">
-                  <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                </div>
-                <div class="col-12" style="padding-bottom: 1rem;">
-                  <span id="passwordHelpInline" class="form-text" >
-                    Deve ter de 8 a 20 caracteres.
-                  </span>
-                </div>
-            </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" >
                 <label for="inputTel4" class="form-label">Telefone</label>
-                <input type="tel" class="form-control" id="inputTel4" required>
+                <input type="tel" name="telefone" class="form-control" id="inputTel4" maxlength="30" required>
               </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" id="input">
+              <label for="inputPassword6" class="col-form-label" style="justify-content: space-between; display: flex; align-items: center;">Senha</i></label>
+              <input type="text" id="inputPassword6" name="senha" class="form-control" placeholder="8 à 12 caracteres" minlength="8" maxlength="12" aria-describedby="passwordHelpInline">
+            </div>
+            <div class="col-md-6" id="input">
+              <label for="inputPassword6" class="col-form-label" style="justify-content: space-between; display: flex; align-items: center;">Confirmar Senha</i></label>
+              <input type="text" id="inputPassword6" name="confsenha" class="form-control" placeholder="8 à 12 caracteres" minlength="8" maxlength="12" aria-describedby="passwordHelpInline">
+            </div>
+          </form>
+          <h2>Endereço</h2>
+          <form class="row g-3 align-items-center" action="CLASSES/cadastro.php" method="post">
+              <div class="col-md-6">
+                <label for="inputZip" class="form-label">CEP</label>
+                <input type="text" name="cep" class="form-control" id="inputZip" maxlength="30">
+              </div>
+            <div class="col-md-6" >
               <label for="inputAddress" class="form-label">Endereço</label>
-              <input type="text" class="form-control" id="inputAddress" placeholder="Rua/Av." required>
+              <input type="text" name="endereço" class="form-control" id="inputAddress" placeholder="Rua/Av." required maxlength="30">
             </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" >
+              <label for="inputNumber" class="form-label">Número</label>
+              <input type="text" name="numero" class="form-control" id="inputNumber" required maxlength="30">
+            </div>
+            <div class="col-md-6" >
+              <label for="inputAddress" class="form-label">Complemento</label>
+              <input type="text" name="complemento" class="form-control" id="inputAddress" placeholder="Apto./Bloco" maxlength="30">
+            </div>
+            <div class="col-md-6" >
               <label for="inputAddress2" class="form-label">Bairro</label>
-              <input type="text" class="form-control" id="inputAddress2" required>
+              <input type="text" name="bairro" class="form-control" id="inputAddress2" required maxlength="30">
             </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" >
               <label for="inputCity" class="form-label">Cidade</label>
-              <input type="text" class="form-control" id="inputCity">
+              <input type="text" name="cidade" class="form-control" id="inputCity" maxlength="30">
             </div>
-            <div class="col-md-12" style="padding-bottom: 1rem;">
+            <div class="col-md-6" >
               <label for="inputState" class="form-label">Estado</label>
-              <select id="inputState" class="form-select">
+              <select id="inputState" name="estado" class="form-select" maxlength="30">
                 <option selected>Selecione...</option>
                 <option value="AC">Acre</option>
-			    <option value="AL">Alagoas</option>
-			    <option value="AP">Amapá</option>
-			    <option value="AM">Amazonas</option>
-			    <option value="BA">Bahia</option>
-			    <option value="CE">Ceará</option>
-		    	<option value="DF">Distrito Federal</option>
-			    <option value="ES">Espírito Santo</option>
-			    <option value="GO">Goiás</option>
-			    <option value="MA">Maranhão</option>
-			    <option value="MT">Mato Grosso</option>
-			    <option value="MS">Mato Grosso do Sul</option>
-			    <option value="MG">Minas Gerais</option>
-			    <option value="PA">Pará</option>
-			    <option value="PB">Paraíba</option>
-			    <option value="PR">Paraná</option>
-			    <option value="PE">Pernambuco</option>
-			    <option value="PI">Piauí</option>
-			    <option value="RJ">Rio de Janeiro</option>
-			    <option value="RN">Rio Grande do Norte</option>
-			    <option value="RS">Rio Grande do Sul</option>
-			    <option value="RO">Rondônia</option>
-			    <option value="RR">Roraima</option>
-			    <option value="SC">Santa Catarina</option>
-			    <option value="SP">São Paulo</option>
-			    <option value="SE">Sergipe</option>
-			    <option value="TO">Tocantins</option>
-            </select>
+			          <option value="AL">Alagoas</option>
+			          <option value="AP">Amapá</option>
+			          <option value="AM">Amazonas</option>
+			          <option value="BA">Bahia</option>
+			          <option value="CE">Ceará</option>
+		    	      <option value="DF">Distrito Federal</option>
+			          <option value="ES">Espírito Santo</option>
+			          <option value="GO">Goiás</option>
+			          <option value="MA">Maranhão</option>
+			          <option value="MT">Mato Grosso</option>
+			          <option value="MS">Mato Grosso do Sul</option>
+			          <option value="MG">Minas Gerais</option>
+			          <option value="PA">Pará</option>
+			          <option value="PB">Paraíba</option>
+			          <option value="PR">Paraná</option>
+			          <option value="PE">Pernambuco</option>
+			          <option value="PI">Piauí</option>
+			          <option value="RJ">Rio de Janeiro</option>
+			          <option value="RN">Rio Grande do Norte</option>
+			          <option value="RS">Rio Grande do Sul</option>
+			          <option value="RO">Rondônia</option>
+			          <option value="RR">Roraima</option>
+			          <option value="SC">Santa Catarina</option>
+			          <option value="SP">São Paulo</option>
+			          <option value="SE">Sergipe</option>
+			          <option value="TO">Tocantins</option>
+              </select>
             </div>
-            <div class="col-md-12" style="padding-bottom: 1.5rem;">
-              <label for="inputZip" class="form-label">CEP</label>
-              <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12" style="padding-bottom: 1rem;">
+            <div class="col-12" style="padding-top: 2rem;" >
               <button type="submit" class="btn btn-dark">Cadastrar</button>
               <a href="user-login.html">Já possui conta? Clique aqui!</a>
             </div>
@@ -154,28 +166,26 @@
       </section>
 
 
-
-      <a class="top" href="">VOLTAR AO TOPO</button></a>
+      <!-- <a class="top" href="">VOLTAR AO TOPO</button></a> -->
 
       <footer>
-        <div class="container-footer">
+        <!-- <div class="container-footer">
             <div class="row-footer">
-                <!-- footer col-->
+                
                 <div class="footer-col">
                   <h4>Institucional</h4>
                   <ul>
                       <li><a href="quem-somos.html">Quem somos </a></li>
                       <li><a href="nossos-servicos.html"> nossos serviços </a></li><br>
-                      <!-- <li><a href=""> política de privacidade </a></li><br> -->
-                      <!-- <li><a href=""> programa de afiliados</a></li> -->
+
                       <h4 style="margin: 0; margin-bottom: 1rem; padding: 0;">políticas</h4>
                       <li><a href="trocas.html">trocas e devoluções</a></li>
                       <li><a href="privacidade.html">termos de privacidade</a></li>
                       <li><a href="entrega.html">Prazo e formas de pagamento</a></li>
                   </ul>
               </div>
-              <!--end footer col-->
-              <!-- footer col-->
+              
+              
               <div class="footer-col">
                   <h4>Atendimento</h4>
                   <ul>
@@ -183,8 +193,8 @@
                       <li><a href="contato.html">Contato</a></li>
                   </ul>
               </div>
-                <!--end footer col-->
-                <!-- footer col-->
+                
+                
                 <div class="footer-col">
                     <h4>Categorias</h4>
                     <ul>
@@ -194,8 +204,8 @@
                         <li><a href="#">Acessórios</a></li>
                     </ul>
                 </div>
-                <!--end footer col-->
-                <!-- footer col-->
+                
+                
                 <div class="footer-col">
                     <h4>Se inscreva!</h4>
                     <div class="form-sub">
@@ -213,14 +223,15 @@
                     </div>
 
                 </div>
-                <!--end footer col-->
+                
             </div>
-        </div>
+        </div> -->
         <div class="desenvolvedor">
           <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>
+        <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
