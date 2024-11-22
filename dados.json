@@ -1,0 +1,2056 @@
+{
+    "produtos": [
+      {
+        "id": "produto1",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Black",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/camiseta-preta.jpg",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "PRETO",              
+        "imagem_principal": "IMG/camiseta-preta.jpg",
+        "imagens_slider": [
+          "IMG/camiseta-preta.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta-preta.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto2",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Blue",
+        "titulo": "Tshirt Dry Fit Blue",
+        "imagem": "IMG/camiseta-azul.jpg",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Azul",
+        "imagem_principal": "IMG/camiseta-azul.jpg",
+        "imagens_slider": [
+          "IMG/camiseta-azul.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta-azul.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto3",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "imagem": "IMG/camiseta-vermelha.jpg",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta-vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta-vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta-vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto4",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit OffWhite",
+        "titulo": "Tshirt Dry Fit OffWhite",
+        "imagem": "IMG/camiseta-offwhite.jpg",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta-offwhite.jpg",
+        "imagens_slider": [
+          "IMG/camiseta-offwhite.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta-offwhite.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto5",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Beige",
+        "titulo": "Tshirt Dry Fit Beige",
+        "imagem": "IMG/camiseta-bege.jpg",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Bege",
+        "imagem_principal": "IMG/camiseta-bege.jpg",
+        "imagens_slider": [
+          "IMG/camiseta-bege.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta-bege.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto6",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Kit Dry Fit Black + Bermuda + Bolsa",
+        "titulo": "Kit Dry Fit Black + Bermuda + Bolsa",
+        "preco_credito": "249,90",
+        "preco_pix": "245,90",
+        "cor": "Preto",
+        "imagem_principal": "IMG/kit preto.jpg",
+        "imagens_slider": [
+          "IMG/kit preto.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/kit preto.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto7",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Kit Dry Fit Blue + Bermuda + Bolsa",
+        "titulo": "Kit Dry Fit Blue + Bermuda + Bolsa",
+        "preco_credito": "249,90",
+        "preco_pix": "245,90",
+        "cor": "Azul",
+        "imagem_principal": "IMG/kit azul.jpg",
+        "imagens_slider": [
+          "IMG/kit azul.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/kit azul.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto8",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Kit Dry Fit Pink + Bermuda + Bolsa",
+        "titulo": "Kit Dry Fit Pink + Bermuda + Bolsa",
+        "preco_credito": "249,90",
+        "preco_pix": "245,90",
+        "cor": "Rosa",
+        "imagem_principal": "IMG/kit rosa.jpg",
+        "imagens_slider": [
+          "IMG/kit rosa.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/kit rosa.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto9",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Kit Dry Fit White + Bermuda + Bolsa",
+        "titulo": "Kit Dry Fit White + Bermuda + Bolsa",
+        "preco_credito": "249,90",
+        "preco_pix": "245,90",
+        "cor": "Branco",
+        "imagem_principal": "IMG/kit branco.jpg",
+        "imagens_slider": [
+          "IMG/kit branco.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/kit branco.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto10",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Kit Dry Fit  Red + Bermuda + Bolsa",
+        "titulo": "Kit Dry Fit Red + Bermuda + Bolsa",
+        "preco_credito": "249,90",
+        "preco_pix": "245,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/kit vermelho.jpg",
+        "imagens_slider": [
+          "IMG/kit vermelho.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/kit vermelho.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto11",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg"
+      },
+      {
+        "id": "produto12",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto13",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto14",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto15",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto16",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto17",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto18",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto19",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto20",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto21",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto22",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto23",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto24",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto25",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto26",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto27",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto28",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto29",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto30",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto31",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto32",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto33",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto34",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto35",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto36",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto37",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto38",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto39",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+      {
+        "id": "produto40",
+        "categoria": "Masculinos",
+        "subcategoria": "Camisetas",
+        "nome": "Camiseta Dry Fit Red",
+        "titulo": "Tshirt Dry Fit Red",
+        "preco_credito": "119,90",
+        "preco_pix": "115,90",
+        "cor": "Vermelho",
+        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagens_slider": [
+          "IMG/camiseta vermelha.jpg",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      }
+    ]
+}
+  

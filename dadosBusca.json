@@ -1,0 +1,23 @@
+[
+    {
+      "titulo": "Página Inicial",
+      "descricao": "Bem-vindo à nossa página inicial!",
+      "url": "index.html"
+    },
+    {
+      "titulo": "Produtos",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "produtos.html"
+    },
+    {
+      "titulo": "Carrinho",
+      "descricao": "Confira o seu carrinho de compras.",
+      "url": "carrinho.html"
+    },
+    {
+      "titulo": "Contato",
+      "descricao": "Entre em contato conosco!",
+      "url": "contato.html"
+    }
+  ]
+  

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dableu Pro - Moda Fitness Masculina e Feminina</title>
+    <link rel="shortcut icon" type="imagex/png" href="IMG/BARRAS-PRETAS-4cm-6cm-_2_.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="CSS/slick-theme.css">
+    <link rel="stylesheet" href="CSS/slick.css">
+    <link rel="stylesheet" href="CSS/produto1.css">
+    
+</head>
+<body>
+    <header>
+        <p>FRETE GRÁTIS EM SP PARA COMPRAS À PARTIR DE R$250,00</p>
+    </header>
+    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
+      <div class="container-fluid justify-content-center" style="gap: 5rem;">
+        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+              <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    MASCULINO
+                  </a>
+                  
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    FEMININO
+                  </a>
+                  
+                </li> 
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    KITS
+                  </a>
+                  
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    LANÇAMENTOS
+                  </a>
+                  
+                </li>
+                <ul class="icons">
+                  <li>
+                    <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
+                    <a href="#busca"><i class="bi bi-search"></i></a>
+                    <a href="favoritos.html"><i class="bi bi-heart"></i></a>
+                    <a href="carrinho.html">
+                      <div id="cart-icon-container"></div>
+                    </a>
+                  </li>  
+                </ul> 
+              </ul>
+          </div>
+      </div>
+    </nav>
+
+    <section class="geral-produto">
+      <div class="geral-info">
+        <div class="produto">
+          <div class="col-12 col-lg-6" id="productGallery">
+            <!-- Imagem Principal -->
+            
+            <!-- Controles de Navegação -->
+            <div class="slider-controls">
+              <button id="prevBtn" class="nav-btn left"><i class="fa-solid fa-chevron-left"></i></button> <!-- Setas laterais -->
+              <img class="imagem-produto" id="imagem-produto" src="IMG/camiseta preta.jpg" alt="Produto" >
+              <button id="nextBtn" class="nav-btn right"><i class="fa-solid fa-chevron-right"></i></button> <!-- Setas laterais -->
+            </div>
+        </div>
+
+            <!-- Galeria de Imagens - Slider -->
+            <div class="swiffy-slider slider-item-ratio slider-item-ratio-1x1 slider-nav-round slider-nav-nodelay" id="pgallery">
+                <ul class="slider-container">
+                    <!-- Miniaturas da Galeria -->
+                    <li class="slider-item">
+                        <img src="IMG/camiseta preta.jpg" alt="Imagem 1" class="thumbnail">
+                    </li>
+                    <li class="slider-item">
+                        <img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" alt="Imagem 2" class="thumbnail">
+                    </li>
+                    <li class="slider-item">
+                        <img src="IMG/BARRAS PRETAS - 4cm - 6cm.png" alt="Imagem 3" class="thumbnail">
+                    </li>
+                    <!-- Adicione mais imagens conforme necessário -->
+                </ul>
+            </div>
+
+            
+      
+        <!-- Lightbox para imagem expandida -->
+        <div id="lightbox" class="lightbox">
+          <span id="close-btn" class="close-btn">&times;</span>
+
+          <!-- Controles de navegação dentro do lightbox -->
+          <button id="prevLightboxBtn" class="nav-btn lightbox-nav"><i class="fa-solid fa-chevron-left"></i></button>
+          <img id="expanded-image" src="" alt="Imagem Expandida">
+          <button id="nextLightboxBtn" class="nav-btn lightbox-nav"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <script>
+          // Selecione os elementos
+          const mainImage = document.getElementById("imagem-produto");
+          const thumbnails = document.querySelectorAll(".thumbnail");
+          const prevBtn = document.getElementById("prevBtn");
+          const nextBtn = document.getElementById("nextBtn");
+          const lightbox = document.getElementById("lightbox");
+          const expandedImage = document.getElementById("expanded-image");
+          const closeBtn = document.getElementById("close-btn");
+          const prevLightboxBtn = document.getElementById("prevLightboxBtn");
+          const nextLightboxBtn = document.getElementById("nextLightboxBtn");
+          let currentIndex = 0;
+      
+          // Função para atualizar a imagem principal
+          function updateMainImage(index) {
+              const selectedThumbnail = thumbnails[index];
+              mainImage.src = selectedThumbnail.src;
+              currentIndex = index;
+          }
+      
+          // Event listeners para as miniaturas
+          thumbnails.forEach((thumbnail, index) => {
+              thumbnail.addEventListener("click", () => {
+                  updateMainImage(index);
+              });
+          });
+      
+          // Controles de navegação entre a imagem principal
+          prevBtn.addEventListener("click", () => {
+              if (currentIndex > 0) {
+                  updateMainImage(currentIndex - 1);
+              } else {
+                  updateMainImage(thumbnails.length - 1);
+              }
+          });
+      
+          nextBtn.addEventListener("click", () => {
+              if (currentIndex < thumbnails.length - 1) {
+                  updateMainImage(currentIndex + 1);
+              } else {
+                  updateMainImage(0);
+              }
+          });
+      
+          // Expandir imagem ao clicar na imagem principal
+          mainImage.addEventListener("click", () => {
+              expandedImage.src = mainImage.src;  // Definir a imagem ampliada
+              lightbox.style.display = "flex";  // Mostrar a caixa de luz
+          });
+      
+          // Fechar o lightbox
+          closeBtn.addEventListener("click", () => {
+              lightbox.style.display = "none";  // Esconder o lightbox
+          });
+      
+          // Fechar o lightbox ao clicar fora da imagem
+          lightbox.addEventListener("click", (event) => {
+              if (event.target === lightbox) {
+                  lightbox.style.display = "none";  // Esconder o lightbox
+              }
+          });
+      
+          // Controles de navegação dentro do lightbox
+          prevLightboxBtn.addEventListener("click", () => {
+              if (currentIndex > 0) {
+                  updateExpandedImage(currentIndex - 1);
+              } else {
+                  updateExpandedImage(thumbnails.length - 1); // Vai para a última imagem
+              }
+          });
+      
+          nextLightboxBtn.addEventListener("click", () => {
+              if (currentIndex < thumbnails.length - 1) {
+                  updateExpandedImage(currentIndex + 1);
+              } else {
+                  updateExpandedImage(0); // Vai para a primeira imagem
+              }
+          });
+      
+          // Atualizar a imagem expandida no lightbox
+          function updateExpandedImage(index) {
+              const selectedThumbnail = thumbnails[index];
+              expandedImage.src = selectedThumbnail.src;
+              currentIndex = index;  // Atualiza o índice da imagem expandida
+          }
+      </script>
+
+          
+            <div class="cart-container" style="display: none;">
+              <h3>Carrinho de Compras</h3>
+              <table class="cart-table">
+                <thead>
+                  <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+              <div class="cart-total">
+                <p>Total: <span class="total-amount">R$0,00</span></p>
+              </div>
+            </div>
+
+            <div class="content">
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;" id="titulo-produto">Tshirt Dry Fit Blue</b> <br>
+             <div class="descricao-produto">
+              <div id="descricao-produto">
+                • Tecido: Dry Fit <br>
+                • Modelagem: Raglan <br>
+                • Silk: Halteres e Marca <br>
+                • Modelo veste G <br>
+                • Composição: 100% Poliéster <br><br>
+      
+                <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">TECIDO DRY FIT</b> <br>
+                O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal.
+                <br><br>
+                <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">MODELAGEM</b> <br>
+                As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas.
+                <br><br>
+                <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">TECNOLOGIA</b> <br>
+                O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco.
+              </div>
+              <img class="details" src="IMG/Untitled1.png" alt="detalhes da camiseta" style="width: 100%; height: 400px; object-fit: cover;">
+              <div class="content1">
+                <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CAMISETA DE ACADEMIA DRY FIT</b> <br>
+                <b style="font-size: 1.4rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">IDEAL PARA SUA PERFORMANCE</b>
+                <br><br>
+                Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu.
+                <br>
+              </div>
+             </div>
+            <div class="medidas">
+              <b style="font-size: 1.6rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">TABELA DE MEDIDAS:</b>
+              <img class=".imagem-produto" src="IMG/Sem título-3_Prancheta 1.jpg" alt="" style="width: 100%; height: 400px;">
+            </div>
+             </div>
+          </div>
+        </div>
+        <div class="informacoes minimizada">
+          <div class="minimizar-area" onclick="toggleExpandir()">
+              <p>Clique para mais informações!</p> <!-- Texto ou ícone indicativo -->
+          </div>
+        
+        <div class="geral-preco">
+          <div class="informacoes">
+            <div id="conteudo">
+              <p  class="titulo-produto" id="nome-produto">Tshirt Dry Fit Black</p>
+          <div class="precos">
+          <p class="preco-produto-credito">R$99,90</p>
+          <p class="preco-produto-pix">R$95,90</p>
+              <p class="preco-pix">(NO PIX)</p>
+            </div>
+            <p class="pagamento-produto">Ou R$99,90 no cartão de crédito <br> em até 2x sem juros</p>
+            <p class="cor">Cor selecionada: Azul</p>
+            
+            <img src="IMG/camiseta azul.jpg" alt="" class="img-produto" style="width: 80px; border: 2px solid black;">
+            
+            <p style="padding-top: 1rem;">Selecione o tamanho:</p>
+              <ul class="tamanho">
+                <li onclick="selecionarTamanho(this)">P</li>
+                <li onclick="selecionarTamanho(this)">M</li>
+                <li onclick="selecionarTamanho(this)">G</li>
+                <li onclick="selecionarTamanho(this)">GG</li>
+                <li onclick="selecionarTamanho(this)">XGG</li>
+            </ul>
+            <p style="padding-top: 1rem;">Quantidade:</p>
+            <div data-app="product.quantity" id="quantidade" class="quantidade">
+                <span id="span_erro_carrinho" class="blocoAlerta" style="display:none;">Selecione uma opção para variação do produto</span>
+                <input type="button" id="plus" value='-' onclick="alterarQuantidade(-1)" />
+                <input id="quantia" name="quant" class="text" size="1" type="text" value="1" maxlength="5" />
+                <input type="button" id="minus" value='+' onclick="alterarQuantidade(1)">
+            </div><br>
+               <!-- Novo campo para CEP -->
+            <!-- <p style="padding-top: 1rem;">Digite o CEP para calcular o frete:</p> -->
+            <input type="text" id="cep" placeholder="Calcule o Frete" oninput="calcularFrete()">
+            <p id="valorFrete" style="display:none;">Valor do Frete: R$0,00</p>
+              <div class="button">
+                <button type="button" class="button-hover-background add-to-cart" onclick="adicionarCarrinho()">ADICIONAR AO CARRINHO</button>
+              </div>
+            </div> 
+              
+              
+              
+            </div>
+          </div>
+      </div>
+      <script>
+      function toggleExpandir() {
+        const barra = document.querySelector('.informacoes');
+        barra.classList.toggle('minimizada');
+        barra.classList.toggle('expandida');
+    }
+  </script>
+    
+      <script>
+        // Função para carregar as informações do produto a partir do JSON
+function carregarProduto(produtoId) {
+    // Carregar o arquivo JSON (pode ser local ou via API)
+    fetch('dados.json')
+        .then(response => response.json())
+        .then(data => {
+            // Encontrar o produto com base no ID
+            const produto = data.produtos.find(p => p.id === produtoId);
+            
+            if (produto) {
+                // Atualizar as informações principais do produto na página
+                document.querySelector('#nome-produto').textContent = produto.nome;
+                document.querySelector('#titulo-produto').textContent = produto.extras?.titulo || '';
+                document.querySelector('.preco-produto-credito').textContent = `R$${produto.preco_credito}`;
+                document.querySelector('.preco-produto-pix').textContent = `R$${produto.preco_pix}`;
+                document.querySelector('.preco-pix').textContent = `(NO PIX)`;
+                document.querySelector('.cor').textContent = `Cor selecionada: ${produto.cor}`;
+                document.querySelector('.img-produto').src = produto.imagem_produto;
+
+                // Alterar a imagem principal do produto
+                const imagemProduto = document.getElementById('imagem-produto');
+                imagemProduto.src = produto.imagem_principal;
+
+                // Alterar as imagens do slider
+                const sliderItems = document.querySelectorAll('.thumbnail');
+                produto.imagens_slider.forEach((img, index) => {
+                    if (sliderItems[index]) {
+                        sliderItems[index].src = img;
+                    }
+                });
+
+                // Renderizar a descrição detalhada do produto
+                const descricaoDiv = document.querySelector('.descricao-produto');
+                descricaoDiv.innerHTML = '';
+
+                // Renderizar os detalhes
+                if (produto.descricao?.detalhes) {
+                    const detalhesHTML = produto.descricao.detalhes.map(d => `<p>• ${d}</p>`).join('');
+                    descricaoDiv.innerHTML += detalhesHTML;
+                }
+
+                // Renderizar textos com títulos
+                if (produto.descricao?.textos) {
+                    produto.descricao.textos.forEach(texto => {
+                        descricaoDiv.innerHTML += `
+                            <b style="font-size: 1.6rem;">${texto.titulo}</b><br>
+                            <p>${texto.conteudo}</p><br>
+                        `;
+                    });
+                }
+
+                // Adicionar imagem detalhada se disponível
+                if (produto.imagens && produto.imagens.length > 0) {
+                    produto.imagens.forEach(imagem => {
+                        descricaoDiv.innerHTML += `
+                            <img src="${imagem.url}" alt="${imagem.descricao}" style="width: 100%; height: 400px; object-fit: cover;"><br><br>
+                        `;
+                    });
+                }
+
+                // Renderizar informações adicionais (extras)
+                if (produto.extras) {
+                    descricaoDiv.innerHTML += `
+                        <div class="content1">
+                            <b style="font-size: 1.6rem;">${produto.extras.titulo}</b><br>
+                            <b style="font-size: 1.4rem;">${produto.extras.subtitulo}</b><br><br>
+                            <p>${produto.extras.conteudo}</p><br>
+                        </div>
+                    `;
+                }
+
+                // // Renderizar tabela de medidas, se aplicável
+                // if (produto.tabela_medidas) {
+                //     const medidasDiv = document.querySelector('.medidas');
+                //     medidasDiv.innerHTML = `
+                //         <b style="font-size: 1.6rem;">TABELA DE MEDIDAS:</b><br>
+                //         <img src="${produto.tabela_medidas}" alt="Tabela de Medidas" style="width: 100%; height: 400px;">
+                //     `;
+                // }
+            } else {
+                console.error('Produto não encontrado.');
+            }
+        })
+        .catch(error => console.error('Erro ao carregar o produto:', error));
+}
+
+// Obter o ID do produto a partir da URL (exemplo: produto.html?id=produto1)
+const urlParams = new URLSearchParams(window.location.search);
+const produtoId = urlParams.get('id') || 'produto2'; // Se não houver ID, carrega o produto padrão
+
+// Carregar o produto
+carregarProduto(produtoId);
+
+
+      </script>
+      
+      </section>
+      <section class="dicas">
+        <!-- <p>COMPRE TAMBÉM</p> -->
+        <div class="mais-pedidos">
+          <p>COMPRE TAMBÉM</p>
+          <div class="arrow">
+            <i id="arrow-left" class="fa-solid fa-angle-left" style="font-size: 1.3rem; padding-left: 1rem;"></i>
+            <i id="arrow-right" class="fa-solid fa-angle-right" style="font-size: 1.3rem; padding: 0;"></i>
+          </div>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper" id="mais-vendidos">
+            <!-- Os itens serão adicionados dinamicamente pelo JS -->
+          </div>
+          <!-- Controles -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      
+      <a class="top" href="">VOLTAR AO TOPO</button></a>
+
+      <footer>
+        <div class="container-footer">
+            <div class="row-footer">
+                <!-- footer col-->
+                <div class="footer-col">
+                  <h4>Institucional</h4>
+                  <ul>
+                      <li><a href="quem-somos.html">Quem somos </a></li>
+                      <li><a href="nossos-servicos.html"> nossos serviços </a></li><br>
+                      <!-- <li><a href=""> política de privacidade </a></li><br> -->
+                      <!-- <li><a href=""> programa de afiliados</a></li> -->
+                      <h4 style="margin: 0; margin-bottom: 1rem; padding: 0;">políticas</h4>
+                      <li><a href="trocas.html">trocas e devoluções</a></li>
+                      <li><a href="privacidade.html">termos de privacidade</a></li>
+                      <li><a href="entrega.html">Prazo e formas de pagamento</a></li>
+                  </ul>
+              </div>
+              <!--end footer col-->
+              <!-- footer col-->
+              <div class="footer-col">
+                  <h4>Atendimento</h4>
+                  <ul>
+                      <li><a href="faq.html">FAQ</a></li>
+                      <li><a href="contato.html">Contato</a></li>
+                  </ul>
+              </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Categorias</h4>
+                    <ul>
+                        <li><a href="#">Camisetas</a></li>
+                        <li><a href="#">Bermudas</a></li>
+                        <li><a href="#">Calças</a></li>
+                        <li><a href="#">Acessórios</a></li>
+                    </ul>
+                </div>
+                <!--end footer col-->
+                <!-- footer col-->
+                <div class="footer-col">
+                    <h4>Se inscreva!</h4>
+                    <div class="form-sub">
+                        <form>
+                            <input type="email" placeholder="Digite o seu e-mail" required>
+                            <button>Inscrever</button>
+                        </form>
+                    </div>
+
+                    <div class="medias-socias">
+                        <a href="#"> <i class="fa fa-facebook"></i> </a>
+                        <a href="#"> <i class="fa fa-instagram"></i> </a>
+                        <a href="#"> <i class="fa fa-twitter"></i> </a>
+                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                    </div>
+
+                </div>
+                <!--end footer col-->
+            </div>
+        </div>
+        <div class="desenvolvedor">
+          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
+          <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
+        </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+      <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
+      <script src="https://kit.fontawesome.com/43b36f20b7.js" crossorigin="anonymous"></script>
+      <script src="JAVASCRIPT/slick.min.js"></script>
+      <script src="JAVASCRIPT/slick.js"></script>
+      <script src="JAVASCRIPT/funcoes.js"></script>
+      <script src="JAVASCRIPT/miniCart.js"></script>
+      <script src="JAVASCRIPT/addcarrinho.js"></script>
+      <script src="JAVASCRIPT/dados.js"></script>
+      <script src="JAVASCRIPT/maispedidos.js"></script>
+      <script src="JAVASCRIPT/favorito.js"></script>
+    </body>
+    </html>

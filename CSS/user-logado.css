@@ -54,12 +54,43 @@ header p {
 .icons li {
     list-style: none;
     flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .icons a {
     color: black;
     letter-spacing: 1rem;
     font-size: 1.2rem;
+}
+
+/* CONTENT */
+
+.infos1 {
+    width: 65.5%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+.dados-user {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.dados-user a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    background-color: black;
+    padding: .5rem;
+    border-radius: 15%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 /* FOOTER */
@@ -272,4 +303,157 @@ footer {
 .conteudo-quemsomos .accordion-body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: .8rem;
+}
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+section .dados-user {
+    padding-top: 2rem;
+}
+
+/* Estilo da área de boas-vindas */
+.infos1 {
+    background-color: gray;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.infos1 .dados-user p {
+    font-size: 18px;
+}
+
+.infos1 .dados-user strong {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.infos1 .dados-user a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: transparent;
+    border: 1px solid red;
+}
+
+.infos1 .dados-user a:hover {
+    background-color: #fff;
+    color: red;
+    transition: .2s all ease-in-out;
+    border: none;
+}
+
+/* Seção de Títulos */
+.title-edit {
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.title-edit h2 {
+    display: flex;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    /* max-width: 65%;
+    margin-inline: auto; */
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: black;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    max-width: 65%;
+    margin-inline: auto;
+}
+
+/* Estilo das tabelas */
+table {
+    /* max-width: 70%; */
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    /* margin-inline: auto; */
+    align-items: baseline;
+    justify-content: baseline;
+    margin-left: 17.5%;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    color: black;
+}
+
+table td {
+    background-color: #fff;
+    color: #555;
+}
+
+/* Estilo dos links */
+a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.edit {
+    max-width: 65%;
+    margin-inline: auto;
+    padding: .5rem 0 ;
+    display: flex;
+    justify-content: end;
+}
+
+.edit button {
+    background-color: #000;
+    border: none;
+    border-radius: 5%;
+    padding: .5rem;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    /* Ajuste do layout das tabelas */
+    table th, table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    .infos1 .dados-user p {
+        font-size: 16px;
+    }
+
+    .infos1 .dados-user strong {
+        font-size: 18px;
+    }
 }

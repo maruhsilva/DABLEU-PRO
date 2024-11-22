@@ -1,0 +1,18 @@
+{
+    "name": "seu-nome/do-projeto",
+    "autoload": {
+      "psr-4": {
+        "Phpmailer\\Phpmailer\\": "vendor/phpmailer/phpmailer/src/"
+      }
+    },
+    "authors": [
+      {
+        "name": "maruhsilva",
+        "email": "marua.desenvolvedor@gmail.com"
+      }
+    ],
+    "require": {
+      "phpmailer/phpmailer": "^6.5"
+    }
+  }
+  

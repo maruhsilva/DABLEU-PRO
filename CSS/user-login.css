@@ -54,6 +54,9 @@ header p {
 .icons li {
     list-style: none;
     flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .icons a {
@@ -327,4 +330,30 @@ footer {
 .conteudo-quemsomos .accordion-body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: .8rem;
+}
+
+input.error {
+    border-color: #ff0000;
+}
+
+.popover {
+    position: absolute;
+    background: #ffefef;
+    color: #ff0000;
+    padding: 5px 10px;
+    border: 1px solid #ff0000;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+    z-index: 10;
+}
+
+.popover::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 10px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ff0000 transparent transparent transparent;
 }

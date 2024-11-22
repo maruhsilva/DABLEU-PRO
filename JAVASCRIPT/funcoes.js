@@ -1,3 +1,5 @@
+// SLIDE INDEX PROMO
+
 $('.cards1').slick({
     dots: false,
     infinite: false,
@@ -37,6 +39,8 @@ $('.cards1').slick({
       // instead of a settings object
     ]
   });
+
+// SLIDE INDEX INFO
 
   $('.cards2').slick({
     dots: false,
@@ -78,6 +82,7 @@ $('.cards1').slick({
     ]
   });
 
+  // SLIDE PRODUTOS
 
   $('.center').slick({
     centerMode: true,
@@ -105,15 +110,31 @@ $('.cards1').slick({
     ]
   });
 
+// AUMENTAR DIMINUIR QUANTIDADE
+
   function process(quant){
-    var value = parseInt(document.getElementById("quant").value);
+    var value = parseInt(document.getElementById("quantia").value);
     value+=quant;
     if(value < 1){
-      document.getElementById("quant").value = 1;
+      document.getElementById("quantia").value = 1;
     }else{
-    document.getElementById("quant").value = value;
+    document.getElementById("quantia").value = value;
     }
   }
+
+  // function process(quant){
+  //   var value = parseInt(document.getElementById("quantia").value);
+  //   value+=quant;
+  //   if(value < 1){
+  //     document.getElementById("quantia").value = 1;
+  //   }else{
+  //   document.getElementById("quantia").value = value;
+  //   }
+  // }
+
+
+
+// BUSCA CEP
 
  $("#inputZip").blur(function(){
       // Remove tudo o que não é número para fazer a pesquisa
@@ -151,3 +172,4 @@ $('.cards1').slick({
   img.addEventListener('click', function () {
     input.type = input.type == 'text' ? 'password' : 'text';
   });
+

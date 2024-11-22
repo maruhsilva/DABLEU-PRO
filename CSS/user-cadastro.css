@@ -54,6 +54,9 @@ header p {
 .icons li {
     list-style: none;
     flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .icons a {
@@ -319,4 +322,17 @@ footer {
 .conteudo-quemsomos .accordion-body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: .8rem;
+}
+
+#msg-sucesso {
+    display: flex;
+    max-width: 420px;
+    margin-inline: auto;
+}
+
+.msg-erro {
+    display: flex;
+    max-width: 420px;
+    margin-inline: auto;
+    padding-left: 2rem;
 }

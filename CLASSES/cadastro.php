@@ -9,7 +9,7 @@
         $confirmarSenha = addslashes($_POST['confsenha']);
 
         $cep = addslashes($_POST['cep']);
-        $endereço = addslashes($_POST['endereço']);
+        $endereco = addslashes($_POST['endereco']);
         $numero = addslashes($_POST['numero']);
         $complemento = addslashes($_POST['complemento']);
         $bairro = addslashes($_POST['bairro']);
@@ -17,7 +17,7 @@
         $estado = addslashes($_POST['estado']);
 
         if(!empty($nome) && !empty($cpf) && !empty($email) && !empty($telefone) && !empty($senha) 
-        && !empty($confirmarSenha) && !empty($cep) && !empty($endereço) && !empty($numero) && !empty($complemento) &&
+        && !empty($confirmarSenha) && !empty($cep) && !empty($endereco) && !empty($numero) && !empty($complemento) &&
         !empty($bairro) && !empty($cidade) && !empty($estado))
         {
           $u->conectar("login_dableupro", "localhost", "root", "");
@@ -26,7 +26,7 @@
             if($senha == $confirmarSenha)
             {
               if($u->cadastrar($nome, $cpf, $email, $telefone, $senha, $cep, 
-            $endereço, $numero, $complemento, $bairro, $cidade, $estado))
+            $endereco, $numero, $complemento, $bairro, $cidade, $estado))
               {
                 echo "Cadastrado com sucesso! Acesse para entrar!";
               }
