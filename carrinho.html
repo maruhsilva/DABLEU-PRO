@@ -55,7 +55,7 @@
                     <a href="#busca"><i class="bi bi-search"></i></a>
                     <a href="favoritos.html"><i class="bi bi-heart"></i></a>
                     <a href="carrinho.html">
-                      <div id="cart-icon-container"></div>
+                      <div id="cart-icon-container">0</div>
                     </a>
                   </li>  
                 </ul> 
@@ -94,8 +94,10 @@
         </div>
 
         <div class="botao-finalizar">
-            <!-- Botão para finalizar a compra -->
-        <button id="finalizar-compra">Finalizar Compra</button>
+          <form action="carrinho-logado.php" method="POST">
+            <input type="hidden" name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
+            <button type="submit">Finalizar Compra</button>
+        </form>
 
       </div>
       <!-- Adicione o SDK do Mercado Pago -->

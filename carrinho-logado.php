@@ -1,3 +1,51 @@
+<?php
+session_start();
+require_once 'classes/config.php'; // Inclui o arquivo de configuração para o banco de dados
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['id_usuario'])) {
+    header('Location: user-login.php');
+    exit;
+}
+
+// Verifica se o carrinho foi enviado
+if (isset($_POST['carrinho'])) {
+    $carrinho = json_decode($_POST['carrinho'], true); // Converte o carrinho de volta para array
+
+    // Verifica se o carrinho não está vazio
+    if (empty($carrinho)) {
+        echo "Carrinho vazio.";
+        exit;
+    }
+} else {
+    echo "Carrinho não enviado.";
+    exit;
+}
+
+// Obtém os dados do cliente a partir do banco de dados
+$id_usuario = $_SESSION['id_usuario'];
+$sql = "SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = '$id_usuario'";
+$result = $mysqli->query($sql);
+
+if ($result->num_rows > 0) {
+    // Se o usuário existe, preenche as variáveis com os dados do banco
+    $cliente = $result->fetch_assoc();
+    $nome_cliente = $cliente['nome'];
+    $cpf_cliente = $cliente['cpf'];
+    $telefone_cliente = $cliente['telefone'];
+    $endereco_cliente = $cliente['endereco'];
+    $numero_cliente = $cliente['numero'];
+    $cep_cliente = $cliente['cep'];
+} else {
+    // Caso o cliente não seja encontrado, pode exibir uma mensagem de erro ou redirecionar
+    echo "Erro ao recuperar os dados do cliente.";
+    exit;
+}
+
+// Se o método de pagamento já foi escolhido, podemos prosseguir
+$metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -7,10 +55,9 @@
     <link rel="shortcut icon" type="imagex/png" href="IMG/BARRAS-PRETAS-4cm-6cm-_2_.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <link rel="stylesheet" href="CSS/slick-theme.css">
     <link rel="stylesheet" href="CSS/slick.css">
-    <link rel="stylesheet" href="CSS/payment.css">
+    <link rel="stylesheet" href="CSS/carrinho.css">
 </head>
 <body>
     <header>
@@ -64,99 +111,74 @@
           </div>
       </div>
     </nav>
-      
-    <h1>Comprar Produto</h1>
-    <form action="checkout.php" method="POST">
-        <button type="submit">Pagar com Mercado Pago</button>
-    </form>
+      <div class="container">
+        <h1>Verificação dos Produtos</h1>
+              
+        <!-- Tabela para exibir os produtos -->
+        <table id="tabela-carrinho" class="tabela-carrinho">
+            <thead>
+              <tr>
+                <th>Imagem</th>
+                <th>Produto</th>
+                <th>Tamanho</th>
+                <th>Quantidade</th>
+                <th>Preço Unitário</th>
+                <th>Valor Total</th>
+                <th>Ações</th>
+            </tr>
+            </thead>
+            <tbody id="produtos-carrinho">
+                <!-- Os produtos serão inseridos aqui dinamicamente -->
+            </tbody>
+        </table>
+        <div id="mensagem-carrinho-vazio" style="display:none; color: black; text-align: center;">
+          <h2 style="font-size: 1.3rem;">O seu carrinho está vazio!</h2>
+          <p>Adicione produtos ao carrinho para começar a comprar.</p>
+        </div>
+        <div class="resumo">
+            <p><strong>Subtotal:</strong> R$ <span id="subtotal">0,00</span></p>
+            <p><strong>Frete:</strong> R$ <span id="frete">0,00</span></p>
+            <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p>
+        </div>
 
-  <!-- Exemplo de Produto no Carrinho
-  <div id="walletBrick_container"></div>
-        <script>
-          const mp = new MercadoPago('TEST-a84f2cb5-ae7d-4eff-b4ed-fc47f940cd98', {
-            locale: 'pt-BR'
-          });
-          const bricksBuilder = mp.bricks();
-          const renderWalletBrick = async (bricksBuilder) => {
-            const settings = {
-              initialization: {
-                redirectMode: 'blank',
-              },
-              customization: {
-                texts: {
-                  action: 'pay',
-                  valueProp: 'security_details',
-                },
-                visual: {
-                  hideValueProp: false,
-                  buttonBackground: 'black', // default, black, blue, white
-                  valuePropColor: 'grey', // grey, white
-                  buttonHeight: '48px', // min 48px - max free
-                  borderRadius: '6px',
-                  verticalPadding: '16px', // min 16px - max free
-                  horizontalPadding: '0px', // min 0px - max free
-                },
-                checkout: {
-                  theme: {
-                    elementsColor: '#4287F5', // color hex code
-                    headerColor: '#4287F5', // color hex code
-                  },
-                },
-              },
-              callbacks: {
-                onReady: () => {
-                /*
-                Callback called when Brick is ready.
-                Here you can hide loadings from your site, for example.
-                */
-                },
-                onSubmit: (formData) => {
-                  /*
-                  Callback called when clicking Wallet Brick
-                  this is possible because the brick is a button
-                  at this time of submit, you must create the preference
-                  */
-                  const yourRequestBodyHere = {
-                    items: [
-                      {
-                        id: 'YOUR_PRODUCT_ID',
-                        title: 'YOUR_PRODUCT_TITLE',
-                        description: 'YOUR_PRODUCT_DESCRIPTION',
-                        quantity: YOUR_PRODUCT_QUANTITY,
-                        unit_price: YOUR_PRODUCT_UNIT_PRICE, // item unit price.
-                      },
-                    ],
-                    purpose: 'wallet_purchase',
-                  };
-                  return new Promise((resolve, reject) => {
-                    fetch('/create_preference', {
-                      method: 'POST',
-                      headers: {
-                        'Content-Type': 'application/json',
-                      },
-                        body: JSON.stringify(formData),
-                      })
-                        .then((response) => response.json())
-                        .then((response) => {
-                        // resolve the promise with the ID of the preference
-                        resolve(response.preference_id);
-                      })
-                      .catch((error) => {
-                        // handle error response when trying to create preference
-                        reject();
-                      });
-                  });
-                },
-              },
-            };
-            window.walletBrickController = await bricksBuilder.create(
-              'wallet',
-              'walletBrick_container',
-              settings,
-            );
-          };
-          renderWalletBrick(bricksBuilder);
-        </script> -->
+        
+
+        <form method="POST" action="processar_pagamento.php">
+    <h2>Dados do Cliente</h2>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
+    
+    <label for="cpf">CPF:</label>
+    <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
+    
+    <label for="telefone">Telefone:</label>
+    <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
+    
+    <label for="endereco">Endereço:</label>
+    <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
+    
+    <label for="numero">Número:</label>
+    <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
+    
+    <label for="cep">CEP:</label>
+    <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly>
+
+    <h2>Método de Pagamento</h2>
+    <label for="metodo_pagamento">Escolha o método de pagamento:</label>
+    <select name="metodo_pagamento" required>
+        <option value="cartao" <?= ($metodo_pagamento == 'cartao') ? 'selected' : '' ?>>Cartão de Crédito</option>
+        <option value="pix" <?= ($metodo_pagamento == 'pix') ? 'selected' : '' ?>>Pix</option>
+    </select>
+
+    <div class="botao-finalizar">
+            <!-- Botão para finalizar a compra -->
+            <button type="submit">Finalizar Compra</button>
+        </div>
+    
+    </div>
+
+      <!-- <a class="top" href="">VOLTAR AO TOPO</button></a> -->
+
       <footer>
         <!-- <div class="container-footer">
             <div class="row-footer">
@@ -166,7 +188,7 @@
                   <ul>
                       <li><a href="quem-somos.html">Quem somos </a></li>
                       <li><a href="nossos-servicos.html"> nossos serviços </a></li><br>
-
+                      
                       <h4 style="margin: 0; margin-bottom: 1rem; padding: 0;">políticas</h4>
                       <li><a href="trocas.html">trocas e devoluções</a></li>
                       <li><a href="privacidade.html">termos de privacidade</a></li>
@@ -220,18 +242,17 @@
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>
-    
-        <!-- // SDK MercadoPago.js -->
-      <script src="JAVASCRIPT/payment.js"></script>
+      <script src="https://sdk.mercadopago.com/js/v2"></script>
+      <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
       <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
       <script src="https://kit.fontawesome.com/43b36f20b7.js" crossorigin="anonymous"></script>
       <script src="JAVASCRIPT/slick.min.js"></script>
       <script src="JAVASCRIPT/slick.js"></script>
-      <script src="JAVASCRIPT/funcoes.js"></script>
+      <script src="JAVASCRIPT/miniCart.js"></script>
       <script src="JAVASCRIPT/carrinho.js"></script>
-      <script src="JAVASCRIPT/payment.js"></script>
       <script src="JAVASCRIPT/addcarrinho.js"></script>
+      <script src="JAVASCRIPT/carrinho-logado.js"></script>
     </body>
-    </html>
+</html>

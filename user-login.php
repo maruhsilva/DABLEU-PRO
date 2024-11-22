@@ -1,8 +1,19 @@
 <?php
 include "classes/config.php";
 
+session_start(); // Inicia a sessão, se ainda não iniciada
+
 $error_email = false;
 $error_senha = false;
+
+// Salva a URL de origem, se existir, e ainda não foi definida
+if (!isset($_SESSION['redirect_to']) && isset($_SERVER['HTTP_REFERER'])) {
+    $referer = $_SERVER['HTTP_REFERER'];
+    // Evita salvar a própria página de login como origem
+    if (strpos($referer, 'user-login.php') === false) {
+        $_SESSION['redirect_to'] = $referer;
+    }
+}
 
 if (isset($_POST["email"]) || isset($_POST["senha"])) {
     if (strlen($_POST["email"]) == 0) {
@@ -12,7 +23,7 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
     } else {
         // Proteção contra SQL Injection
         $email = $mysqli->real_escape_string($_POST["email"]);
-        $senha = $mysqli->real_escape_string($_POST["senha"]); // MD5 pode ser ajustado se necessário
+        $senha = $mysqli->real_escape_string($_POST["senha"]);
 
         // Verifica se o e-mail existe
         $sql_email = "SELECT * FROM usuarios WHERE email = '$email'";
@@ -23,25 +34,25 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
         } else {
             // Se o e-mail existe, verifica a senha
             $usuario = $query_email->fetch_assoc();
-            if ($usuario['senha'] != $senha) {
+            if ($usuario['senha'] != $senha) { // Ajuste para método de hash se necessário
                 $error_senha = true;
             } else {
                 // Login bem-sucedido
-                if (!isset($_SESSION)) {
-                    session_start();
-                }
-
                 $_SESSION['id_usuario'] = $usuario['id_usuario'];
                 $_SESSION['nome'] = $usuario['nome'];
                 $_SESSION['email'] = $usuario['email'];
 
-                header('Location: user-logado.php');
+                // Redireciona para a página de origem ou página padrão
+                $redirect_to = $_SESSION['redirect_to'] ?? 'user-logado.php';
+                unset($_SESSION['redirect_to']); // Limpa a URL de origem
+                header("Location: $redirect_to");
                 exit;
             }
         }
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>

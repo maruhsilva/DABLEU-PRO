@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    carregarCarrinho();
-    atualizarBadgeCarrinho(); // Atualiza o badge ao carregar a página
-    atualizarTotal(); // Atualiza o total ao carregar a página
+    carregarCarrinho();  // Carregar os produtos do carrinho na página
+    atualizarBadgeCarrinho();  // Atualiza o badge com o número de itens
+    atualizarTotal();  // Atualiza o subtotal, frete e total
 });
 
 // Carrega o carrinho e exibe os produtos na tabela
@@ -37,6 +37,9 @@ function carregarCarrinho() {
         `;
         tabelaCarrinho.appendChild(row);
     });
+
+    // Atualiza o subtotal, frete e total após carregar os produtos
+    atualizarTotal();
 }
 
 // Atualiza o número de itens no badge
@@ -45,25 +48,40 @@ function atualizarBadgeCarrinho() {
     const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
     const badge = document.getElementById("quantidade-itens");
 
-    badge.textContent = totalItens;
+    if (badge) { // Verifica se o badge existe
+        badge.textContent = totalItens;
 
-    if (totalItens > 0) {
-        badge.style.display = "flex";
-    } else {
-        badge.style.display = "none";
+        if (totalItens > 0) {
+            badge.style.display = "flex";
+        } else {
+            badge.style.display = "none";
+        }
     }
 }
 
-// Calcula e exibe o total do carrinho
+// Calcula e exibe o total do carrinho (subtotal + frete)
 function atualizarTotal() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const subtotal = carrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
     const frete = calcularFrete(subtotal);
     const total = subtotal + frete;
 
-    document.querySelector("#subtotal").textContent = `R$ ${subtotal.toFixed(2)}`;
-    document.querySelector("#frete").textContent = `R$ ${frete.toFixed(2)}`;
-    document.querySelector("#total").textContent = `R$ ${total.toFixed(2)}`;
+    // Atualiza os valores no HTML
+    const subtotalElement = document.querySelector("#subtotal");
+    const freteElement = document.querySelector("#frete");
+    const totalElement = document.querySelector("#total");
+
+    if (subtotalElement) {
+        subtotalElement.textContent = `R$ ${subtotal.toFixed(2)}`;
+    }
+
+    if (freteElement) {
+        freteElement.textContent = `R$ ${frete.toFixed(2)}`;
+    }
+
+    if (totalElement) {
+        totalElement.textContent = `R$ ${total.toFixed(2)}`;
+    }
 }
 
 // Função para calcular o frete
@@ -71,7 +89,7 @@ function calcularFrete(subtotal) {
     return subtotal > 250 ? 0 : 10; // Frete grátis para compras acima de R$ 250
 }
 
-// Lida com ações no carrinho
+// Lida com ações no carrinho (aumentar, diminuir ou remover produto)
 document.querySelector("#produtos-carrinho").addEventListener("click", function (event) {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const target = event.target;
@@ -91,7 +109,7 @@ document.querySelector("#produtos-carrinho").addEventListener("click", function 
 
     // Atualiza o LocalStorage e recarrega os elementos
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    carregarCarrinho();
-    atualizarBadgeCarrinho();
-    atualizarTotal();
+    carregarCarrinho();  // Recarrega o carrinho na página
+    atualizarBadgeCarrinho();  // Atualiza o badge com o número de itens
+    atualizarTotal();  // Atualiza os valores de subtotal, frete e total
 });
