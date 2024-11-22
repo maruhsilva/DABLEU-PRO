@@ -202,5 +202,8 @@ try {
       <script src="JAVASCRIPT/slick.js"></script>
       <script src="JAVASCRIPT/funcoes.js"></script>
       <script src="JAVASCRIPT/addcarrinho.js"></script>
+      <script src="JAVASCRIPT/carrinho.js"></script>
+      <script src="JAVASCRIPT/miniCart.js"></script>
+      <script src="JAVASCRIPT/addcarrinho.js"></script>
     </body>
     </html>

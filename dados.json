@@ -2,7 +2,7 @@
     "produtos": [
       {
         "id": "produto1",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Black",
         "titulo": "Tshirt Dry Fit Black",
@@ -56,7 +56,7 @@
 
       {
         "id": "produto2",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Blue",
         "titulo": "Tshirt Dry Fit Blue",
@@ -109,7 +109,7 @@
       },
       {
         "id": "produto3",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -162,7 +162,7 @@
       },
       {
         "id": "produto4",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit OffWhite",
         "titulo": "Tshirt Dry Fit OffWhite",
@@ -215,7 +215,7 @@
       },
       {
         "id": "produto5",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Beige",
         "titulo": "Tshirt Dry Fit Beige",
@@ -268,7 +268,7 @@
       },
       {
         "id": "produto6",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Kit Dry Fit Black + Bermuda + Bolsa",
         "titulo": "Kit Dry Fit Black + Bermuda + Bolsa",
@@ -320,7 +320,7 @@
       },
       {
         "id": "produto7",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Kit Dry Fit Blue + Bermuda + Bolsa",
         "titulo": "Kit Dry Fit Blue + Bermuda + Bolsa",
@@ -372,7 +372,7 @@
       },
       {
         "id": "produto8",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Kit Dry Fit Pink + Bermuda + Bolsa",
         "titulo": "Kit Dry Fit Pink + Bermuda + Bolsa",
@@ -424,7 +424,7 @@
       },
       {
         "id": "produto9",
-        "categoria": "Masculinos",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
         "nome": "Kit Dry Fit White + Bermuda + Bolsa",
         "titulo": "Kit Dry Fit White + Bermuda + Bolsa",
@@ -476,7 +476,7 @@
       },
       {
         "id": "produto10",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Kit Dry Fit  Red + Bermuda + Bolsa",
         "titulo": "Kit Dry Fit Red + Bermuda + Bolsa",
@@ -528,7 +528,7 @@
       },
       {
         "id": "produto11",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -545,7 +545,7 @@
       },
       {
         "id": "produto12",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -597,7 +597,7 @@
       },
       {
         "id": "produto13",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -649,7 +649,7 @@
       },
       {
         "id": "produto14",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -701,7 +701,7 @@
       },
       {
         "id": "produto15",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -753,7 +753,7 @@
       },
       {
         "id": "produto16",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -805,7 +805,7 @@
       },
       {
         "id": "produto17",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -857,7 +857,7 @@
       },
       {
         "id": "produto18",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -909,7 +909,7 @@
       },
       {
         "id": "produto19",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -961,7 +961,7 @@
       },
       {
         "id": "produto20",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1013,7 +1013,7 @@
       },
       {
         "id": "produto21",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1065,7 +1065,7 @@
       },
       {
         "id": "produto22",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1117,7 +1117,7 @@
       },
       {
         "id": "produto23",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1169,7 +1169,7 @@
       },
       {
         "id": "produto24",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1221,7 +1221,7 @@
       },
       {
         "id": "produto25",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1273,7 +1273,7 @@
       },
       {
         "id": "produto26",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1325,7 +1325,7 @@
       },
       {
         "id": "produto27",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1377,7 +1377,7 @@
       },
       {
         "id": "produto28",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1429,7 +1429,7 @@
       },
       {
         "id": "produto29",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1481,7 +1481,7 @@
       },
       {
         "id": "produto30",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1533,7 +1533,7 @@
       },
       {
         "id": "produto31",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1585,7 +1585,7 @@
       },
       {
         "id": "produto32",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1637,7 +1637,7 @@
       },
       {
         "id": "produto33",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1689,7 +1689,7 @@
       },
       {
         "id": "produto34",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1741,7 +1741,7 @@
       },
       {
         "id": "produto35",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1793,7 +1793,7 @@
       },
       {
         "id": "produto36",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1845,7 +1845,7 @@
       },
       {
         "id": "produto37",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1897,7 +1897,7 @@
       },
       {
         "id": "produto38",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -1949,7 +1949,7 @@
       },
       {
         "id": "produto39",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
@@ -2001,7 +2001,7 @@
       },
       {
         "id": "produto40",
-        "categoria": "Masculinos",
+        "categoria": "",
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",

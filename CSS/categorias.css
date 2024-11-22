@@ -54,6 +54,9 @@ header p {
 .icons li {
     list-style: none;
     flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .icons a {
@@ -274,68 +277,149 @@ footer {
     font-size: .8rem;
 }
 
-/* Estilos gerais */
-#categoria-filtros {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.filtro {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.filtro:hover {
-    background-color: #555;
-}
-
-#categorias-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+main {
     padding: 20px;
 }
 
-.categoria {
-    position: relative;
-    overflow: hidden;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
+.produtos {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    /* border: 1px solid hsl(0, 0%, 0%, .1); */
+    align-items: center;
+    justify-content: space-around;
 }
 
-.categoria:hover {
-    transform: scale(1.05);
-}
-
-.categoria img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #ccc;
-}
-
-.categoria h3 {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-size: 18px;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.categoria a {
-    display: block;
+.produtos a {
     text-decoration: none;
-    color: inherit;
+    color: black;
+}
+
+.produtos .preco-produto-credito {
+    font-size: 1.1rem;
+    text-decoration: line-through;
+    opacity: .6;
+}
+
+.produtos .preco-produto-pix {
+    font-size: 1.5rem;
+    color: red;
+    margin-bottom: .75rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.produtos .preco-pix {
+    color: red;
+    margin-bottom: 1.19rem;
+    font-size: .9rem;
+    text-align: justify;
+}
+
+.produtos .pagamento-produto {
+    font-size: .9rem;
+    text-align: justify;
+    /* padding-left: .5rem; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.produtos .titulo-produto {
+    /* padding-left: .5rem; */
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    font-size: 1.15rem;
+    padding-top: .5rem;
+    /* padding: 0; */
+    text-align: justify;
+    text-transform: uppercase;
+}
+
+.produtos .pagamento-produto {
+    text-transform: uppercase;
+}
+
+.produtos ul {
+    padding: .5rem;
+    /* gap: 1.5rem; */
+    border: 1px solid hsl(0, 0%, 0%, .1);
+    max-width: 300px;
+
+}
+
+.produtos ul img {
+    /* width: 50%; */
+    padding-left: .5rem;
+    padding-top: .5rem;
+    /* margin: 0; */
+    /* width: 400px; */
+}
+
+.produtos li {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.produtos i {
+    background-color: hsl(0, 0%, 100%);
+    padding: .8rem;
+    margin-right: .2rem;
+    font-size: 1.2rem;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.produtos i:hover {
+    color: red;
+    cursor: pointer;
+    transition: .2s ease-in;
+}
+
+.heart {
+    text-align: end;
+}
+
+
+.foto-like {
+    max-width: 300px;
+    background-size: cover;
+    height: 300px;
+}
+
+.precos {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+    gap: .5rem;
+}
+
+#icone-carrinho {
+    display: inline-block; /* Exibido por padrão */
+    position: relative;
+    cursor: pointer;
+}
+
+.badge {
+    display: flex; /* Usa flexbox para centralizar */
+    justify-content: left; 
+    align-items: center; /* Centraliza verticalmente */
+    background-color: red; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border-radius: 50%; /* Mantém a badge circular */
+    max-width: 25px; /* Permite largura dinâmica */
+    height: 24px; /* Altura fixa */
+    padding: 8px; /* Adiciona espaçamento horizontal */
+    font-size: 12px; /* Ajusta o tamanho do texto */
+    font-weight: bold; /* Deixa o texto mais visível */
+    position: absolute; /* Para posicionar no ícone */
+    top: -5px; /* Ajusta posição vertical */
+    right: -5px; /* Ajusta posição horizontal */
+    box-sizing: border-box; /* Garante que padding não afete o tamanho */
+    min-width: 10px; /* Define largura mínima para manter a forma circular */
 }
