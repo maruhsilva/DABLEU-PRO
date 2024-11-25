@@ -7,7 +7,7 @@ function enviarCarrinhoParaPHP() {
         // Cria o formulário dinamicamente
         const form = document.createElement('form');
         form.method = 'POST';
-        form.action = 'processar_pagamento.php'; // A URL do seu PHP
+        form.action = 'processar_pagamento.php'; // Aqui você pode enviar para um arquivo que processa o carrinho, sem redirecionar
 
         // Adiciona o carrinho como um campo hidden (oculto) no formulário
         const inputCarrinho = document.createElement('input');
@@ -23,13 +23,29 @@ function enviarCarrinhoParaPHP() {
         inputMetodoPagamento.value = 'cartao'; // Ou 'pix', dependendo da escolha do usuário
         form.appendChild(inputMetodoPagamento);
 
-        // Envia o formulário
-        document.body.appendChild(form);
-        form.submit();
+        // Envia o formulário sem redirecionar
+        fetch('processar_pagamento.php', {
+            method: 'POST',
+            body: new FormData(form),
+        })
+        .then(response => response.json()) // Supondo que o servidor retorne JSON
+        .then(data => {
+            if (data.sucesso) {
+                alert('Carrinho processado com sucesso!');
+                // Aqui você pode exibir os dados ou atualizar a página sem redirecionar
+            } else {
+                alert('Houve um erro ao processar o carrinho.');
+            }
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert('Erro ao processar o carrinho.');
+        });
     } else {
         alert('Carrinho vazio');
     }
 }
 
 // Exemplo de chamada para enviar o carrinho ao servidor
+// Isso pode ser chamado quando o usuário clicar no botão de finalizar compra
 enviarCarrinhoParaPHP();

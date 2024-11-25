@@ -1,25 +1,21 @@
 <?php
 session_start();
+session_regenerate_id();
 require_once 'classes/config.php'; // Inclui o arquivo de configuração para o banco de dados
 
-// Verifica se o usuário está logado
-if (!isset($_SESSION['id_usuario'])) {
-    header('Location: user-login.php');
-    exit;
-}
+// if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['metodo_pagamento'])) {
+//   // Redireciona de volta para a página do carrinho
+//   header("Location: processar_pagamento.php");
+//   exit;
+// }
 
-// Verifica se o carrinho foi enviado
-if (isset($_POST['carrinho'])) {
-    $carrinho = json_decode($_POST['carrinho'], true); // Converte o carrinho de volta para array
-
-    // Verifica se o carrinho não está vazio
-    if (empty($carrinho)) {
-        echo "Carrinho vazio.";
-        exit;
-    }
+// Verifica se o carrinho foi enviado e possui produtos
+if (isset($_POST["carrinho"]) && !empty(json_decode($_POST["carrinho"], true))) {
+  // Exibe o carrinho na página e mantém o usuário
+  $carrinho = json_decode($_POST["carrinho"], true);
+  // Mostra o conteúdo do carrinho, mas não redireciona automaticamente
 } else {
-    echo "Carrinho não enviado.";
-    exit;
+  echo "Seu carrinho está vazio.";
 }
 
 // Obtém os dados do cliente a partir do banco de dados
@@ -38,13 +34,15 @@ if ($result->num_rows > 0) {
     $cep_cliente = $cliente['cep'];
 } else {
     // Caso o cliente não seja encontrado, pode exibir uma mensagem de erro ou redirecionar
-    echo "Erro ao recuperar os dados do cliente.";
+    $_SESSION['mensagem'] = 'Erro ao recuperar os dados do cliente.';
+    header('Location: carrinho-logado.php');
     exit;
 }
 
 // Se o método de pagamento já foi escolhido, podemos prosseguir
 $metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -171,9 +169,8 @@ $metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
     </select>
 
     <div class="botao-finalizar">
-            <!-- Botão para finalizar a compra -->
-            <button type="submit">Finalizar Compra</button>
-        </div>
+    <button>Finalizar Compra</button>
+</div>
     
     </div>
 

@@ -36,7 +36,7 @@ class Usuario
             $sql->bindValue(":c", $cpf);
             $sql->bindValue(":e", $email);
             $sql->bindValue(":t", $telefone);
-            $sql->bindValue(":s", md5($senha)); // A senha deve ser criptografada
+            $sql->bindValue(":s", $senha); // A senha deve ser criptografada
             $sql->bindValue(":z", $cep);
             $sql->bindValue(":r", $endereco);
             $sql->bindValue(":h", $numero);
@@ -59,7 +59,7 @@ class Usuario
         try {
             $sql = $this->pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
             $sql->bindValue(":e", $email);
-            $sql->bindValue(":s", md5($senha)); // A senha deve ser criptografada
+            $sql->bindValue(":s", $senha); // A senha deve ser criptografada
             $sql->execute();
 
             if ($sql->rowCount() > 0) {

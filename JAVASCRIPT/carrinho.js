@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
 // Carrega o carrinho e exibe os produtos na tabela
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    console.log("Carrinho carregado:", carrinho);  // Depuração: Verificar o que foi carregado no carrinho
+
     const tabelaCarrinho = document.querySelector("#produtos-carrinho");
     const mensagemCarrinhoVazio = document.querySelector("#mensagem-carrinho-vazio");
 
@@ -62,6 +64,8 @@ function atualizarBadgeCarrinho() {
 // Calcula e exibe o total do carrinho (subtotal + frete)
 function atualizarTotal() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    console.log("Carrinho para atualizar o total:", carrinho);  // Depuração: Verificar carrinho na atualização do total
+
     const subtotal = carrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
     const frete = calcularFrete(subtotal);
     const total = subtotal + frete;
@@ -107,9 +111,37 @@ document.querySelector("#produtos-carrinho").addEventListener("click", function 
         carrinho.splice(index, 1);
     }
 
-    // Atualiza o LocalStorage e recarrega os elementos
+    // Atualiza o carrinho no localStorage após as mudanças
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    carregarCarrinho();  // Recarrega o carrinho na página
-    atualizarBadgeCarrinho();  // Atualiza o badge com o número de itens
-    atualizarTotal();  // Atualiza os valores de subtotal, frete e total
+
+    // Atualiza a página após a modificação
+    carregarCarrinho();
+    atualizarBadgeCarrinho();
+    atualizarTotal();
 });
+
+// Função para processar o pagamento
+function processarPagamento() {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+    // Apenas envia os dados se o carrinho não estiver vazio
+    if (carrinho.length > 0) {
+        // Cria o formulário dinamicamente para enviar os dados do carrinho
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = 'processar_pagamento.php';
+
+        // Adiciona o carrinho como um campo hidden (oculto) no formulário
+        const inputCarrinho = document.createElement('input');
+        inputCarrinho.type = 'hidden';
+        inputCarrinho.name = 'carrinho';
+        inputCarrinho.value = JSON.stringify(carrinho);
+        form.appendChild(inputCarrinho);
+
+        // Envia o formulário
+        document.body.appendChild(form);
+        form.submit();
+    } else {
+        alert('Carrinho vazio. Não é possível processar o pagamento.');
+    }
+}

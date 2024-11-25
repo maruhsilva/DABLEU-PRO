@@ -95,13 +95,13 @@
 
         <div class="botao-finalizar">
           <form action="carrinho-logado.php" method="POST">
-            <input type="hidden" name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
-            <button type="submit">Finalizar Compra</button>
+            <input type="hidden"  name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
+            <button type="submit" id="finalizar-compra" >Finalizar Compra</button>
         </form>
 
       </div>
       <!-- Adicione o SDK do Mercado Pago -->
-    
+
     </div>
 
       <!-- <a class="top" href="">VOLTAR AO TOPO</button></a> -->

@@ -1,7 +1,7 @@
 <?php
 
-include "classes/protect.php"; // Protege a página, garantindo que o usuário esteja autenticado
-require_once 'classes/usuarios.php'; // Inclui a classe de usuário que contém a lógica de conexão com o banco
+include __DIR__ . '/classes/protect.php';
+require_once __DIR__ . '/classes/usuarios.php';
 
 // Inicializando a conexão com o banco de dados
 $usuario = new Usuario();

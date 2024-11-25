@@ -284,7 +284,7 @@ header p {
     color: black;
 }
 
-.cards1, .cards2 {
+.cards2 {
     display: flex;
     padding: 0;
     /* border: 1px solid hsl(0, 0%, 0%, .1); */
