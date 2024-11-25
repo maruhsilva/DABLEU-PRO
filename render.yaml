@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: dableu-pro-php
+    name: dableu-pro
     env: docker
     plan: free
     dockerfilePath: ./Dockerfile
