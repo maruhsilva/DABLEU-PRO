@@ -4,16 +4,16 @@ session_regenerate_id();
 require_once 'classes/config.php'; // Inclui a conexão com o banco de dados
 require 'vendor/autoload.php'; // Carregar o autoloader do Composer
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['metodo_pagamento'])) {
-//     header("Location: processar_pagamento.php");
-//     exit;
-// }
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['metodo_pagamento'])) {
+    header("Location: processar_pagamento.php");
+    exit;
+}
 
-// if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['metodo_pagamento'])) {
-//     // Redireciona de volta para a página do carrinho
-//     header("Location: carrinho-logado.php");
-//     exit;
-// }
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['metodo_pagamento'])) {
+    // Redireciona de volta para a página do carrinho
+    header("Location: carrinho-logado.php");
+    exit;
+}
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {

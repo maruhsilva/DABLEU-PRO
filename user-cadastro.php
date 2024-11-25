@@ -274,10 +274,10 @@
                 <div class="footer-col">
                     <h4>Categorias</h4>
                     <ul>
-                        <li><a href="#">Camisetas</a></li>
-                        <li><a href="#">Bermudas</a></li>
-                        <li><a href="#">Calças</a></li>
-                        <li><a href="#">Acessórios</a></li>
+                        <li><a href="cat-masc.html">Masculino</a></li>
+                        <li><a href="cat-fem.html">Feminino</a></li>
+                        <li><a href="cat-kits.html">Kits</a></li>
+                        <li><a href="cat-lan.html">Lançamentos</a></li>
                     </ul>
                 </div>
                 

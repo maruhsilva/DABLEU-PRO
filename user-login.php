@@ -43,7 +43,7 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
                 $_SESSION['email'] = $usuario['email'];
 
                 // Redireciona para a página de origem ou página padrão
-                $redirect_to = $_SESSION['redirect_to'] ?? 'user-logado.php';
+                $redirect_to = $_SESSION['redirect_to'] ?? '';
                 unset($_SESSION['redirect_to']); // Limpa a URL de origem
                 header("Location: $redirect_to");
                 exit;
@@ -208,10 +208,10 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
                 <div class="footer-col">
                     <h4>Categorias</h4>
                     <ul>
-                        <li><a href="#">Camisetas</a></li>
-                        <li><a href="#">Bermudas</a></li>
-                        <li><a href="#">Calças</a></li>
-                        <li><a href="#">Acessórios</a></li>
+                        <li><a href="cat-masc.html">Masculino</a></li>
+                        <li><a href="cat-fem.html">Feminino</a></li>
+                        <li><a href="cat-kits.html">Kits</a></li>
+                        <li><a href="cat-lan.html">Lançamentos</a></li>
                     </ul>
                 </div>
                 

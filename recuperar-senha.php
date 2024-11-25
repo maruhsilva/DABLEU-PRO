@@ -96,25 +96,25 @@ if (isset($_POST['email'])) {
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="cat-masc.html" role="button" >
                     MASCULINO
                   </a>
                   
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="cat-fem.html" role="button">
                     FEMININO
                   </a>
                   
                 </li> 
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="cat-kits.html" role="button">
                     KITS
                   </a>
                   
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link " href="cat-lan.html" role="button">
                     LANÇAMENTOS
                   </a>
                   

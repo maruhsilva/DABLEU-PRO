@@ -6,17 +6,17 @@
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Black",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/camiseta-preta.jpg",
+        "imagem": "IMG/camiseta-preta1.png",
         "preco_credito": "119,90",
         "preco_pix": "115,90",
         "cor": "PRETO",              
-        "imagem_principal": "IMG/camiseta-preta.jpg",
+        "imagem_principal": "IMG/camiseta-preta1.png",
         "imagens_slider": [
-          "IMG/camiseta-preta.jpg",
+          "IMG/camiseta-preta1.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta-preta.jpg",
+        "imagem_produto": "IMG/camiseta-preta1.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -60,17 +60,17 @@
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Blue",
         "titulo": "Tshirt Dry Fit Blue",
-        "imagem": "IMG/camiseta-azul.jpg",
+        "imagem": "IMG/camiseta-azul1.png",
         "preco_credito": "119,90",
         "preco_pix": "115,90",
         "cor": "Azul",
-        "imagem_principal": "IMG/camiseta-azul.jpg",
+        "imagem_principal": "IMG/camiseta-azul1.png",
         "imagens_slider": [
-          "IMG/camiseta-azul.jpg",
+          "IMG/camiseta-azul1.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta-azul.jpg",
+        "imagem_produto": "IMG/camiseta-azul1.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -113,22 +113,22 @@
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Red",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem": "IMG/camiseta-vermelha.jpg",
+        "imagem": "IMG/camiseta-vermelha.png",
         "preco_credito": "119,90",
         "preco_pix": "115,90",
         "cor": "Vermelho",
-        "imagem_principal": "IMG/camiseta-vermelha.jpg",
+        "imagem_principal": "IMG/camiseta-vermelha.png",
         "imagens_slider": [
-          "IMG/camiseta-vermelha.jpg",
+          "IMG/camiseta-vermelha.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta-vermelha.jpg",
+        "imagem_produto": "IMG/camiseta-vermelha.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
           "Modelagem: Raglan",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -164,24 +164,24 @@
         "id": "produto4",
         "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Camiseta Dry Fit OffWhite",
-        "titulo": "Tshirt Dry Fit OffWhite",
-        "imagem": "IMG/camiseta-offwhite.jpg",
+        "nome": "Camiseta Dry Fit Green",
+        "titulo": "Tshirt Dry Fit Green",
+        "imagem": "IMG/camiseta-verdeagua.png",
         "preco_credito": "119,90",
         "preco_pix": "115,90",
         "cor": "Vermelho",
-        "imagem_principal": "IMG/camiseta-offwhite.jpg",
+        "imagem_principal": "IMG/camiseta-verdeagua.png",
         "imagens_slider": [
-          "IMG/camiseta-offwhite.jpg",
+          "IMG/camiseta-verdeagua.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta-offwhite.jpg",
+        "imagem_produto": "IMG/camiseta-verdeagua.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
           "Modelagem: Raglan",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -217,19 +217,19 @@
         "id": "produto5",
         "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Camiseta Dry Fit Beige",
-        "titulo": "Tshirt Dry Fit Beige",
-        "imagem": "IMG/camiseta-bege.jpg",
+        "nome": "Camiseta Dry Fit Pink",
+        "titulo": "Tshirt Dry Fit Pink",
+        "imagem": "IMG/camiseta-rosa.png",
         "preco_credito": "119,90",
         "preco_pix": "115,90",
         "cor": "Bege",
-        "imagem_principal": "IMG/camiseta-bege.jpg",
+        "imagem_principal": "IMG/camiseta-rosa.png",
         "imagens_slider": [
-          "IMG/camiseta-bege.jpg",
+          "IMG/camiseta-rosa.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta-bege.jpg",
+        "imagem_produto": "IMG/camiseta-rosa.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -270,18 +270,18 @@
         "id": "produto6",
         "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Kit Dry Fit Black + Bermuda + Bolsa",
-        "titulo": "Kit Dry Fit Black + Bermuda + Bolsa",
-        "preco_credito": "249,90",
-        "preco_pix": "245,90",
+        "nome": "Regata Cavada Black",
+        "titulo": "Regata Cavada Black",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
         "cor": "Preto",
-        "imagem_principal": "IMG/kit preto.jpg",
+        "imagem_principal": "IMG/regata-preta1.png",
         "imagens_slider": [
-          "IMG/kit preto.jpg",
+          "IMG/regata-preta1",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit preto.jpg",
+        "imagem_produto": "IMG/regata-preta1",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -322,18 +322,18 @@
         "id": "produto7",
         "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Kit Dry Fit Blue + Bermuda + Bolsa",
-        "titulo": "Kit Dry Fit Blue + Bermuda + Bolsa",
-        "preco_credito": "249,90",
-        "preco_pix": "245,90",
+        "nome": "Regata Cavada Blue",
+        "titulo": "Regata Cavada Blue",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
         "cor": "Azul",
-        "imagem_principal": "IMG/kit azul.jpg",
+        "imagem_principal": "IMG/regata-azul.png",
         "imagens_slider": [
-          "IMG/kit azul.jpg",
+          "IMG/regata-azul.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit azul.jpg",
+        "imagem_produto": "IMG/regata-azul.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -374,18 +374,18 @@
         "id": "produto8",
         "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Kit Dry Fit Pink + Bermuda + Bolsa",
-        "titulo": "Kit Dry Fit Pink + Bermuda + Bolsa",
-        "preco_credito": "249,90",
-        "preco_pix": "245,90",
+        "nome": "Regata Cavada Pink",
+        "titulo": "Regata Cavada Pink",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
         "cor": "Rosa",
-        "imagem_principal": "IMG/kit rosa.jpg",
+        "imagem_principal": "IMG/regata-rosa.png",
         "imagens_slider": [
-          "IMG/kit rosa.jpg",
+          "IMG/regata-rosa.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit rosa.jpg",
+        "imagem_produto": "IMG/regata-rosa.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -426,18 +426,18 @@
         "id": "produto9",
         "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Kit Dry Fit White + Bermuda + Bolsa",
-        "titulo": "Kit Dry Fit White + Bermuda + Bolsa",
-        "preco_credito": "249,90",
-        "preco_pix": "245,90",
+        "nome": "Regata Cavada White",
+        "titulo": "Regata Cavada White",
+        "preco_credito": "99,90",
+        "preco_pix": "99,90",
         "cor": "Branco",
-        "imagem_principal": "IMG/kit branco.jpg",
+        "imagem_principal": "IMG/regata-branca.png",
         "imagens_slider": [
-          "IMG/kit branco.jpg",
+          "IMG/regata-branca.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit branco.jpg",
+        "imagem_produto": "IMG/regata-branca.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -476,20 +476,20 @@
       },
       {
         "id": "produto10",
-        "categoria": "",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Kit Dry Fit  Red + Bermuda + Bolsa",
-        "titulo": "Kit Dry Fit Red + Bermuda + Bolsa",
-        "preco_credito": "249,90",
-        "preco_pix": "245,90",
+        "nome": "Regata Cavada Red",
+        "titulo": "Regata Cavada Red",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
         "cor": "Vermelho",
-        "imagem_principal": "IMG/kit vermelho.jpg",
+        "imagem_principal": "IMG/regata-vermelha.png",
         "imagens_slider": [
-          "IMG/kit vermelho.jpg",
+          "IMG/regata-vermelha.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit vermelho.jpg",
+        "imagem_produto": "IMG/regata-vermelha.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -528,37 +528,72 @@
       },
       {
         "id": "produto11",
-        "categoria": "",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Camiseta Dry Fit Red",
-        "titulo": "Tshirt Dry Fit Red",
-        "preco_credito": "119,90",
-        "preco_pix": "115,90",
-        "cor": "Vermelho",
-        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "nome": "Regata Cavada Orange",
+        "titulo": "Regata Cavada Orange",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
+        "cor": "Laranja",
+        "imagem_principal": "IMG/regata-laranja.png",
         "imagens_slider": [
-          "IMG/camiseta vermelha.jpg",
+          "IMG/regata-laranja.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta vermelha.jpg"
+        "imagem_produto": "IMG/regata-laranja.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "O tecido dry fit é a tecnologia ideal para treinos na academia, crossfit e outros esportes. Com ele você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "CAMISETA DE ACADEMIA DRY FIT",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
       },
       {
         "id": "produto12",
-        "categoria": "",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Camiseta Dry Fit Red",
-        "titulo": "Tshirt Dry Fit Red",
-        "preco_credito": "119,90",
-        "preco_pix": "115,90",
+        "nome": "Regata Cavada Preta",
+        "titulo": "Regata Cavada Preta",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
         "cor": "Vermelho",
-        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagem_principal": "IMG/regata-preta2.png",
         "imagens_slider": [
-          "IMG/camiseta vermelha.jpg",
+          "IMG/regata-preta2.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "imagem_produto": "IMG/regata-preta2.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -597,20 +632,20 @@
       },
       {
         "id": "produto13",
-        "categoria": "",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Camiseta Dry Fit Red",
-        "titulo": "Tshirt Dry Fit Red",
-        "preco_credito": "119,90",
-        "preco_pix": "115,90",
+        "nome": "Regata Cavada Green",
+        "titulo": "Regata Cavada Green",
+        "preco_credito": "99,90",
+        "preco_pix": "95,90",
         "cor": "Vermelho",
-        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "imagem_principal": "IMG/regata-verde.png",
         "imagens_slider": [
-          "IMG/camiseta vermelha.jpg",
+          "IMG/regata-verde.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "imagem_produto": "IMG/regata-verde.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -649,20 +684,20 @@
       },
       {
         "id": "produto14",
-        "categoria": "",
+        "categoria": "Masculino",
         "subcategoria": "Camisetas",
-        "nome": "Camiseta Dry Fit Red",
-        "titulo": "Tshirt Dry Fit Red",
+        "nome": "Camiseta Dry Fit White",
+        "titulo": "Camiseta Dry Fit White",
         "preco_credito": "119,90",
         "preco_pix": "115,90",
-        "cor": "Vermelho",
-        "imagem_principal": "IMG/camiseta vermelha.jpg",
+        "cor": "Branco",
+        "imagem_principal": "IMG/camiseta-branca.png",
         "imagens_slider": [
-          "IMG/camiseta vermelha.jpg",
+          "IMG/camiseta-branca.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta vermelha.jpg",
+        "imagem_produto": "IMG/camiseta-branca.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",

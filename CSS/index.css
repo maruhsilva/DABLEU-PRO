@@ -284,10 +284,15 @@ header p {
     color: black;
 }
 
-.cards2 {
+.cards1 {
     display: flex;
     padding: 0;
     /* border: 1px solid hsl(0, 0%, 0%, .1); */
+    min-height: 400px;
+}
+
+.cards1 ul {
+    
 }
 
 .cards1 a {
@@ -304,20 +309,23 @@ header p {
     padding-top: 1rem;
     gap: 1.5rem;
     border: 1px solid hsl(0, 0%, 0%, .1);
-    max-width: 300px;
+    max-width: 260px;
 }
 
 .promocoes1 ul img {
     /* width: 50%; */
     padding-left: .5rem;
     padding-top: .5rem;
+    height: 400px;
     /* margin: 0; */
-    /* width: 400px; */
 }
 
 .promocoes1 li {
     list-style: none;
     margin-bottom: 0;
+}
+
+.cards1 ul {
 }
 
 .promocoes1 .titulo-produto {
@@ -386,7 +394,7 @@ header p {
 
 .foto-like {
     max-width: 300px;
-    background-size: contain;
+    object-fit: contain;
     height: 300px;
 }
 

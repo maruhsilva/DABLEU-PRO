@@ -17,8 +17,11 @@ function carregarProdutos() {
                 return;
             }
 
-            // Iterar pelos produtos filtrados e criar os cards
-            produtosFiltrados.forEach(produto => {
+            // Embaralhar os produtos filtrados
+            const produtosEmbaralhados = produtosFiltrados.sort(() => Math.random() - 0.5);
+
+            // Iterar pelos produtos embaralhados e criar os cards
+            produtosEmbaralhados.forEach(produto => {
                 const card = document.createElement('div');
                 card.classList.add('produto-card');
 
@@ -27,7 +30,7 @@ function carregarProdutos() {
                     <ul>
                         <li>
                             <a href="produto.html?id=${produto.id}">
-                                <ul class="foto-like" style="background-image: url(${produto.imagem_principal});">
+                                <ul class="foto-like" style="background-image: url(${produto.imagem_principal}); background-size: contain;">
                                     <div class="heart"><i class="bi bi-heart"></i></div>
                                 </ul>
                             </a>
@@ -39,7 +42,7 @@ function carregarProdutos() {
                                 <p class="preco-produto-pix">R$${produto.preco_pix}</p>
                                 <p class="preco-pix">(NO PIX)</p>
                             </div>
-                            <p class="pagamento-produto">Ou R$${produto.preco_credito} no cartão de crédito <br> em até 2x sem juros</p>
+                            <p class="pagamento-produto">Ou R$${produto.preco_credito} no cartão de crédito em até 2x sem juros</p>
                         </li>
                     </ul>
                 `;
@@ -53,4 +56,5 @@ function carregarProdutos() {
 
 // Carregar produtos ao iniciar a página
 document.addEventListener('DOMContentLoaded', carregarProdutos);
+
 

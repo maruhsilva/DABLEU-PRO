@@ -417,3 +417,12 @@ footer {
     min-width: 10px; /* Define largura mínima para manter a forma circular */
 }
 
+#dados {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#dados h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

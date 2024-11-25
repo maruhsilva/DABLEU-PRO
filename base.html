@@ -16,85 +16,53 @@
         <p>FRETE GRÁTIS EM SP PARA COMPRAS À PARTIR DE R$250,00</p>
     </header>
     <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
-        <div class="container-fluid justify-content-center" style="gap: 5rem;">
-          <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      MASCULINO
+      <div class="container-fluid justify-content-center" style="gap: 5rem;">
+        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+              <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="cat-masc.html" role="button" >
+                    MASCULINO
+                  </a>
+                  
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="cat-fem.html" role="button">
+                    FEMININO
+                  </a>
+                  
+                </li> 
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="cat-kits.html" role="button">
+                    KITS
+                  </a>
+                  
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link " href="cat-lan.html" role="button">
+                    LANÇAMENTOS
+                  </a>
+                  
+                </li>
+                <ul class="icons">
+                  <li>
+                    <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
+                    <a href="#busca"><i class="bi bi-search"></i></a>
+                    <a href="favoritos.html"><i class="bi bi-heart"></i></a>
+                    <a href="carrinho.html">
+                      <div id="cart-icon-container"></div>
                     </a>
-                    <ul class="dropdown-menu" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Produtos</h6></li>
-                      <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                      <li><a class="dropdown-item" href="#">Regatas</a></li>
-                      <li><a class="dropdown-item" href="#">Shorts e Bermudas</a></li><br>
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Acessórios</h6></li>  
-                      <li><a class="dropdown-item" href="#">Cuecas</a></li>
-                      <li><a class="dropdown-item" href="#">Meias</a></li>
-                      <li><a class="dropdown-item" href="#">Bonés</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      FEMININO
-                    </a>
-                    <ul class="dropdown-menu" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Produtos</h6></li>  
-                      <li><a class="dropdown-item" href="#">Camisetas/Cropped</a></li>
-                      <li><a class="dropdown-item" href="#">Calça/Legging</a></li>
-                      <li><a class="dropdown-item" href="#">Shorts</a></li><br>
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Acessórios</h6></li>  
-                      <li><a class="dropdown-item" href="#">Top</a></li>
-                      <li><a class="dropdown-item" href="#">Meias</a></li>
-                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                    </ul>
-                  </li> 
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      KITS
-                    </a>
-                    <ul class="dropdown-menu" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Masculinos</h6></li>
-                      <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                      <li><a class="dropdown-item" href="#">Camisetas + Bermudas</a></li>
-                      <li><a class="dropdown-item" href="#">Acessórios</a></li><br>
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Femininos</h6></li>
-                      <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                      <li><a class="dropdown-item" href="#">Camisetas + Shorts</a></li>
-                      <li><a class="dropdown-item" href="#">Acessórios</a></li><br>
-                    </ul>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      LANÇAMENTOS
-                    </a>
-                    <ul class="dropdown-menu" style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
-                      <li><h6 class="dropdown-header" style="font-size: 1.05rem;">Produtos</h6></li>
-                      <li><a class="dropdown-item" href="#">Camisetas</a></li>
-                      <li><a class="dropdown-item" href="#">Bermudas/Calças</a></li>
-                      <li><a class="dropdown-item" href="#">Acessórios</a></li>
-                    </ul>
-                  </li>
-                  <ul class="icons">
-                    <li>
-                      <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
-                      <a href="#busca"><i class="bi bi-search"></i></a>
-                      <a href="favoritos.html"><i class="bi bi-heart"></i></a>
-                      <a href="carrinho.html">
-                        <div id="cart-icon-container"></div>
-                      </a>
-                    </li>  
-                  </ul> 
-                </ul>
-            </div>
-        </div>
-      </nav>
+                  </li>  
+                </ul> 
+              </ul>
+          </div>
+      </div>
+    </nav>
       
       <a class="top" href="">VOLTAR AO TOPO</button></a>
 
@@ -129,10 +97,10 @@
                 <div class="footer-col">
                     <h4>Categorias</h4>
                     <ul>
-                        <li><a href="#">Camisetas</a></li>
-                        <li><a href="#">Bermudas</a></li>
-                        <li><a href="#">Calças</a></li>
-                        <li><a href="#">Acessórios</a></li>
+                      <li><a href="cat-masc.html">Masculino</a></li>
+                      <li><a href="cat-fem.html">Feminino</a></li>
+                      <li><a href="cat-kits.html">Kits</a></li>
+                      <li><a href="cat-lan.html">Lançamentos</a></li>
                     </ul>
                 </div>
                 <!--end footer col-->

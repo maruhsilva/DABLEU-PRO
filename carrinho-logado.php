@@ -1,47 +1,71 @@
 <?php
 session_start();
 session_regenerate_id();
-require_once 'classes/config.php'; // Inclui o arquivo de configuração para o banco de dados
 
-// if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['metodo_pagamento'])) {
-//   // Redireciona de volta para a página do carrinho
-//   header("Location: processar_pagamento.php");
-//   exit;
-// }
+// Inclui o arquivo de configuração para o banco de dados
+require_once 'classes/config.php';
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['id_usuario'])) {
+    $_SESSION['mensagem'] = 'Sessão expirada. Por favor, faça login novamente.';
+    header('Location: user-login.php');
+    exit;
+}
+
+// Verifica se a requisição é POST e se o método de pagamento foi enviado
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['metodo_pagamento'])) {
+    $_SESSION['mensagem'] = 'Escolha um método de pagamento para continuar.';
+    header("Location: carrinho-logado.php");
+    exit;
+}
 
 // Verifica se o carrinho foi enviado e possui produtos
-if (isset($_POST["carrinho"]) && !empty(json_decode($_POST["carrinho"], true))) {
-  // Exibe o carrinho na página e mantém o usuário
-  $carrinho = json_decode($_POST["carrinho"], true);
-  // Mostra o conteúdo do carrinho, mas não redireciona automaticamente
-} else {
-  echo "Seu carrinho está vazio.";
+if (!isset($_POST["carrinho"]) || empty(json_decode($_POST["carrinho"], true))) {
+    $_SESSION['mensagem'] = 'Seu carrinho está vazio. Adicione itens para prosseguir.';
+    header("Location: carrinho-logado.php");
+    exit;
 }
+
+// Decodifica o carrinho enviado via POST
+$carrinho = json_decode($_POST["carrinho"], true);
 
 // Obtém os dados do cliente a partir do banco de dados
 $id_usuario = $_SESSION['id_usuario'];
-$sql = "SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = '$id_usuario'";
-$result = $mysqli->query($sql);
+try {
+    // Use prepared statements para evitar injeção de SQL
+    $stmt = $mysqli->prepare("SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = ?");
+    $stmt->bind_param("i", $id_usuario);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-if ($result->num_rows > 0) {
-    // Se o usuário existe, preenche as variáveis com os dados do banco
-    $cliente = $result->fetch_assoc();
-    $nome_cliente = $cliente['nome'];
-    $cpf_cliente = $cliente['cpf'];
-    $telefone_cliente = $cliente['telefone'];
-    $endereco_cliente = $cliente['endereco'];
-    $numero_cliente = $cliente['numero'];
-    $cep_cliente = $cliente['cep'];
-} else {
-    // Caso o cliente não seja encontrado, pode exibir uma mensagem de erro ou redirecionar
-    $_SESSION['mensagem'] = 'Erro ao recuperar os dados do cliente.';
+    if ($result->num_rows > 0) {
+        // Preenche as variáveis com os dados do banco
+        $cliente = $result->fetch_assoc();
+        $nome_cliente = htmlspecialchars($cliente['nome']);
+        $cpf_cliente = htmlspecialchars($cliente['cpf']);
+        $telefone_cliente = htmlspecialchars($cliente['telefone']);
+        $endereco_cliente = htmlspecialchars($cliente['endereco']);
+        $numero_cliente = htmlspecialchars($cliente['numero']);
+        $cep_cliente = htmlspecialchars($cliente['cep']);
+    } else {
+        // Caso o cliente não seja encontrado
+        $_SESSION['mensagem'] = 'Erro ao recuperar os dados do cliente.';
+        header('Location: carrinho-logado.php');
+        exit;
+    }
+} catch (Exception $e) {
+    error_log("Erro ao recuperar dados do cliente: " . $e->getMessage());
+    $_SESSION['mensagem'] = 'Ocorreu um erro ao processar suas informações.';
     header('Location: carrinho-logado.php');
     exit;
 }
 
-// Se o método de pagamento já foi escolhido, podemos prosseguir
-$metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
+// Obtém o método de pagamento escolhido
+$metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
+
+// Agora você pode prosseguir com a lógica para finalizar o pagamento
 ?>
+
 
 
 <!DOCTYPE html>
@@ -72,25 +96,25 @@ $metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="cat-masc.html" role="button" >
                     MASCULINO
                   </a>
                   
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="cat-fem.html" role="button">
                     FEMININO
                   </a>
                   
                 </li> 
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="cat-kits.html" role="button">
                     KITS
                   </a>
                   
                 </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link " href="cat-lan.html" role="button">
                     LANÇAMENTOS
                   </a>
                   
@@ -136,41 +160,43 @@ $metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
         <div class="resumo">
             <p><strong>Subtotal:</strong> R$ <span id="subtotal">0,00</span></p>
             <p><strong>Frete:</strong> R$ <span id="frete">0,00</span></p>
-            <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p>
+            <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p><br>
         </div>
 
         
 
+        <div class="dados-cliente" id="dados">
         <form method="POST" action="processar_pagamento.php">
-    <h2>Dados do Cliente</h2>
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
-    
-    <label for="cpf">CPF:</label>
-    <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
-    
-    <label for="telefone">Telefone:</label>
-    <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
-    
-    <label for="endereco">Endereço:</label>
-    <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
-    
-    <label for="numero">Número:</label>
-    <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
-    
-    <label for="cep">CEP:</label>
-    <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly>
+        <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente</h2>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
 
-    <h2>Método de Pagamento</h2>
-    <label for="metodo_pagamento">Escolha o método de pagamento:</label>
-    <select name="metodo_pagamento" required>
-        <option value="cartao" <?= ($metodo_pagamento == 'cartao') ? 'selected' : '' ?>>Cartão de Crédito</option>
-        <option value="pix" <?= ($metodo_pagamento == 'pix') ? 'selected' : '' ?>>Pix</option>
-    </select>
+        <label for="cpf">CPF:</label>
+        <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
 
-    <div class="botao-finalizar">
-    <button>Finalizar Compra</button>
-</div>
+        <label for="telefone">Telefone:</label>
+        <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
+
+        <label for="endereco">Endereço:</label>
+        <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
+
+        <label for="numero">Número:</label>
+        <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
+
+        <label for="cep">CEP:</label>
+        <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly><br><br>
+
+        <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Método de Pagamento</h2>
+        <label for="metodo_pagamento">Escolha o método de pagamento:</label>
+        <select name="metodo_pagamento" required>
+            <option value="cartao" <?= ($metodo_pagamento == 'cartao') ? 'selected' : '' ?>>Cartão de Crédito</option>
+            <option value="pix" <?= ($metodo_pagamento == 'pix') ? 'selected' : '' ?>>Pix</option>
+        </select>
+        </div>
+
+        <div class="botao-finalizar">
+        <button>Finalizar Compra</button>
+      </div>
     
     </div>
 
@@ -206,10 +232,10 @@ $metodo_pagamento = $_POST['metodo_pagamento'] ?? '';
                 <div class="footer-col">
                     <h4>Categorias</h4>
                     <ul>
-                        <li><a href="#">Camisetas</a></li>
-                        <li><a href="#">Bermudas</a></li>
-                        <li><a href="#">Calças</a></li>
-                        <li><a href="#">Acessórios</a></li>
+                        <li><a href="cat-masc.html">Masculino</a></li>
+                        <li><a href="cat-fem.html">Feminino</a></li>
+                        <li><a href="cat-kits.html">Kits</a></li>
+                        <li><a href="cat-lan.html">Lançamentos</a></li>
                     </ul>
                 </div>
                 
