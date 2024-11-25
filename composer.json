@@ -1,18 +1,17 @@
 {
-    "name": "seu-nome/do-projeto",
+    "name": "note/dableu-pro",
     "autoload": {
-      "psr-4": {
-        "Phpmailer\\Phpmailer\\": "vendor/phpmailer/phpmailer/src/"
-      }
+        "psr-4": {
+            "Note\\DableuPro\\": "src/"
+        }
     },
     "authors": [
-      {
-        "name": "maruhsilva",
-        "email": "marua.desenvolvedor@gmail.com"
-      }
+        {
+            "name": "maruhsilva",
+            "email": "marua.desenvolvedor@gmail.com"
+        }
     ],
     "require": {
-      "phpmailer/phpmailer": "^6.5",
-        "mercadopago/dx-php": "^2.6"
+        "mercadopago/dx-php": "^3.0"
     }
-  }
+}

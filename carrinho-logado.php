@@ -2,8 +2,10 @@
 session_start();
 session_regenerate_id();
 
-// Inclui o arquivo de configuração para o banco de dados
 require_once 'classes/config.php';
+
+// Variável para exibir erros sem redirecionar
+$erro = "";
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {
@@ -12,58 +14,41 @@ if (!isset($_SESSION['id_usuario'])) {
     exit;
 }
 
-// Verifica se a requisição é POST e se o método de pagamento foi enviado
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || empty($_POST['metodo_pagamento'])) {
-    $_SESSION['mensagem'] = 'Escolha um método de pagamento para continuar.';
-    header("Location: carrinho-logado.php");
-    exit;
-}
+// Inicializa variáveis
+$cliente = []; // Inicializando como array vazio
+$metodo_pagamento = isset($_POST['metodo_pagamento']) ? htmlspecialchars($_POST['metodo_pagamento']) : "";
 
-// Verifica se o carrinho foi enviado e possui produtos
-if (!isset($_POST["carrinho"]) || empty(json_decode($_POST["carrinho"], true))) {
-    $_SESSION['mensagem'] = 'Seu carrinho está vazio. Adicione itens para prosseguir.';
-    header("Location: carrinho-logado.php");
-    exit;
-}
+// Conexão com o banco de dados
+if (!isset($mysqli)) {
+    $erro = 'Erro de conexão com o banco de dados.';
+} else {
+    // Recupera os dados do cliente logado
+    $id_usuario = $_SESSION['id_usuario'];
+    try {
+        $stmt = $mysqli->prepare("SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = ?");
+        $stmt->bind_param("i", $id_usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-// Decodifica o carrinho enviado via POST
-$carrinho = json_decode($_POST["carrinho"], true);
-
-// Obtém os dados do cliente a partir do banco de dados
-$id_usuario = $_SESSION['id_usuario'];
-try {
-    // Use prepared statements para evitar injeção de SQL
-    $stmt = $mysqli->prepare("SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = ?");
-    $stmt->bind_param("i", $id_usuario);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        // Preenche as variáveis com os dados do banco
-        $cliente = $result->fetch_assoc();
-        $nome_cliente = htmlspecialchars($cliente['nome']);
-        $cpf_cliente = htmlspecialchars($cliente['cpf']);
-        $telefone_cliente = htmlspecialchars($cliente['telefone']);
-        $endereco_cliente = htmlspecialchars($cliente['endereco']);
-        $numero_cliente = htmlspecialchars($cliente['numero']);
-        $cep_cliente = htmlspecialchars($cliente['cep']);
-    } else {
-        // Caso o cliente não seja encontrado
-        $_SESSION['mensagem'] = 'Erro ao recuperar os dados do cliente.';
-        header('Location: carrinho-logado.php');
-        exit;
+        if ($result->num_rows > 0) {
+            $cliente = $result->fetch_assoc();
+        } else {
+            $erro = 'Usuário não encontrado. Por favor, verifique os dados.';
+        }
+    } catch (Exception $e) {
+        error_log("Erro ao recuperar dados do cliente: " . $e->getMessage());
+        $erro = 'Ocorreu um erro ao processar suas informações.';
     }
-} catch (Exception $e) {
-    error_log("Erro ao recuperar dados do cliente: " . $e->getMessage());
-    $_SESSION['mensagem'] = 'Ocorreu um erro ao processar suas informações.';
-    header('Location: carrinho-logado.php');
-    exit;
 }
 
-// Obtém o método de pagamento escolhido
-$metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
+// Dados do cliente com valores padrão
+$nome_cliente = $cliente['nome'] ?? 'Nome não encontrado';
+$cpf_cliente = $cliente['cpf'] ?? 'CPF não encontrado';
+$telefone_cliente = $cliente['telefone'] ?? 'Telefone não encontrado';
+$endereco_cliente = $cliente['endereco'] ?? 'Endereço não encontrado';
+$numero_cliente = $cliente['numero'] ?? 'Número não encontrado';
+$cep_cliente = $cliente['cep'] ?? 'CEP não encontrado';
 
-// Agora você pode prosseguir com a lógica para finalizar o pagamento
 ?>
 
 
@@ -76,7 +61,6 @@ $metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
     <title>Dableu Pro - Moda Fitness Masculina e Feminina</title>
     <link rel="shortcut icon" type="imagex/png" href="IMG/BARRAS-PRETAS-4cm-6cm-_2_.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="CSS/slick-theme.css">
     <link rel="stylesheet" href="CSS/slick.css">
     <link rel="stylesheet" href="CSS/carrinho.css">
@@ -125,7 +109,7 @@ $metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
                     <a href="#busca"><i class="bi bi-search"></i></a>
                     <a href="favoritos.html"><i class="bi bi-heart"></i></a>
                     <a href="carrinho.html">
-                      <div id="cart-icon-container"></div>
+                    <div id="cart-icon-container"></div>
                     </a>
                   </li>  
                 </ul> 
@@ -133,10 +117,8 @@ $metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
           </div>
       </div>
     </nav>
-      <div class="container">
+    <div class="container">
         <h1>Verificação dos Produtos</h1>
-              
-        <!-- Tabela para exibir os produtos -->
         <table id="tabela-carrinho" class="tabela-carrinho">
             <thead>
               <tr>
@@ -162,9 +144,9 @@ $metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
             <p><strong>Frete:</strong> R$ <span id="frete">0,00</span></p>
             <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p><br>
         </div>
-
-        
-
+        <!-- <?php if ($erro): ?>
+            <div class="alert alert-danger" role="alert"><?= htmlspecialchars($erro) ?></div>
+        <?php endif; ?> -->
         <div class="dados-cliente" id="dados">
         <form method="POST" action="processar_pagamento.php">
         <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente</h2>
@@ -189,93 +171,28 @@ $metodo_pagamento = htmlspecialchars($_POST['metodo_pagamento']);
         <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Método de Pagamento</h2>
         <label for="metodo_pagamento">Escolha o método de pagamento:</label>
         <select name="metodo_pagamento" required>
+            <option value="vazio">Selecione uma opção</option>
             <option value="cartao" <?= ($metodo_pagamento == 'cartao') ? 'selected' : '' ?>>Cartão de Crédito</option>
             <option value="pix" <?= ($metodo_pagamento == 'pix') ? 'selected' : '' ?>>Pix</option>
         </select>
         </div>
 
-        <div class="botao-finalizar">
-        <button>Finalizar Compra</button>
-      </div>
-    
+        <form action="finalizar-compra.php" method="post">
+          <input type="hidden" name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
+          <input type="submit" value="Finalizar Compra" class="btn btn-primary">
+        </form>
+
     </div>
-
-      <!-- <a class="top" href="">VOLTAR AO TOPO</button></a> -->
-
-      <footer>
-        <!-- <div class="container-footer">
-            <div class="row-footer">
-                
-                <div class="footer-col">
-                  <h4>Institucional</h4>
-                  <ul>
-                      <li><a href="quem-somos.html">Quem somos </a></li>
-                      <li><a href="nossos-servicos.html"> nossos serviços </a></li><br>
-                      
-                      <h4 style="margin: 0; margin-bottom: 1rem; padding: 0;">políticas</h4>
-                      <li><a href="trocas.html">trocas e devoluções</a></li>
-                      <li><a href="privacidade.html">termos de privacidade</a></li>
-                      <li><a href="entrega.html">Prazo e formas de pagamento</a></li>
-                  </ul>
-              </div>
-              
-              
-              <div class="footer-col">
-                  <h4>Atendimento</h4>
-                  <ul>
-                      <li><a href="faq.html">FAQ</a></li>
-                      <li><a href="contato.html">Contato</a></li>
-                  </ul>
-              </div>
-                
-                
-                <div class="footer-col">
-                    <h4>Categorias</h4>
-                    <ul>
-                        <li><a href="cat-masc.html">Masculino</a></li>
-                        <li><a href="cat-fem.html">Feminino</a></li>
-                        <li><a href="cat-kits.html">Kits</a></li>
-                        <li><a href="cat-lan.html">Lançamentos</a></li>
-                    </ul>
-                </div>
-                
-                
-                <div class="footer-col">
-                    <h4>Se inscreva!</h4>
-                    <div class="form-sub">
-                        <form>
-                            <input type="email" placeholder="Digite o seu e-mail" required>
-                            <button>Inscrever</button>
-                        </form>
-                    </div>
-
-                    <div class="medias-socias">
-                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                        <a href="#"> <i class="fa fa-instagram"></i> </a>
-                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                    </div>
-
-                </div>
-                
-            </div>
-        </div> -->
+    <footer>
         <div class="desenvolvedor">
-          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
-          <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
+            <p>© 2024 DableuPro LTDA | Todos os Direitos Reservados.</p>
+            <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer">
+                <img src="IMG/Sem título.png" alt="logo do desenvolvedor">
+            </a>
         </div>
     </footer>
-      <script src="https://sdk.mercadopago.com/js/v2"></script>
-      <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-      <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
-      <script src="https://kit.fontawesome.com/43b36f20b7.js" crossorigin="anonymous"></script>
-      <script src="JAVASCRIPT/slick.min.js"></script>
-      <script src="JAVASCRIPT/slick.js"></script>
-      <script src="JAVASCRIPT/miniCart.js"></script>
-      <script src="JAVASCRIPT/carrinho.js"></script>
-      <script src="JAVASCRIPT/addcarrinho.js"></script>
-      <script src="JAVASCRIPT/carrinho-logado.js"></script>
-    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
+    <script src="JAVASCRIPT/carrinho.js"></script>
+</body>
 </html>
