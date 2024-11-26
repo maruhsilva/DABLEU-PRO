@@ -154,36 +154,66 @@ if ($result->num_rows > 0) {
         </form>
         
       </div>
-      <form action="processar_pagamento.php" method="post" id="form-finalizar-compra">
-    <!-- Campos existentes -->
-    <input type="hidden" name="carrinho" id="carrinho" value=''>
+      
 
-    <button type="submit" id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
+      <button id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
 
-    <script>
-      function finalizarCompra(items) {
-    fetch("processar_pagamento.php", {
+<script>
+    document.getElementById("finalizar-compra-btn").addEventListener("click", function (e) {
+    e.preventDefault(); // Evita a recarga padrão da página
+
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    console.log("Conteúdo do carrinho:", carrinho);
+
+    if (!Array.isArray(carrinho) || carrinho.length === 0) {
+        alert("O carrinho está vazio. Adicione itens antes de finalizar a compra.");
+        return;
+    }
+
+    const items = carrinho.map(produto => ({
+        title: produto.nome || "Produto sem nome",
+        quantity: produto.quantidade || 1,
+        unit_price: produto.preco || 0.0
+    }));
+
+    console.log("Itens preparados para a compra:", items);
+
+    function finalizarCompra(items) {
+    const dadosCompra = {
+        items: items
+    };
+
+    fetch("./processar_pagamento.php", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({ items })
+        body: JSON.stringify(dadosCompra)
     })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                window.location.href = data.redirect_url; // Redireciona para o link de pagamento
-            } else {
-                alert("Erro ao processar o pagamento: " + data.error);
-            }
-        })
-        .catch(error => {
-            console.error("Erro ao enviar os dados para o servidor:", error);
-            alert("Ocorreu um erro ao finalizar a compra.");
-        });
-}
+    .then(response => response.text())  // Vamos capturar a resposta como texto para depuração
+    .then(data => {
+        console.log("Resposta do servidor:", data);  // Veja exatamente o que o servidor está retornando
 
-    </script>
+        try {
+            const jsonData = JSON.parse(data);  // Tenta converter para JSON
+            if (jsonData.success) {
+                // Redireciona para o Mercado Pago com o link da preferência
+                window.location.href = jsonData.redirect_url;
+            } else {
+                alert("Houve um problema ao processar a compra. Tente novamente.");
+            }
+        } catch (error) {
+            console.error("Erro ao processar resposta:", error);
+            alert("Houve um erro na resposta do servidor. Tente novamente.");
+        }
+    })
+    .catch(error => {
+        console.error("Erro na requisição:", error);
+        alert("Erro ao processar a compra. Tente novamente mais tarde.");
+    });
+}
+});
+</script>
 
 </form>
 

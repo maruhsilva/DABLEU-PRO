@@ -1,49 +1,60 @@
 <?php
-require __DIR__ . '/vendor/autoload.php'; // Carrega o Mercado Pago
+require __DIR__ .  '/vendor/autoload.php';
 
-// Configurar o acesso ao Mercado Pago
-MercadoPago\SDK::setAccessToken('APP_USR-4793205581620291-112211-828e7008b13c17b4b80b583f0303137c-50073279');
+// Configuração da API do Mercado Pago
+MercadoPago\SDK::setAccessToken('APP_USR-7557293504970150-111823-6998573d94a7a1eeb3e93fcaf80617ec-50073279');
 
-// Capturar os itens enviados pelo frontend
-$data = json_decode(file_get_contents("php://input"), true);
-$items = $data['items'] ?? [];
+// Coletar dados enviados pelo frontend
+$data = json_decode(file_get_contents('php://input'), true);
 
-// Validar itens recebidos
-if (empty($items)) {
-    echo json_encode(['success' => false, 'error' => 'Carrinho vazio ou inválido.']);
-    exit;
-}
-
-// Criar os itens para o Mercado Pago
+// Criação do objeto de preferência
 $preference = new MercadoPago\Preference();
-$itemList = [];
 
-foreach ($items as $item) {
-    $mercadoPagoItem = new MercadoPago\Item();
-    $mercadoPagoItem->title = $item['title'];
-    $mercadoPagoItem->quantity = $item['quantity'];
-    $mercadoPagoItem->unit_price = $item['unit_price'];
-    $itemList[] = $mercadoPagoItem;
+// Adicionar os itens
+$items = [];
+
+foreach ($data['items'] as $item) {
+    $produto = new MercadoPago\Item();
+    $produto->title = $item['title'];
+    $produto->quantity = $item['quantity'];
+    $produto->unit_price = $item['unit_price'];
+
+    // Adiciona cada item ao array
+    $items[] = $produto;
 }
 
-$preference->items = $itemList;
+// Define os itens na preferência
+$preference->items = $items;
 
-// URL de retorno após o pagamento
-$preference->back_urls = [
-    "success" => "http://seusite.com/sucesso.php",
-    "failure" => "http://seusite.com/erro.php",
-    "pending" => "http://seusite.com/pendente.php"
-];
-$preference->auto_return = "approved";
-
-// Salvar a preferência no Mercado Pago
+// Salva a preferência
 try {
     $preference->save();
-    echo json_encode([
+    $response = [
         'success' => true,
-        'redirect_url' => $preference->init_point // URL para redirecionar ao Mercado Pago
-    ]);
+        'redirect_url' => $preference->init_point // URL de redirecionamento para o pagamento
+    ];
 } catch (Exception $e) {
-    error_log("Erro ao criar preferência de pagamento: " . $e->getMessage());
-    echo json_encode(['success' => false, 'error' => 'Erro ao criar a preferência de pagamento.']);
+    $response = [
+        'success' => false,
+        'message' => 'Erro ao processar a compra: ' . $e->getMessage()
+    ];
 }
+
+// Retorna a resposta em formato JSON
+header('Content-Type: application/json');
+echo json_encode($response);
+
+try {
+    $preference->save();
+    $response = [
+        'success' => true,
+        'redirect_url' => $preference->init_point
+    ];
+} catch (Exception $e) {
+    error_log('Erro ao salvar a preferência: ' . $e->getMessage());
+    $response = [
+        'success' => false,
+        'message' => 'Erro ao processar a compra: ' . $e->getMessage()
+    ];
+}
+?>
