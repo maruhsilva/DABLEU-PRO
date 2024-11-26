@@ -1,56 +1,43 @@
 <?php
 session_start();
-session_regenerate_id();
-
-require_once 'classes/config.php';
-
-// Variável para exibir erros sem redirecionar
-$erro = "";
+include "classes/config.php"; // Inclui o arquivo de conexão com o banco de dados
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {
-    $_SESSION['mensagem'] = 'Sessão expirada. Por favor, faça login novamente.';
-    header('Location: user-login.php');
+    header("Location: user-login.php"); // Redireciona para a página de login, se necessário
     exit;
 }
 
-// Inicializa variáveis
-$cliente = []; // Inicializando como array vazio
-$metodo_pagamento = isset($_POST['metodo_pagamento']) ? htmlspecialchars($_POST['metodo_pagamento']) : "";
+// Recupera os dados do cliente com base no ID do usuário logado
+$id_usuario = $_SESSION['id_usuario'];
 
-// Conexão com o banco de dados
-if (!isset($mysqli)) {
-    $erro = 'Erro de conexão com o banco de dados.';
+$sql = "SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = ?";
+$stmt = $mysqli->prepare($sql);
+$stmt->bind_param("i", $id_usuario);
+$stmt->execute();
+$result = $stmt->get_result();
+
+// Verifica se os dados foram encontrados
+if ($result->num_rows > 0) {
+    $cliente = $result->fetch_assoc();
+
+    // Atribui os valores para exibição no formulário
+    $nome_cliente = $cliente['nome'];
+    $cpf_cliente = $cliente['cpf'];
+    $telefone_cliente = $cliente['telefone'];
+    $endereco_cliente = $cliente['endereco'];
+    $numero_cliente = $cliente['numero'];
+    $cep_cliente = $cliente['cep'];
 } else {
-    // Recupera os dados do cliente logado
-    $id_usuario = $_SESSION['id_usuario'];
-    try {
-        $stmt = $mysqli->prepare("SELECT nome, cpf, telefone, endereco, numero, cep FROM usuarios WHERE id_usuario = ?");
-        $stmt->bind_param("i", $id_usuario);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        if ($result->num_rows > 0) {
-            $cliente = $result->fetch_assoc();
-        } else {
-            $erro = 'Usuário não encontrado. Por favor, verifique os dados.';
-        }
-    } catch (Exception $e) {
-        error_log("Erro ao recuperar dados do cliente: " . $e->getMessage());
-        $erro = 'Ocorreu um erro ao processar suas informações.';
-    }
+    // Caso os dados do cliente não sejam encontrados
+    $nome_cliente = "N/A";
+    $cpf_cliente = "N/A";
+    $telefone_cliente = "N/A";
+    $endereco_cliente = "N/A";
+    $numero_cliente = "N/A";
+    $cep_cliente = "N/A";
 }
-
-// Dados do cliente com valores padrão
-$nome_cliente = $cliente['nome'] ?? 'Nome não encontrado';
-$cpf_cliente = $cliente['cpf'] ?? 'CPF não encontrado';
-$telefone_cliente = $cliente['telefone'] ?? 'Telefone não encontrado';
-$endereco_cliente = $cliente['endereco'] ?? 'Endereço não encontrado';
-$numero_cliente = $cliente['numero'] ?? 'Número não encontrado';
-$cep_cliente = $cliente['cep'] ?? 'CEP não encontrado';
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -144,46 +131,39 @@ $cep_cliente = $cliente['cep'] ?? 'CEP não encontrado';
             <p><strong>Frete:</strong> R$ <span id="frete">0,00</span></p>
             <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p><br>
         </div>
-        <!-- <?php if ($erro): ?>
-            <div class="alert alert-danger" role="alert"><?= htmlspecialchars($erro) ?></div>
-        <?php endif; ?> -->
         <div class="dados-cliente" id="dados">
-        <form method="POST" action="processar_pagamento.php">
-        <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente</h2>
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
+        <form method="POST" action="">
+            <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente</h2>
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
 
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
+            <label for="cpf">CPF:</label>
+            <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
 
-        <label for="telefone">Telefone:</label>
-        <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
+            <label for="telefone">Telefone:</label>
+            <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
 
-        <label for="endereco">Endereço:</label>
-        <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
+            <label for="endereco">Endereço:</label>
+            <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
 
-        <label for="numero">Número:</label>
-        <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
+            <label for="numero">Número:</label>
+            <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
 
-        <label for="cep">CEP:</label>
-        <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly><br><br>
-
-        <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Método de Pagamento</h2>
-        <label for="metodo_pagamento">Escolha o método de pagamento:</label>
-        <select name="metodo_pagamento" required>
-            <option value="vazio">Selecione uma opção</option>
-            <option value="cartao" <?= ($metodo_pagamento == 'cartao') ? 'selected' : '' ?>>Cartão de Crédito</option>
-            <option value="pix" <?= ($metodo_pagamento == 'pix') ? 'selected' : '' ?>>Pix</option>
-        </select>
-        </div>
-
-        <form action="finalizar-compra.php" method="post">
-          <input type="hidden" name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
-          <input type="submit" value="Finalizar Compra" class="btn btn-primary">
+            <label for="cep">CEP:</label>
+            <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly><br><br>
         </form>
+        
+      </div>
+      <form action="processar_pagamento.php" method="post" id="form-finalizar-compra">
+    <!-- Campos existentes -->
+    <input type="hidden" name="carrinho" id="carrinho" value=''>
 
-    </div>
-    <footer>
+    <button type="submit" id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
+
+
+</form>
+
+      <footer>
         <div class="desenvolvedor">
             <p>© 2024 DableuPro LTDA | Todos os Direitos Reservados.</p>
             <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer">
@@ -194,5 +174,7 @@ $cep_cliente = $cliente['cep'] ?? 'CEP não encontrado';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
     <script src="JAVASCRIPT/carrinho.js"></script>
+    <script src="JAVASCRIPT/carrinho-logado.js"></script>
+    <!-- <script src="JAVASCRIPT/miniCart.js"></script> -->
 </body>
 </html>

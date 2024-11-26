@@ -1,26 +1,32 @@
-function enviarCarrinhoParaPHP() {
-    const carrinho = JSON.parse(localStorage.getItem("carrinho"));
-
-    if (!carrinho || carrinho.length === 0) {
-        alert('Carrinho vazio');
+function enviarDadosCarrinho(dadosCarrinho) {
+    // Verifique se os dados estão corretos
+    if (dadosCarrinho.length === 0) {
+        console.error('Carrinho vazio! Não é possível enviar dados vazios.');
         return;
     }
 
-    fetch('processar_pagamento.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            carrinho,
-            metodo_pagamento: 'cartao' // Ou 'pix', dependendo do caso
-        })
+    const dados = {
+        carrinho: dadosCarrinho,  // Não é necessário JSON.stringify aqui
+        
+    };
+
+
+    console.log("Carrinho antes de enviar:", JSON.stringify(carrinho));
+
+fetch('processar_pagamento.php', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        carrinho: carrinho // Envia apenas os dados do carrinho
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.sucesso) {
-            window.location.href = data.redirect_url;
-        } else {
-            alert(data.mensagem || 'Erro no processamento.');
-        }
-    })
-    .catch(error => console.error('Erro:', error));
+})
+.then(response => response.json())
+.then(data => {
+    console.log("Resposta do servidor:", data);
+})
+.catch(error => {
+    console.error("Erro ao enviar dados:", error);
+});
 }

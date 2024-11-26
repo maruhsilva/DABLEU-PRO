@@ -1,65 +1,46 @@
 <?php
-session_start();
-require_once 'vendor/autoload.php';
-
-// Configura o Mercado Pago
+// Configuração do Mercado Pago
+require 'vendor/autoload.php';
 MercadoPago\SDK::setAccessToken('APP_USR-7557293504970150-111823-6998573d94a7a1eeb3e93fcaf80617ec-50073279');
 
-// Verifica se há dados no carrinho
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['carrinho'])) {
-    $carrinho = json_decode($_POST['carrinho'], true);
+$json_input = file_get_contents('php://input');
+echo $json_input; // Para ver o que está sendo recebido
+$dados = json_decode($json_input, true); // Converte o JSON para array
 
-    if (empty($carrinho)) {
-        die('O carrinho está vazio.');
-    }
-
-    // Criar a preferência de pagamento
-    $preference = new MercadoPago\Preference();
-
-    // Configurar os itens da compra
-    $items = [];
-    foreach ($carrinho as $produto) {
-        $item = new MercadoPago\Item();
-        $item->title = $produto['nome']; // Nome do produto
-        $item->quantity = $produto['quantidade']; // Quantidade
-        $item->unit_price = $produto['preco']; // Preço unitário
-        $items[] = $item;
-    }
-    $preference->items = $items;
-
-    // Configurar o comprador
-    $preference->payer = [
-        "name" => $_SESSION['nome_usuario'], // Nome do cliente
-        "email" => $_SESSION['email_usuario'], // E-mail do cliente
-    ];
-
-    // URL de redirecionamento após pagamento
-    $preference->back_urls = [
-        "success" => "http://seusite.com/sucesso.php",
-        "failure" => "http://seusite.com/erro.php",
-        "pending" => "http://seusite.com/pendente.php"
-    ];
-    $preference->auto_return = "approved";
-
-    // Salvar a preferência
-    $preference->save();
-
-    // Redirecionar para a página de pagamento do Mercado Pago
-    header("Location: " . $preference->init_point);
-    exit;
-} else {
-    die('Dados inválidos. Retorne ao carrinho.');
+// Verifica se o JSON foi recebido corretamente
+if (!$dados) {
+    die('Erro ao decodificar os dados do carrinho');
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['carrinho'])) {
-        echo '<pre>';
-        print_r(json_decode($_POST['carrinho'], true));
-        echo '</pre>';
-    } else {
-        echo 'Carrinho não enviado.';
-    }
-} else {
-    echo 'Requisição inválida.';
+
+// Verifique se o campo 'carrinho' existe e é um array
+$carrinho = isset($dados['carrinho']) ? $dados['carrinho'] : null;
+
+if (!$carrinho || !is_array($carrinho)) {
+    die('Carrinho vazio ou com dados inválidos');
 }
-exit;
+
+// Criação de itens de preferência para o Mercado Pago
+$itens = [];
+foreach ($carrinho as $produto) {
+    $item = new MercadoPago\Item();
+    $item->title = $produto['nome'];
+    $item->quantity = $produto['quantidade'];
+    $item->unit_price = $produto['preco'];
+    $item->picture_url = $produto['imagem'];
+    $itens[] = $item;
+}
+
+// Criação da preferência
+$preference = new MercadoPago\Preference();
+$preference->items = $itens;
+$preference->back_urls = array(
+    "success" => "https://www.suaurl.com.br/sucesso",
+    "failure" => "https://www.suaurl.com.br/erro",
+    "pending" => "https://www.suaurl.com.br/pendente"
+);
+$preference->auto_return = "approved";
+$preference->save();
+
+// Retorna a URL de pagamento para o frontend
+echo json_encode(array("redirect_url" => $preference->init_point));
 ?>

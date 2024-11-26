@@ -1,29 +1,28 @@
 <?php
 include "classes/config.php";
 
-session_start(); // Inicia a sessão, se ainda não iniciada
+session_start(); // Inicia a sessão
 
 $error_email = false;
 $error_senha = false;
 
-// Salva a URL de origem, se existir, e ainda não foi definida
+// Salva a URL de origem, se ainda não definida
 if (!isset($_SESSION['redirect_to']) && isset($_SERVER['HTTP_REFERER'])) {
     $referer = $_SERVER['HTTP_REFERER'];
-    // Evita salvar a própria página de login como origem
-    if (strpos($referer, 'user-login.php') === false) {
+    if (basename(parse_url($referer, PHP_URL_PATH)) !== 'user-login.php') {
         $_SESSION['redirect_to'] = $referer;
     }
 }
 
-if (isset($_POST["email"]) || isset($_POST["senha"])) {
-    if (strlen($_POST["email"]) == 0) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $error_email = true;
     } else if (strlen($_POST["senha"]) == 0) {
         $error_senha = true;
     } else {
         // Proteção contra SQL Injection
         $email = $mysqli->real_escape_string($_POST["email"]);
-        $senha = $mysqli->real_escape_string($_POST["senha"]);
+        $senha = ($_POST["senha"]); // Aplica md5 à senha informada
 
         // Verifica se o e-mail existe
         $sql_email = "SELECT * FROM usuarios WHERE email = '$email'";
@@ -32,9 +31,10 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
         if ($query_email->num_rows == 0) {
             $error_email = true;
         } else {
-            // Se o e-mail existe, verifica a senha
             $usuario = $query_email->fetch_assoc();
-            if ($usuario['senha'] != $senha) { // Ajuste para método de hash se necessário
+
+            // Verifica a senha
+            if ($senha !== $usuario['senha']) {
                 $error_senha = true;
             } else {
                 // Login bem-sucedido
@@ -42,9 +42,9 @@ if (isset($_POST["email"]) || isset($_POST["senha"])) {
                 $_SESSION['nome'] = $usuario['nome'];
                 $_SESSION['email'] = $usuario['email'];
 
-                // Redireciona para a página de origem ou página padrão
-                $redirect_to = $_SESSION['redirect_to'] ?? '';
-                unset($_SESSION['redirect_to']); // Limpa a URL de origem
+                // Redireciona para a página de origem ou padrão
+                $redirect_to = $_SESSION['redirect_to'] ?? 'index.php';
+                unset($_SESSION['redirect_to']);
                 header("Location: $redirect_to");
                 exit;
             }

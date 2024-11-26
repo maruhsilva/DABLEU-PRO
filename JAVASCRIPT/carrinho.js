@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", function () {
-    carregarCarrinho();  // Carregar os produtos do carrinho na página
-    atualizarBadgeCarrinho();  // Atualiza o badge com o número de itens
-    atualizarTotal();  // Atualiza o subtotal, frete e total
+    carregarCarrinho();  // Carrega os produtos do carrinho na página
+    atualizarBadgeCarrinho();  // Atualiza o badge com o número de itens no carrinho
+    atualizarTotal();  // Calcula e exibe o subtotal, frete e total
 });
 
-// Carrega o carrinho e exibe os produtos na tabela
+// Envia o carrinho ao servidor antes de submeter o formulário
+document.querySelector('form').addEventListener('submit', (e) => {
+    enviarCarrinho();
+});
+
+// Função para carregar os produtos do carrinho e renderizá-los na página
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    console.log("Carrinho carregado:", carrinho);  // Depuração: Verificar o que foi carregado no carrinho
-
     const tabelaCarrinho = document.querySelector("#produtos-carrinho");
     const mensagemCarrinhoVazio = document.querySelector("#mensagem-carrinho-vazio");
 
-    // Limpar a tabela antes de renderizar os itens novamente
-    tabelaCarrinho.innerHTML = "";
+    tabelaCarrinho.innerHTML = "";  // Limpa a tabela antes de renderizar os itens
 
     if (carrinho.length === 0) {
         mensagemCarrinhoVazio.style.display = "block";
@@ -33,67 +35,52 @@ function carregarCarrinho() {
                 <span>${produto.quantidade}</span>
                 <button class="aumentar-quantidade" data-index="${index}">+</button>
             </td>
-            <td>R$ ${produto.preco.toFixed(2)}</td> <!-- Preço unitário -->
-            <td>R$ ${(produto.preco * produto.quantidade).toFixed(2)}</td> <!-- Preço total do item -->
+            <td>R$ ${produto.preco.toFixed(2)}</td>
+            <td>R$ ${(produto.preco * produto.quantidade).toFixed(2)}</td>
             <td><button class="remover-produto" data-index="${index}">Remover</button></td>
         `;
         tabelaCarrinho.appendChild(row);
     });
 
-    // Atualiza o subtotal, frete e total após carregar os produtos
     atualizarTotal();
 }
 
-// Atualiza o número de itens no badge
+// Função para atualizar o badge com o número total de itens no carrinho
 function atualizarBadgeCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
     const badge = document.getElementById("quantidade-itens");
 
-    if (badge) { // Verifica se o badge existe
+    if (badge) {
         badge.textContent = totalItens;
-
-        if (totalItens > 0) {
-            badge.style.display = "flex";
-        } else {
-            badge.style.display = "none";
-        }
+        badge.style.display = totalItens > 0 ? "flex" : "none";
     }
 }
 
-// Calcula e exibe o total do carrinho (subtotal + frete)
+// Função para calcular e atualizar os valores de subtotal, frete e total
 function atualizarTotal() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    console.log("Carrinho para atualizar o total:", carrinho);  // Depuração: Verificar carrinho na atualização do total
-
     const subtotal = carrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
     const frete = calcularFrete(subtotal);
     const total = subtotal + frete;
 
-    // Atualiza os valores no HTML
-    const subtotalElement = document.querySelector("#subtotal");
-    const freteElement = document.querySelector("#frete");
-    const totalElement = document.querySelector("#total");
-
-    if (subtotalElement) {
-        subtotalElement.textContent = `R$ ${subtotal.toFixed(2)}`;
-    }
-
-    if (freteElement) {
-        freteElement.textContent = `R$ ${frete.toFixed(2)}`;
-    }
-
-    if (totalElement) {
-        totalElement.textContent = `R$ ${total.toFixed(2)}`;
-    }
+    document.querySelector("#subtotal").textContent = `R$ ${subtotal.toFixed(2)}`;
+    document.querySelector("#frete").textContent = `R$ ${frete.toFixed(2)}`;
+    document.querySelector("#total").textContent = `R$ ${total.toFixed(2)}`;
 }
 
-// Função para calcular o frete
+// Calcula o frete com base no subtotal (frete grátis acima de R$ 250)
 function calcularFrete(subtotal) {
-    return subtotal > 250 ? 0 : 10; // Frete grátis para compras acima de R$ 250
+    return subtotal > 250 ? 0 : 10;
 }
 
-// Lida com ações no carrinho (aumentar, diminuir ou remover produto)
+// Função para enviar o carrinho ao servidor
+function enviarCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    document.querySelector('input[name="carrinho"]').value = JSON.stringify(carrinho);
+}
+
+// Lida com ações de aumentar, diminuir ou remover produtos do carrinho
 document.querySelector("#produtos-carrinho").addEventListener("click", function (event) {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const target = event.target;
@@ -111,37 +98,8 @@ document.querySelector("#produtos-carrinho").addEventListener("click", function 
         carrinho.splice(index, 1);
     }
 
-    // Atualiza o carrinho no localStorage após as mudanças
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
-    // Atualiza a página após a modificação
     carregarCarrinho();
     atualizarBadgeCarrinho();
     atualizarTotal();
 });
-
-// Função para processar o pagamento
-function processarPagamento() {
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-    // Apenas envia os dados se o carrinho não estiver vazio
-    if (carrinho.length > 0) {
-        // Cria o formulário dinamicamente para enviar os dados do carrinho
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = 'processar_pagamento.php';
-
-        // Adiciona o carrinho como um campo hidden (oculto) no formulário
-        const inputCarrinho = document.createElement('input');
-        inputCarrinho.type = 'hidden';
-        inputCarrinho.name = 'carrinho';
-        inputCarrinho.value = JSON.stringify(carrinho);
-        form.appendChild(inputCarrinho);
-
-        // Envia o formulário
-        document.body.appendChild(form);
-        form.submit();
-    } else {
-        alert('Carrinho vazio. Não é possível processar o pagamento.');
-    }
-}

@@ -93,11 +93,20 @@
             <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p>
         </div>
 
-        <div class="botao-finalizar">
-          <form action="carrinho-logado.php" method="POST">
+        <div class="botao-finalizar" >
+          <form action="processar_pagamento.php" method="POST">
             <input type="hidden"  name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
-            <button type="submit" id="finalizar-compra" >Finalizar Compra</button>
+            <button type="submit" id="finalizar-compra" style="background: black;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;">Finalizar Compra</button>
         </form>
+
+        
 
       </div>
       <!-- Adicione o SDK do Mercado Pago -->
