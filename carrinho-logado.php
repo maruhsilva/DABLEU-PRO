@@ -160,6 +160,30 @@ if ($result->num_rows > 0) {
 
     <button type="submit" id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
 
+    <script>
+      function finalizarCompra(items) {
+    fetch("processar_pagamento.php", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ items })
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                window.location.href = data.redirect_url; // Redireciona para o link de pagamento
+            } else {
+                alert("Erro ao processar o pagamento: " + data.error);
+            }
+        })
+        .catch(error => {
+            console.error("Erro ao enviar os dados para o servidor:", error);
+            alert("Ocorreu um erro ao finalizar a compra.");
+        });
+}
+
+    </script>
 
 </form>
 
@@ -174,7 +198,8 @@ if ($result->num_rows > 0) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
     <script src="JAVASCRIPT/carrinho.js"></script>
-    <script src="JAVASCRIPT/carrinho-logado.js"></script>
+    <!-- <script src="JAVASCRIPT/carrinho-logado.js"></script> -->
+    <!-- <script src="JAVASCRIPT/finalizar-compra.js"></script> -->
     <!-- <script src="JAVASCRIPT/miniCart.js"></script> -->
 </body>
 </html>

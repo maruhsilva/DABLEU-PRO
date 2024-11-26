@@ -1,40 +1,49 @@
 <?php
-// Definir o cabeçalho para aceitar JSON
-header('Content-Type: application/json');
+require __DIR__ . '/vendor/autoload.php'; // Carrega o Mercado Pago
 
-// Ler os dados recebidos
-$dadosRecebidos = file_get_contents("php://input");
+// Configurar o acesso ao Mercado Pago
+MercadoPago\SDK::setAccessToken('APP_USR-4793205581620291-112211-828e7008b13c17b4b80b583f0303137c-50073279');
 
-// Verificar se há dados recebidos
-if (!$dadosRecebidos) {
-    echo json_encode(['sucesso' => false, 'mensagem' => 'Nenhum dado recebido.']);
+// Capturar os itens enviados pelo frontend
+$data = json_decode(file_get_contents("php://input"), true);
+$items = $data['items'] ?? [];
+
+// Validar itens recebidos
+if (empty($items)) {
+    echo json_encode(['success' => false, 'error' => 'Carrinho vazio ou inválido.']);
     exit;
 }
 
-// Exibir os dados recebidos (para depuração)
-error_log("Dados recebidos: " . $dadosRecebidos);
+// Criar os itens para o Mercado Pago
+$preference = new MercadoPago\Preference();
+$itemList = [];
 
-// Tentar decodificar o JSON
-$dados = json_decode($dadosRecebidos, true);
-
-// Verificar se houve erro de decodificação
-if (json_last_error() !== JSON_ERROR_NONE) {
-    echo json_encode(['sucesso' => false, 'mensagem' => 'Erro ao decodificar os dados JSON: ' . json_last_error_msg()]);
-    exit;
+foreach ($items as $item) {
+    $mercadoPagoItem = new MercadoPago\Item();
+    $mercadoPagoItem->title = $item['title'];
+    $mercadoPagoItem->quantity = $item['quantity'];
+    $mercadoPagoItem->unit_price = $item['unit_price'];
+    $itemList[] = $mercadoPagoItem;
 }
 
-// Verificar se o carrinho está presente nos dados
-if (!isset($dados['carrinho'])) {
-    echo json_encode(['sucesso' => false, 'mensagem' => 'Dados incompletos recebidos.']);
-    exit;
+$preference->items = $itemList;
+
+// URL de retorno após o pagamento
+$preference->back_urls = [
+    "success" => "http://seusite.com/sucesso.php",
+    "failure" => "http://seusite.com/erro.php",
+    "pending" => "http://seusite.com/pendente.php"
+];
+$preference->auto_return = "approved";
+
+// Salvar a preferência no Mercado Pago
+try {
+    $preference->save();
+    echo json_encode([
+        'success' => true,
+        'redirect_url' => $preference->init_point // URL para redirecionar ao Mercado Pago
+    ]);
+} catch (Exception $e) {
+    error_log("Erro ao criar preferência de pagamento: " . $e->getMessage());
+    echo json_encode(['success' => false, 'error' => 'Erro ao criar a preferência de pagamento.']);
 }
-
-// Exibir os dados decodificados (para depuração)
-error_log("Carrinho decodificado: " . print_r($dados['carrinho'], true));
-
-// Aqui você pode processar os dados do carrinho, por exemplo, salvar no banco de dados ou realizar outras ações
-// (Exemplo: loop para salvar os itens no banco de dados)
-
-echo json_encode(['sucesso' => true, 'mensagem' => 'Carrinho processado com sucesso.']);
-exit;
-?>
