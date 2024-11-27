@@ -158,61 +158,63 @@ if ($result->num_rows > 0) {
 
       <button id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
 
-<script>
-    document.getElementById("finalizar-compra-btn").addEventListener("click", function (e) {
+      <script>
+document.getElementById("finalizar-compra-btn").addEventListener("click", function (e) {
     e.preventDefault(); // Evita a recarga padrão da página
 
+    // Obtém o carrinho do localStorage
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    console.log("Conteúdo do carrinho:", carrinho);
 
+    // Verifica se o carrinho está vazio
     if (!Array.isArray(carrinho) || carrinho.length === 0) {
         alert("O carrinho está vazio. Adicione itens antes de finalizar a compra.");
         return;
     }
 
+    // Mapeia os produtos para o formato esperado
     const items = carrinho.map(produto => ({
         title: produto.nome || "Produto sem nome",
-        quantity: produto.quantidade || 1,
-        unit_price: produto.preco || 0.0
+        quantity: produto.quantidade || 1, // Garante que a quantidade seja pelo menos 1
+        unit_price: produto.preco || 0.0 // Garante que o preço seja válido
     }));
 
-    console.log("Itens preparados para a compra:", items);
+    // Verifica se todos os itens possuem dados válidos
+    if (items.some(item => item.unit_price <= 0 || item.quantity <= 0)) {
+        alert("Um ou mais itens do carrinho possuem dados inválidos. Verifique e tente novamente.");
+        return;
+    }
 
-    function finalizarCompra(items) {
-    const dadosCompra = {
-        items: items
-    };
-
-    fetch("./processar_pagamento.php", {
-        method: "POST",
+    // Envia os dados para o servidor
+    fetch('./processar_pagamento.php', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(dadosCompra)
+        body: JSON.stringify({ itens: items })
     })
-    .then(response => response.text())  // Vamos capturar a resposta como texto para depuração
-    .then(data => {
-        console.log("Resposta do servidor:", data);  // Veja exatamente o que o servidor está retornando
-
-        try {
-            const jsonData = JSON.parse(data);  // Tenta converter para JSON
-            if (jsonData.success) {
-                // Redireciona para o Mercado Pago com o link da preferência
-                window.location.href = jsonData.redirect_url;
+    .then(response => response.json())
+    .then(response => {
+        console.log("Resposta do servidor:", response);
+        if (response.success) {
+            if (response.redirect_url) {
+                // Abrir a URL do Mercado Pago em uma nova aba
+                window.open(response.redirect_url, '_blank');
             } else {
-                alert("Houve um problema ao processar a compra. Tente novamente.");
+                alert("Não foi possível obter a URL de pagamento.");
             }
-        } catch (error) {
-            console.error("Erro ao processar resposta:", error);
-            alert("Houve um erro na resposta do servidor. Tente novamente.");
+        } else {
+            alert("Houve um erro ao processar a compra: " + response.message);
         }
     })
     .catch(error => {
-        console.error("Erro na requisição:", error);
-        alert("Erro ao processar a compra. Tente novamente mais tarde.");
+        console.error("Erro ao enviar a compra:", error);
+        alert("Houve um problema ao processar a compra. Tente novamente.");
     });
-}
 });
+
+
+
+
 </script>
 
 </form>
