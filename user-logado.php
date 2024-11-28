@@ -123,9 +123,10 @@ try {
         </div>
       </section>
       <!-- Seção de Dados Pessoais -->
-      <section class="edit">
-          <button><a href="editar-dados.php">Editar Dados</a></button>
-        </section>
+      <section class="edit" style="gap: 1rem">
+        <button><a href="meus-pedidos.php">Meus Pedidos</a></button>
+        <button><a href="editar-dados.php">Editar Dados</a></button>
+      </section>
     <section style="flex-direction: column; align-items: center; justify-content: baseline;">
         <h2>Dados Pessoais</h2>
         <table border="1">

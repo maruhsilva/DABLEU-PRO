@@ -212,9 +212,6 @@ document.getElementById("finalizar-compra-btn").addEventListener("click", functi
     });
 });
 
-
-
-
 </script>
 
 </form>

@@ -1,19 +1,45 @@
-<?php 
+<?php
 session_start();
-require 'classes/config.php'; // Arquivo com a conexão PDO
-require 'classes/pedido.php';
 
-// Verificar se o usuário está logado
-if (!isset($_SESSION['id_usuario'])) {
-    header('Location: user-login.php');
-    exit;
+// Configuração do banco de dados
+$host = 'localhost';
+$db = 'login_dableupro';
+$user = 'root';
+$password = '';
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die('Erro ao conectar ao banco de dados: ' . $e->getMessage());
 }
 
-$id_usuario = $_SESSION['id_usuario'];
-$pedido = new Pedido($pdo);
+// Recuperar o ID do usuário logado
+$id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
 
-// Obter os pedidos do usuário
-$pedidos = $pedido->obterPedidos($id_usuario);
+// Verifica se o usuário está logado
+if (!isset($_SESSION['id_usuario'])) {
+  header("Location: user-login.php"); // Redireciona para a página de login, se necessário
+  exit;
+}
+// Buscar os pedidos do usuário no banco de dados
+$stmt = $pdo->prepare("SELECT * FROM pedidos WHERE id_usuario = :id_usuario ORDER BY data_pedido DESC");
+$stmt->execute(['id_usuario' => $id_usuario]);
+$pedidos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Buscar os detalhes do pedido, caso seja solicitado via GET
+$id_pedido = isset($_GET['id']) ? $_GET['id'] : null;
+if ($id_pedido) {
+    // Buscar os detalhes do pedido
+    $stmt_pedido = $pdo->prepare("SELECT * FROM pedidos WHERE id_pedido = :id_pedido");
+    $stmt_pedido->execute(['id_pedido' => $id_pedido]);
+    $pedido = $stmt_pedido->fetch(PDO::FETCH_ASSOC);
+
+    // Buscar os itens do pedido
+    $stmt_items = $pdo->prepare("SELECT * FROM itens_pedido WHERE id_pedido = :id_pedido");
+    $stmt_items->execute(['id_pedido' => $id_pedido]);
+    $itens = $stmt_items->fetchAll(PDO::FETCH_ASSOC);
+}
 ?>
 
 <!DOCTYPE html>
@@ -21,12 +47,9 @@ $pedidos = $pedido->obterPedidos($id_usuario);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dableu Pro - Moda Fitness Masculina e Feminina</title>
+    <title>Dableu Pro - Meus Pedidos</title>
     <link rel="shortcut icon" type="imagex/png" href="IMG/BARRAS-PRETAS-4cm-6cm-_2_.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="CSS/slick-theme.css">
-    <link rel="stylesheet" href="CSS/slick.css">
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
@@ -47,21 +70,25 @@ $pedidos = $pedido->obterPedidos($id_usuario);
                   <a class="nav-link" href="cat-masc.html" role="button" >
                     MASCULINO
                   </a>
+                  
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link" href="cat-fem.html" role="button">
                     FEMININO
                   </a>
+                  
                 </li> 
                 <li class="nav-item dropdown">
                   <a class="nav-link" href="cat-kits.html" role="button">
                     KITS
                   </a>
+                  
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link " href="cat-lan.html" role="button">
                     LANÇAMENTOS
                   </a>
+                  
                 </li>
                 <ul class="icons">
                   <li>
@@ -69,7 +96,7 @@ $pedidos = $pedido->obterPedidos($id_usuario);
                     <a href="#busca"><i class="bi bi-search"></i></a>
                     <a href="favoritos.html"><i class="bi bi-heart"></i></a>
                     <a href="carrinho.html">
-                      <div id="cart-icon-container"></div>
+                    <div id="cart-icon-container"></div>
                     </a>
                   </li>  
                 </ul> 
@@ -77,41 +104,93 @@ $pedidos = $pedido->obterPedidos($id_usuario);
           </div>
       </div>
     </nav>
-      
-    <h1>Meus Pedidos</h1>
 
-    <?php 
-    // Verificando os pedidos
-    var_dump($pedidos); // Isso ajudará a verificar se os dados estão sendo recuperados corretamente.
-    if (count($pedidos) > 0): ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>#ID Pedido</th>
-                    <th>Data</th>
-                    <th>Status</th>
-                    <th>Total</th>
-                    <th>Detalhes</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($pedidos as $pedido): ?>
+    <script>
+        // Função para exibir/ocultar os detalhes do pedido
+        function toggleDetalhes(id) {
+            var detalhes = document.getElementById("detalhes-" + id);
+            if (detalhes.style.display === "none" || detalhes.style.display === "") {
+                detalhes.style.display = "table-row";
+            } else {
+                detalhes.style.display = "none";
+            }
+        }
+    </script>
+    
+    <div class="container mt-5">
+        <h1 class="text-center">Meus Pedidos</h1>
+
+        <?php if (count($pedidos) > 0): ?>
+            <table class="table">
+                <thead>
                     <tr>
-                        <td><?= $pedido['id'] ?></td>
-                        <td><?= date('d/m/Y H:i:s', strtotime($pedido['data_pedido'])) ?></td>
-                        <td><?= $pedido['status'] ?></td>
-                        <td>R$ <?= number_format($pedido['total'], 2, ',', '.') ?></td>
-                        <td><a href="detalhes_pedido.php?id=<?= $pedido['id'] ?>">Ver detalhes</a></td>
+                        <th>#ID Pedido</th>
+                        <th>Data</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Detalhes</th>
+                        <th>Ação</th> <!-- Adicionando a coluna de ação -->
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>Você ainda não fez nenhum pedido.</p>
-    <?php endif; ?>
+                </thead>
+                <tbody>
+                    <?php foreach ($pedidos as $pedido): ?>
+                        <tr>
+                            <td><?= isset($pedido['id_pedido']) ? $pedido['id_pedido'] : 'N/A' ?></td>
+                            <td><?= isset($pedido['data_pedido']) ? date('d/m/Y H:i:s', strtotime($pedido['data_pedido'])) : 'N/A' ?></td>
+                            <td><?= isset($pedido['status']) ? ucfirst($pedido['status']) : 'N/A' ?></td>
+                            <td>R$ <?= isset($pedido['total']) ? number_format($pedido['total'], 2, ',', '.') : '0,00' ?></td>
+                            <td><button onclick="toggleDetalhes(<?= $pedido['id_pedido'] ?>)" style="background-color: black; border: none; color: white; padding: 2px 5px; font-family: Georgia; font-weight: bold;">Ver mais</button></td>
 
-      <footer>
-        <div class="desenvolvedor">
+                            <td>
+                                <?php if (isset($pedido['status']) && ($pedido['status'] === 'rejeitado' || $pedido['status'] === 'pendente')): ?>
+                                    <a href="refazer-pedido.php?id_pedido=<?= $pedido['id_pedido'] ?>" class="btn btn-warning">Refazer Pedido</a>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                        
+                        <!-- Detalhes do pedido -->
+                        <tr id="detalhes-<?= $pedido['id_pedido'] ?>" style="display:none;">
+                            <td colspan="6">
+                                <h3>Detalhes do Pedido</h3>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Produto</th>
+                                            <th>Quantidade</th>
+                                            <th>Preço Unitário</th>
+                                            <th>Total</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        // Carregar os itens do pedido
+                                        $stmt_items = $pdo->prepare("SELECT * FROM itens_pedido WHERE id_pedido = :id_pedido");
+                                        $stmt_items->execute(['id_pedido' => $pedido['id_pedido']]);
+                                        $itens = $stmt_items->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach ($itens as $item):
+                                        ?>
+                                            <tr>
+                                                <td><?= $item['nome_produto'] ?></td>
+                                                <td><?= $item['quantidade'] ?></td>
+                                                <td>R$ <?= number_format($item['preco'], 2, ',', '.') ?></td>
+                                                <td>R$ <?= number_format($item['quantidade'] * $item['preco'], 2, ',', '.') ?></td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+            <p>Você ainda não fez nenhum pedido.</p>
+        <?php endif; ?>
+    </div>
+
+
+    <footer class="text-center mt-5">
+    <div class="desenvolvedor">
           <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>

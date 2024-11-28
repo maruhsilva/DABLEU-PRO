@@ -12,21 +12,21 @@ class Pedido {
         try {
             // Iniciar uma transação
             $this->pdo->beginTransaction();
-
-            // Inserir pedido
-            $stmt = $this->pdo->prepare("INSERT INTO pedidos (id_usuario, total) VALUES (?, ?)");
-            $stmt->execute([$id_usuario, $total]);
+    
+            // Inserir pedido com data_pedido
+            $stmt = $this->pdo->prepare("INSERT INTO pedidos (id_usuario, total, status, data_pedido) VALUES (?, ?, ?, NOW())");
+            $stmt->execute([$id_usuario, $total, 'Pendente']);
             $id_pedido = $this->pdo->lastInsertId();
-
+    
             // Inserir itens do pedido
             foreach ($itens as $item) {
-                $stmt = $this->pdo->prepare("INSERT INTO itens_pedido (id_pedido, nome_produto, quantidade, preco) VALUES (?, ?, ?, ?)");
+                $stmt = $this->pdo->prepare("INSERT INTO itens_pedido (id_pedido, titulo, quantidade, preco_unitario) VALUES (?, ?, ?, ?)");
                 $stmt->execute([$id_pedido, $item['nome'], $item['quantidade'], $item['preco']]);
             }
-
+    
             // Commit da transação
             $this->pdo->commit();
-
+    
             return $id_pedido;
         } catch (Exception $e) {
             // Em caso de erro, desfaz a transação

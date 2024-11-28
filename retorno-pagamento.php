@@ -8,12 +8,13 @@ require __DIR__ . '/vendor/autoload.php';
 // Configuração da API do Mercado Pago
 MercadoPago\SDK::setAccessToken('TEST-7557293504970150-111823-b70f77389318ae03320e08bd19dd8afa-50073279');
 
-// Recupera os parâmetros da URL (payment_id e collection_id)
+// Recupera os parâmetros da URL (payment_id, collection_id e id_pedido)
 $payment_id = isset($_GET['payment_id']) ? $_GET['payment_id'] : null;
 $collection_id = isset($_GET['collection_id']) ? $_GET['collection_id'] : null;
+$id_pedido = isset($_GET['id_pedido']) ? $_GET['id_pedido'] : null;
 
 // Verifica se os parâmetros necessários estão presentes
-if (!$payment_id || !$collection_id) {
+if (!$payment_id || !$collection_id || !$id_pedido) {
     echo "<h1>Erro: Parâmetros de pagamento não encontrados.</h1>";
     exit;
 }
@@ -21,9 +22,34 @@ if (!$payment_id || !$collection_id) {
 try {
     // Consulta o pagamento pelo payment_id
     $payment = MercadoPago\Payment::find_by_id($payment_id);
-    
+
+    // Conecta ao banco de dados
+    $host = 'localhost';
+    $db = 'login_dableupro';
+    $user = 'root';
+    $password = '';
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    // Verifica o status do pagamento
     if ($payment->status === 'approved') {
         // Se o pagamento foi aprovado
+        $status = 'aprovado';
+        // Atualizar informações do pagamento no banco
+        $stmt = $pdo->prepare("UPDATE pedidos SET 
+            status = :status, 
+            metodo_pagamento = :metodo_pagamento, 
+            email_payer = :email_payer 
+            WHERE id_pedido = :id_pedido");
+
+        $stmt->execute([
+            'status' => $status,
+            'metodo_pagamento' => $payment->payment_method_id, // Método de pagamento real
+            'email_payer' => $payment->payer->email, // E-mail real do comprador
+            'id_pedido' => $id_pedido
+        ]);
+
+        // Resposta de sucesso para a página
         $response = [
             'success' => true,
             'message' => 'Pagamento aprovado!',
@@ -35,8 +61,29 @@ try {
                 'collection_id' => $collection_id
             ]
         ];
+
+        // // Exibe mensagem de sucesso e redireciona
+        // echo "<h1>Pagamento aprovado! O pedido foi atualizado.</h1>";
+        // header('Location: http://localhost/DABLEU-PRO/pedido-aprovado.php?id_pedido=' . $id_pedido);
+        // exit;
+
     } elseif ($payment->status === 'pending') {
         // Se o pagamento está pendente
+        $status = 'pendente';
+        // Atualizar informações do pagamento no banco
+        $stmt = $pdo->prepare("UPDATE pedidos SET 
+            status = :status, 
+            metodo_pagamento = :metodo_pagamento, 
+            email_payer = :email_payer 
+            WHERE id_pedido = :id_pedido");
+
+        $stmt->execute([
+            'status' => $status,
+            'metodo_pagamento' => $payment->payment_method_id, // Método de pagamento real
+            'email_payer' => $payment->payer->email, // E-mail real do comprador
+            'id_pedido' => $id_pedido
+        ]);
+
         $response = [
             'success' => false,
             'message' => 'Pagamento pendente.',
@@ -47,21 +94,50 @@ try {
                 'collection_id' => $collection_id
             ]
         ];
+
+        // Exibe mensagem de pagamento pendente
+        echo "<h1>Pagamento pendente. Aguardando confirmação.</h1>";
+        exit;
+
     } else {
         // Caso o pagamento tenha falhado
+        $status = 'rejeitado';
+        // Atualizar informações do pagamento no banco
+        $stmt = $pdo->prepare("UPDATE pedidos SET 
+            status = :status, 
+            metodo_pagamento = :metodo_pagamento, 
+            email_payer = :email_payer 
+            WHERE id_pedido = :id_pedido");
+
+        $stmt->execute([
+            'status' => $status,
+            'metodo_pagamento' => $payment->payment_method_id, // Método de pagamento real
+            'email_payer' => $payment->payer->email, // E-mail real do comprador
+            'id_pedido' => $id_pedido
+        ]);
+
         $response = [
             'success' => false,
             'message' => 'Pagamento não aprovado ou falhou.',
             'payment_data' => []
         ];
+
+        // Exibe mensagem de falha
+        echo "<h1>Pagamento não aprovado ou falhou.</h1>";
+        exit;
     }
+
 } catch (Exception $e) {
-    // Em caso de erro ao consultar o pagamento
+    // Em caso de erro ao consultar o pagamento ou atualizar o banco
     $response = [
         'success' => false,
-        'message' => 'Erro ao processar a consulta do pagamento: ' . $e->getMessage(),
+        'message' => 'Erro ao processar a consulta do pagamento ou atualizar o banco: ' . $e->getMessage(),
         'payment_data' => []
     ];
+
+    // Exibe mensagem de erro
+    echo "<h1>Erro: " . $e->getMessage() . "</h1>";
+    exit;
 }
 
 // Esvaziar o carrinho da sessão
@@ -75,9 +151,8 @@ echo "
         localStorage.removeItem('carrinho');  // Limpa o carrinho do localStorage
     </script>
 ";
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

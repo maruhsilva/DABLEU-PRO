@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['email'] = $usuario['email'];
 
                 // Redireciona para a página de origem ou padrão
-                $redirect_to = $_SESSION['redirect_to'] ?? 'index.php';
+                $redirect_to = $_SESSION['redirect_to'] ?? 'user-logado.php';
                 unset($_SESSION['redirect_to']);
                 header("Location: $redirect_to");
                 exit;

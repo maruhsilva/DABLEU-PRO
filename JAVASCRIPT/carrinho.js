@@ -1,15 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    carregarCarrinho();  // Carrega os produtos do carrinho na página
-    atualizarBadgeCarrinho();  // Atualiza o badge com o número de itens no carrinho
-    atualizarTotal();  // Calcula e exibe o subtotal, frete e total
+    // Inicializa os dados
+    carregarCarrinho();
+    atualizarTotal();
+    atualizarBadgeCarrinho();
+
+    // Adiciona o ouvinte para o evento customizado de atualização do carrinho
+    document.addEventListener('atualizarCarrinho', function () {
+        atualizarBadgeCarrinho();  // Atualiza a badge quando o carrinho mudar
+        carregarCarrinho();        // Atualiza a lista de produtos
+        atualizarTotal();          // Atualiza o total
+    });
 });
 
-// Envia o carrinho ao servidor antes de submeter o formulário
-document.querySelector('form').addEventListener('submit', (e) => {
-    enviarCarrinho();
-});
+// Função para atualizar a badge com o número total de itens no carrinho
+function atualizarBadgeCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
+    const badge = document.getElementById("quantidade-itens");
 
-// Função para carregar os produtos do carrinho e renderizá-los na página
+    if (badge) {
+        badge.textContent = totalItens;
+        badge.style.display = totalItens > 0 ? "flex" : "none";
+    }
+}
+
+// Função para carregar os produtos do carrinho na página
 function carregarCarrinho() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const tabelaCarrinho = document.querySelector("#produtos-carrinho");
@@ -41,23 +56,9 @@ function carregarCarrinho() {
         `;
         tabelaCarrinho.appendChild(row);
     });
-
-    atualizarTotal();
 }
 
-// Função para atualizar o badge com o número total de itens no carrinho
-function atualizarBadgeCarrinho() {
-    const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    const totalItens = carrinho.reduce((total, item) => total + item.quantidade, 0);
-    const badge = document.getElementById("quantidade-itens");
-
-    if (badge) {
-        badge.textContent = totalItens;
-        badge.style.display = totalItens > 0 ? "flex" : "none";
-    }
-}
-
-// Função para calcular e atualizar os valores de subtotal, frete e total
+// Função para atualizar o total do carrinho
 function atualizarTotal() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const subtotal = carrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
@@ -69,18 +70,12 @@ function atualizarTotal() {
     document.querySelector("#total").textContent = `R$ ${total.toFixed(2)}`;
 }
 
-// Calcula o frete com base no subtotal (frete grátis acima de R$ 250)
+// Calcula o frete com base no subtotal
 function calcularFrete(subtotal) {
     return subtotal > 250 ? 0 : 10;
 }
 
-// Função para enviar o carrinho ao servidor
-function enviarCarrinho() {
-    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
-    document.querySelector('input[name="carrinho"]').value = JSON.stringify(carrinho);
-}
-
-// Lida com ações de aumentar, diminuir ou remover produtos do carrinho
+// Função para aumentar, diminuir ou remover produtos do carrinho
 document.querySelector("#produtos-carrinho").addEventListener("click", function (event) {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
     const target = event.target;
@@ -98,8 +93,10 @@ document.querySelector("#produtos-carrinho").addEventListener("click", function 
         carrinho.splice(index, 1);
     }
 
+    // Salva o carrinho no localStorage
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
-    carregarCarrinho();
-    atualizarBadgeCarrinho();
-    atualizarTotal();
+
+    // Dispara o evento customizado para atualizar a página
+    const eventoCarrinho = new CustomEvent('atualizarCarrinho');
+    document.dispatchEvent(eventoCarrinho);  // Dispara o evento para atualizar a página
 });

@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     // Função para adicionar produto ao carrinho
     const botaoAdicionarCarrinho = document.querySelector(".add-to-cart");
@@ -85,12 +86,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Exemplo de chamada para enviar o carrinho ao servidor via AJAX
     function enviarCarrinhoParaPHP() {
         const carrinho = JSON.parse(localStorage.getItem("carrinho"));
-
+    
         if (!carrinho || carrinho.length === 0) {
             alert('Carrinho vazio');
             return;
         }
-
+    
         fetch('processar_pagamento.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -101,20 +102,13 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json())
         .then(data => {
-            if (data.sucesso) {
-                window.location.href = data.redirect_url;
+            if (data.mensagem) {
+                console.log('Aviso:', data.mensagem);
             } else {
-                alert(data.mensagem || 'Erro no processamento.');
+                console.log('Erro no processamento.');
             }
         })
-        .catch(error => console.error('Erro:', error));
+        .catch(error => console.error('Erro na requisição:', error));
     }
-
-    // Exemplo de como usar a função para finalizar compra
-    const botaoFinalizarCompra = document.querySelector("#finalizar-compra");
-    if (botaoFinalizarCompra) {
-        botaoFinalizarCompra.addEventListener("click", function () {
-            enviarCarrinhoParaPHP();
-        });
-    }
+    
 });

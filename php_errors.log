@@ -1,0 +1,1 @@
+[27-Nov-2024 20:01:53 Europe/Berlin] PHP Warning:  mysqli::__construct(): (HY000/1049): Unknown database 'seubanco' in C:\xampp\htdocs\DABLEU-PRO\processar_pag_bd.php on line 22

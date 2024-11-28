@@ -1,3 +1,4 @@
+
 function enviarDadosCarrinho(dadosCarrinho) {
     // Verifique se os dados estão corretos
     if (dadosCarrinho.length === 0) {

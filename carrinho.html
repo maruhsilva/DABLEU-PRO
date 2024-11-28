@@ -51,14 +51,18 @@
                 </li>
                 <ul class="icons">
                   <li>
-                    <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
-                    <a href="#busca"><i class="bi bi-search"></i></a>
-                    <a href="favoritos.html"><i class="bi bi-heart"></i></a>
-                    <a href="carrinho.html">
-                      <div id="cart-icon-container"></div>
-                    </a>
+                      <a href="user-logado.php" style="font-size: 1.5rem;">
+                          <i class="bi bi-person"></i>
+                      </a>
+                      <a href="#busca"><i class="bi bi-search"></i></a>
+                      <a href="favoritos.html"><i class="bi bi-heart"></i></a>
+                      <a href="carrinho.html">
+                          <div id="cart-icon-container">
+                              <!-- Adicionar badge de quantidade -->
+                              <span id="quantidade-itens" style="display: none;"></span>
+                          </div>
+                      </a>
                   </li>  
-                </ul> 
               </ul>
           </div>
       </div>
@@ -95,7 +99,7 @@
 
         <div class="botao-finalizar" >
           <form action="carrinho-logado.php" method="POST">
-            <input type="hidden"  name="carrinho" value='<?php echo json_encode($carrinho); ?>'>
+            <input type="hidden"  name="carrinho" value=''>
             <button type="submit" id="finalizar-compra" style="background: black;
             color: white;
             padding: 0.75rem 1.5rem;
@@ -116,63 +120,7 @@
       <!-- <a class="top" href="">VOLTAR AO TOPO</button></a> -->
 
       <footer>
-        <!-- <div class="container-footer">
-            <div class="row-footer">
-                
-                <div class="footer-col">
-                  <h4>Institucional</h4>
-                  <ul>
-                      <li><a href="quem-somos.html">Quem somos </a></li>
-                      <li><a href="nossos-servicos.html"> nossos serviços </a></li><br>
-                      
-                      <h4 style="margin: 0; margin-bottom: 1rem; padding: 0;">políticas</h4>
-                      <li><a href="trocas.html">trocas e devoluções</a></li>
-                      <li><a href="privacidade.html">termos de privacidade</a></li>
-                      <li><a href="entrega.html">Prazo e formas de pagamento</a></li>
-                  </ul>
-              </div>
-              
-              
-              <div class="footer-col">
-                  <h4>Atendimento</h4>
-                  <ul>
-                      <li><a href="faq.html">FAQ</a></li>
-                      <li><a href="contato.html">Contato</a></li>
-                  </ul>
-              </div>
-                
-                
-                <div class="footer-col">
-                    <h4>Categorias</h4>
-                    <ul>
-                        <li><a href="cat-masc.html">Masculino</a></li>
-                        <li><a href="cat-fem.html">Feminino</a></li>
-                        <li><a href="cat-kits.html">Kits</a></li>
-                        <li><a href="cat-lan.html">Lançamentos</a></li>
-                    </ul>
-                </div>
-                
-                
-                <div class="footer-col">
-                    <h4>Se inscreva!</h4>
-                    <div class="form-sub">
-                        <form>
-                            <input type="email" placeholder="Digite o seu e-mail" required>
-                            <button>Inscrever</button>
-                        </form>
-                    </div>
-
-                    <div class="medias-socias">
-                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                        <a href="#"> <i class="fa fa-instagram"></i> </a>
-                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                    </div>
-
-                </div>
-                
-            </div>
-        </div> -->
+        
         <div class="desenvolvedor">
           <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
