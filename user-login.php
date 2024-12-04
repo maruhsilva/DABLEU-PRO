@@ -1,5 +1,5 @@
 <?php
-include "classes/config.php";
+include __DIR__ ."/config.php";
 
 session_start(); // Inicia a sessão
 
@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </header>
     <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
         <div class="container-fluid justify-content-around" style="gap: 5rem;">
-          <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
+        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 10cm COM R.png" alt="logo da empresa" style="width: 7rem; padding-bottom: .2rem;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -120,6 +120,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
       </nav>
+
+      <style>
+/* Estilo padrão da barra de navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinhamento centralizado em telas maiores */
+    gap: 5rem; /* Espaçamento padrão */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+    .nav-container {
+        justify-content: space-between; /* Distribui espaço entre logo e botão */
+        gap: 0; /* Remove espaçamento extra */
+    }
+
+    /* Logo alinhado à esquerda */
+    .navbar-brand {
+        margin-right: auto; /* Empurra o logo para a esquerda */
+    }
+
+    /* Botão de hambúrguer alinhado à direita */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+}
+      </style>
       <section class="login">
         <h1>ÁREA DE LOGIN | <a href="user-cadastro.php" style="text-decoration: none; color: black;">ÁREA DE CADASTRO</a></h1>
         <form action="" method="post">
@@ -226,18 +254,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="medias-socias">
-                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                        <a href="#"> <i class="fa fa-instagram"></i> </a>
-                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
+                        <a href="https://www.facebook.com/junior.physique.9/" target="_blank" rel="noopener noreferrer"> <i class="fa fa-facebook"></i> </a>
+                        <a href="https://www.instagram.com/roupa_wpro/" target="_blank" rel="noopener noreferrer"> <i class="fa fa-instagram"></i> </a>
+                        <a href="#"> <i class="fa fa-x" ></i> </a>
+                        <a href="https://www.youtube.com/@dable-upro" target="_blank" rel="noopener noreferrer"> <i class="fa fa-youtube"></i> </a>
                     </div>
 
                 </div>
-                
+                <!--end footer col-->
             </div>
-        </div> -->
+        </div>
         <div class="desenvolvedor">
-          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
+          <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>

@@ -333,6 +333,11 @@ body {
     margin-inline: auto;
 }
 
+#produtos-container ul {
+    max-width: 300px;
+    min-height: 430px;
+}
+
 .produtos {
     display: flex;
     flex-wrap: wrap;
@@ -362,27 +367,27 @@ body {
 /* Estilo dos cards */
 .produtos .titulo-produto {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     padding-top: 0.5rem;
     text-align: justify;
     text-transform: uppercase;
 }
 
 .produtos .preco-produto-credito {
-    font-size: .8rem;
+    font-size: 1rem;
     text-decoration: line-through;
     opacity: 0.6;
 }
 
 .produtos .preco-produto-pix {
-    font-size: 1.4rem;
+    font-size: 2rem;
     color: red;
     margin-bottom: 0.75rem;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .produtos .preco-pix {
-    font-size: 0.45rem;
+    font-size: 0.8rem;
     color: red;
     margin-bottom: 1.19rem;
     text-align: justify;
@@ -522,5 +527,47 @@ body {
     max-width: 71.5%;
     padding-top: 1rem;
     padding-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+    
+    .categorias1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 1rem 1rem;
+        min-width: 100%;
+    }
+
+    .categorias1 ul {
+        max-width: 365px;
+        height: 260px;
+    }
+
+    #produtos-container .titulo-produto{
+        font-size: 1.5rem;
+    }
+
+    #produtos-container .preco-produto-credito{
+        font-size: 1rem;
+    }
+    
+    #produtos-container .preco-produto-pix{
+        font-size: 2rem;
+    }
+
+    #produtos-container .preco-pix{
+        font-size: .8rem;
+    }
+
+    #produtos-container ul {
+        max-width: 300px;
+        min-height: 430px;
+    }
+
+    #produtos-container .foto-like {
+        padding: 1rem;
+    }
 }
 

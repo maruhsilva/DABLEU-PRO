@@ -58,16 +58,30 @@ function carregarCarrinho() {
     });
 }
 
-// Função para atualizar o total do carrinho
 function atualizarTotal() {
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-    const subtotal = carrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
-    const frete = calcularFrete(subtotal);
-    const total = subtotal + frete;
+    
+    // Calcula o subtotal no crédito (sem descontos)
+    const subtotalCredito = carrinho.reduce((total, produto) => total + produto.preco * produto.quantidade, 0);
+    
+    // Aplica o desconto de R$ 4 por produto para pagamento via Pix
+    const descontoPixPorProduto = 4;  // Desconto de R$ 4 por produto para pagamento via Pix
+    const subtotalPix = carrinho.reduce((total, produto) => total + (produto.preco - descontoPixPorProduto) * produto.quantidade, 0);
 
-    document.querySelector("#subtotal").textContent = `R$ ${subtotal.toFixed(2)}`;
-    document.querySelector("#frete").textContent = `R$ ${frete.toFixed(2)}`;
-    document.querySelector("#total").textContent = `R$ ${total.toFixed(2)}`;
+    // Calcula o frete
+    const frete = calcularFrete(subtotalCredito);  // O frete é calculado com o valor no crédito (sem desconto)
+
+    // Total no crédito (sem desconto)
+    const totalCredito = subtotalCredito + frete;
+
+    // Total no Pix (com desconto)
+    const totalPix = subtotalPix + frete;
+
+    // Exibe os valores no carrinho
+    document.querySelector("#subtotal").textContent = ` ${subtotalCredito.toFixed(2)}`;
+    document.querySelector("#frete").textContent = ` ${frete.toFixed(2)}`;
+    document.querySelector("#total-credito").textContent = ` ${totalCredito.toFixed(2)}`;
+    document.querySelector("#total-pix").textContent = ` ${totalPix.toFixed(2)}`;
 }
 
 // Calcula o frete com base no subtotal

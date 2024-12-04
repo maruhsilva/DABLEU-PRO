@@ -3,10 +3,10 @@ session_start();
 require __DIR__ . '/vendor/autoload.php';
 
 // Configurações do banco de dados
-$host = 'localhost';
-$dbname = 'login_dableupro';
-$user = 'root';
-$password = '';
+$host = 'login_dableu.mysql.dbaas.com.br';
+$dbname = 'login_dableu';
+$user = 'login_dableu';
+$password = 'Marua3902@';
 
 // Conexão com o banco de dados
 try {
@@ -26,17 +26,23 @@ try {
         exit;
     }
 
+    // Verifica se o carrinho contém itens
+    $itens = $_SESSION['carrinho'] ?? [];
+    if (empty($itens)) {
+        echo "Carrinho vazio.";
+        exit;
+    }
+
     // Obtém dados do pagamento do Mercado Pago
     $payment_id = $_GET['payment_id'];
     $total = $_GET['transaction_amount'];
-    $itens = $_SESSION['carrinho'] ?? []; // Carrinho salvo na sessão
 
     // Inicia transação
     $pdo->beginTransaction();
 
     // Salva pedido
-    $stmt = $pdo->prepare("INSERT INTO pedidos (id_usuario, total) VALUES (:id_usuario, :total)");
-    $stmt->execute([':id_usuario' => $id_usuario, ':total' => $total]);
+    $stmt = $pdo->prepare("INSERT INTO pedidos (id_usuario, total, payment_id) VALUES (:id_usuario, :total, :payment_id)");
+    $stmt->execute([':id_usuario' => $id_usuario, ':total' => $total, ':payment_id' => $payment_id]);
     $id_pedido = $pdo->lastInsertId();
 
     // Salva itens do pedido
@@ -53,10 +59,18 @@ try {
     // Confirma a transação
     $pdo->commit();
 
+    // Limpa o carrinho da sessão após o sucesso
+    unset($_SESSION['carrinho']);
+
     echo "Pedido salvo com sucesso!";
+
 } catch (Exception $e) {
+    // Rola de volta em caso de erro
     if ($pdo->inTransaction()) {
         $pdo->rollBack();
     }
+    // Registra o erro
+    error_log($e->getMessage(), 3, 'error_log.txt');
     echo "Erro ao salvar pedido: " . $e->getMessage();
 }
+?>

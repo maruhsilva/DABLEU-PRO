@@ -13,8 +13,9 @@ $payment_id = isset($_GET['payment_id']) ? $_GET['payment_id'] : null;
 $collection_id = isset($_GET['collection_id']) ? $_GET['collection_id'] : null;
 $id_pedido = isset($_GET['id_pedido']) ? $_GET['id_pedido'] : null;
 
+
 // Verifica se os parâmetros necessários estão presentes
-if (!$payment_id || !$collection_id || !$id_pedido) {
+if (!$payment_id || !$collection_id) {
     echo "<h1>Erro: Parâmetros de pagamento não encontrados.</h1>";
     exit;
 }
@@ -24,120 +25,74 @@ try {
     $payment = MercadoPago\Payment::find_by_id($payment_id);
 
     // Conecta ao banco de dados
-    $host = 'localhost';
-    $db = 'login_dableupro';
-    $user = 'root';
-    $password = '';
+    $host = 'login_dableu.mysql.dbaas.com.br';
+    $db = 'login_dableu';
+    $user = 'login_dableu';
+    $password = 'Marua3902@';
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Verifica o status do pagamento
-    if ($payment->status === 'approved') {
-        // Se o pagamento foi aprovado
-        $status = 'aprovado';
-        // Atualizar informações do pagamento no banco
-        $stmt = $pdo->prepare("UPDATE pedidos SET 
-            status = :status, 
-            metodo_pagamento = :metodo_pagamento, 
-            email_payer = :email_payer 
-            WHERE id_pedido = :id_pedido");
-
-        $stmt->execute([
-            'status' => $status,
-            'metodo_pagamento' => $payment->payment_method_id, // Método de pagamento real
-            'email_payer' => $payment->payer->email, // E-mail real do comprador
-            'id_pedido' => $id_pedido
-        ]);
-
-        // Resposta de sucesso para a página
-        $response = [
-            'success' => true,
-            'message' => 'Pagamento aprovado!',
-            'payment_data' => [
-                'payment_id' => $payment->id,
-                'amount' => $payment->transaction_details->total_paid_amount,
-                'status' => $payment->status,
-                'payer_email' => $payment->payer->email,
-                'collection_id' => $collection_id
-            ]
-        ];
-
-        // // Exibe mensagem de sucesso e redireciona
-        // echo "<h1>Pagamento aprovado! O pedido foi atualizado.</h1>";
-        // header('Location: http://localhost/DABLEU-PRO/pedido-aprovado.php?id_pedido=' . $id_pedido);
-        // exit;
-
-    } elseif ($payment->status === 'pending') {
-        // Se o pagamento está pendente
-        $status = 'pendente';
-        // Atualizar informações do pagamento no banco
-        $stmt = $pdo->prepare("UPDATE pedidos SET 
-            status = :status, 
-            metodo_pagamento = :metodo_pagamento, 
-            email_payer = :email_payer 
-            WHERE id_pedido = :id_pedido");
-
-        $stmt->execute([
-            'status' => $status,
-            'metodo_pagamento' => $payment->payment_method_id, // Método de pagamento real
-            'email_payer' => $payment->payer->email, // E-mail real do comprador
-            'id_pedido' => $id_pedido
-        ]);
-
-        $response = [
-            'success' => false,
-            'message' => 'Pagamento pendente.',
-            'payment_data' => [
-                'payment_id' => $payment->id,
-                'status' => $payment->status,
-                'payer_email' => $payment->payer->email,
-                'collection_id' => $collection_id
-            ]
-        ];
-
-        // Exibe mensagem de pagamento pendente
-        echo "<h1>Pagamento pendente. Aguardando confirmação.</h1>";
-        exit;
-
-    } else {
-        // Caso o pagamento tenha falhado
-        $status = 'rejeitado';
-        // Atualizar informações do pagamento no banco
-        $stmt = $pdo->prepare("UPDATE pedidos SET 
-            status = :status, 
-            metodo_pagamento = :metodo_pagamento, 
-            email_payer = :email_payer 
-            WHERE id_pedido = :id_pedido");
-
-        $stmt->execute([
-            'status' => $status,
-            'metodo_pagamento' => $payment->payment_method_id, // Método de pagamento real
-            'email_payer' => $payment->payer->email, // E-mail real do comprador
-            'id_pedido' => $id_pedido
-        ]);
-
-        $response = [
-            'success' => false,
-            'message' => 'Pagamento não aprovado ou falhou.',
-            'payment_data' => []
-        ];
-
-        // Exibe mensagem de falha
-        echo "<h1>Pagamento não aprovado ou falhou.</h1>";
-        exit;
-    }
-
-} catch (Exception $e) {
-    // Em caso de erro ao consultar o pagamento ou atualizar o banco
+    // Inicializa a variável de resposta
     $response = [
         'success' => false,
-        'message' => 'Erro ao processar a consulta do pagamento ou atualizar o banco: ' . $e->getMessage(),
+        'message' => 'Erro desconhecido.',
         'payment_data' => []
     ];
 
-    // Exibe mensagem de erro
-    echo "<h1>Erro: " . $e->getMessage() . "</h1>";
-    exit;
+    // Verifica o status do pagamento
+    switch ($payment->status) {
+        case 'approved':
+            // Se o pagamento foi aprovado
+            $status = 'aprovado';
+            $response['success'] = true;
+            $response['message'] = 'Pagamento aprovado!';
+            break;
+        case 'pending':
+            // Se o pagamento está pendente
+            $status = 'pendente';
+            $response['success'] = false;
+            $response['message'] = 'Pagamento pendente.';
+            break;
+        case 'rejected':
+            // Se o pagamento foi rejeitado
+            $status = 'rejeitado';
+            $response['success'] = false;
+            $response['message'] = 'Pagamento não aprovado ou falhou.';
+            break;
+        default:
+            $status = 'erro';
+            $response['success'] = false;
+            $response['message'] = 'Status de pagamento desconhecido.';
+            break;
+    }
+
+    // Atualizar informações do pagamento no banco
+    $stmt = $pdo->prepare("UPDATE pedidos SET 
+        status = :status, 
+        metodo_pagamento = :metodo_pagamento, 
+        email_payer = :email_payer 
+        WHERE id_pedido = :id_pedido");
+
+    $stmt->execute([
+        'status' => $status,
+        'metodo_pagamento' => $payment->payment_method_id,
+        'email_payer' => $payment->payer->email,
+        'id_pedido' => $id_pedido
+    ]);
+
+    // Preencher os dados de pagamento no array de resposta
+    $response['payment_data'] = [
+        'payment_id' => $payment->id,
+        'amount' => $payment->transaction_details->total_paid_amount,
+        'status' => $payment->status,
+        'payer_email' => $payment->payer->email,
+        'collection_id' => $collection_id
+    ];
+
+} catch (Exception $e) {
+    // Em caso de erro ao consultar o pagamento ou atualizar o banco
+    $response['success'] = false;
+    $response['message'] = 'Erro ao processar a consulta do pagamento ou atualizar o banco: ' . $e->getMessage();
 }
 
 // Esvaziar o carrinho da sessão
@@ -152,7 +107,6 @@ echo "
     </script>
 ";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -171,54 +125,73 @@ echo "
     <header>
         <p>FRETE GRÁTIS EM SP PARA COMPRAS À PARTIR DE R$250,00</p>
     </header>
-    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
-      <div class="container-fluid justify-content-center" style="gap: 5rem;">
-        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999; display: flex; align-items: center;">
+      <div class="container-fluid justify-content-center nav-container" style="gap: 5rem;">
+          <a class="navbar-brand" href="index.html">
+              <img src="IMG/NOME 10cm COM R.png" alt="logo da empresa" style="width: 7rem; padding-bottom: .2rem;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
               <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-masc.html" role="button" >
-                    MASCULINO
-                  </a>
-                  
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-fem.html" role="button">
-                    FEMININO
-                  </a>
-                  
-                </li> 
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-kits.html" role="button">
-                    KITS
-                  </a>
-                  
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link " href="cat-lan.html" role="button">
-                    LANÇAMENTOS
-                  </a>
-                  
-                </li>
-                <ul class="icons">
-                  <li>
-                    <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
-                    <a href="#busca"><i class="bi bi-search"></i></a>
-                    <a href="favoritos.html"><i class="bi bi-heart"></i></a>
-                    <a href="carrinho.html">
-                      <div id="cart-icon-container"></div>
-                    </a>
-                  </li>  
-                </ul> 
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-masc.html" role="button">MASCULINO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-fem.html" role="button">FEMININO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-kits.html" role="button">KITS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-lan.html" role="button">LANÇAMENTOS</a>
+                  </li>
+                  <ul class="icons">
+                      <li>
+                          <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
+                          <a href="#busca"><i class="bi bi-search"></i></a>
+                          <a href="favoritos.html"><i class="bi bi-heart"></i></a>
+                          <a href="carrinho.html">
+                              <div id="cart-icon-container"></div>
+                          </a>
+                      </li>
+                  </ul>
               </ul>
           </div>
       </div>
-    </nav>
+  </nav>
+
+    <style>
+/* Estilo padrão da barra de navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinhamento centralizado em telas maiores */
+    gap: 5rem; /* Espaçamento padrão */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+    .nav-container {
+        justify-content: space-between; /* Distribui espaço entre logo e botão */
+        gap: 0; /* Remove espaçamento extra */
+    }
+
+    /* Logo alinhado à esquerda */
+    .navbar-brand {
+        margin-right: auto; /* Empurra o logo para a esquerda */
+    }
+
+    /* Botão de hambúrguer alinhado à direita */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+}
+      </style>
     <style>
         /* body {
             font-family: Arial, sans-serif;
@@ -305,6 +278,17 @@ echo "
     
     .btn-warning:hover {
       background-color: #e0a800;
+    }
+
+    @media (max-width: 800px) {
+        .status {
+            padding: 2rem;
+        }
+
+        .payment-info {
+            padding: 2rem 0;
+            text-align: center;
+        }
     }
     </style>
     <div class="status">
@@ -407,7 +391,7 @@ echo "
             </div>
         </div> -->
         <div class="desenvolvedor">
-          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
+          <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>

@@ -331,11 +331,7 @@ header p {
     text-align: end;
 }
 
-.foto-like {
-    max-width: 300px;
-    background-size: cover;
-    height: 300px;
-}
+
 
 .mais-pedidos {
     display: flex;
@@ -628,6 +624,11 @@ footer {
 
     .swiffy-slider {
         min-width: 100%;
+    }
+
+    .imagem-produto {
+        width: 100%;
+        max-height: 300px;
     }
 }
 @media (max-width:600px) {
@@ -971,14 +972,19 @@ footer {
 /* Conteúdo completo (escondido no minimizado) */
 .conteudo {
     display: flex;
+    
 }
 
 /* Exibe o conteúdo ao expandir */
 .informacoes.expandida #conteudo {
     display: block;
     padding: 2rem;
+   
 }
 
+.informacoes.expandida .img-produto {
+    display: none;
+}
 
 }
 
@@ -1008,3 +1014,17 @@ footer {
   .swiper-button-prev {
       display: none !important;
   }
+
+ 
+                
+#mais-pedidos {
+  max-width: 280px;
+  min-height: 410px;
+}
+
+.foto-like {
+  max-width: 200px;
+  min-height: 420px;
+}
+
+          

@@ -2,10 +2,10 @@
 session_start();
 
 // Conectar ao banco de dados
-$host = 'localhost';
-$db = 'login_dableupro';
-$user = 'root';
-$password = '';
+$host = 'login_dableu.mysql.dbaas.com.br';
+$db = 'login_dableu';
+$user = 'login_dableu';
+$password = 'Marua3902@';
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

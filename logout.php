@@ -5,6 +5,6 @@
     }
 
     session_destroy();
-    header("Location: /dableu-pro/user-login.php");
+    header("Location: user-login.php");
 
 ?>

@@ -1,6 +1,4 @@
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Função para adicionar produto ao carrinho
     const botaoAdicionarCarrinho = document.querySelector(".add-to-cart");
 
     if (botaoAdicionarCarrinho) {
@@ -8,30 +6,25 @@ document.addEventListener("DOMContentLoaded", function () {
             const imagemProduto = document.querySelector(".imagem-produto")?.src || '';
             const nomeProduto = document.querySelector(".titulo-produto")?.textContent.trim() || '';
             const tamanhoSelecionado = document.querySelector(".tamanho li.selected")?.textContent.trim() || '';
-            const precoProduto = parseFloat(document.querySelector(".preco-produto-pix")?.textContent.replace("R$", "").replace(",", ".").trim() || 0);
+            const precoProduto = parseFloat(document.querySelector(".preco-produto-credito")?.textContent.replace("R$", "").replace(",", ".").trim() || 0);
             const quantidadeProduto = parseInt(document.querySelector("#quantia")?.value || 1);
 
-            // Verifica se o tamanho foi selecionado
             if (!tamanhoSelecionado) {
                 alert("Por favor, selecione o tamanho do produto.");
                 return;
             }
 
-            // Verifica se os dados são válidos
             if (nomeProduto && precoProduto > 0 && quantidadeProduto > 0) {
                 const produto = {
                     nome: nomeProduto,
                     tamanho: tamanhoSelecionado,
                     preco: precoProduto,
                     quantidade: quantidadeProduto,
-                    imagem: imagemProduto,
+                    imagem: imagemProduto,  // Certifique-se de passar a imagem aqui
                 };
 
-                // Atualiza o carrinho no localStorage
                 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-                const indexProdutoExistente = carrinho.findIndex(
-                    (item) => item.nome === produto.nome && item.tamanho === produto.tamanho
-                );
+                const indexProdutoExistente = carrinho.findIndex((item) => item.nome === produto.nome && item.tamanho === produto.tamanho);
 
                 if (indexProdutoExistente >= 0) {
                     carrinho[indexProdutoExistente].quantidade += produto.quantidade;

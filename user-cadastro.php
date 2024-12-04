@@ -1,6 +1,6 @@
 <?php
 
-  require_once 'CLASSES/usuarios.php';
+  require_once __DIR__ . '/usuarios.php';
   $u = new Usuario;
 
 ?>
@@ -24,7 +24,7 @@
     </header>
     <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
         <div class="container-fluid justify-content-around" style="gap: 5rem;">
-          <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
+        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 10cm COM R.png" alt="logo da empresa" style="width: 7rem; padding-bottom: .2rem;"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -70,6 +70,34 @@
             </div>
         </div>
       </nav>
+
+      <style>
+/* Estilo padrão da barra de navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinhamento centralizado em telas maiores */
+    gap: 5rem; /* Espaçamento padrão */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+    .nav-container {
+        justify-content: space-between; /* Distribui espaço entre logo e botão */
+        gap: 0; /* Remove espaçamento extra */
+    }
+
+    /* Logo alinhado à esquerda */
+    .navbar-brand {
+        margin-right: auto; /* Empurra o logo para a esquerda */
+    }
+
+    /* Botão de hambúrguer alinhado à direita */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+}
+      </style>
 
       <section class="forms">
           <h1>ÁREA DE CADASTRO | <a href="user-login.php" style="text-decoration: none; color: black;">ÁREA DE LOGIN</a></h1>
@@ -189,7 +217,7 @@
         && !empty($confirmarSenha) && !empty($cep) && !empty($endereço) && !empty($numero) &&
         !empty($bairro) && !empty($cidade) && !empty($estado))
         {
-          $u->conectar("login_dableupro", "localhost", "root", "");
+          $u->conectar("login_dableu", "login_dableu.mysql.dbaas.com.br", "login_dableu", "Marua3902@");
           if (empty($_POST[""]))
           {
             if($senha == $confirmarSenha)
@@ -303,7 +331,7 @@
             </div>
         </div> -->
         <div class="desenvolvedor">
-          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
+          <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>

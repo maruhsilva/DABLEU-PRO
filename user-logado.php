@@ -1,29 +1,36 @@
 <?php
 
-include __DIR__ . '/classes/protect.php';
-require_once __DIR__ . '/classes/usuarios.php';
+require_once __DIR__ . '/protect.php';
+require_once __DIR__ . '/usuarios.php';
 
-// Inicializando a conexão com o banco de dados
-$usuario = new Usuario();
-$usuario->conectar('login_dableupro', 'localhost', 'root', '');
+// Caminho do log de erros
+$logFile = __DIR__ . '/logs/errors.log';
 
-// Verifique se a conexão foi estabelecida corretamente
-if (!empty($usuario->msgErro)) {
-    // Caso a conexão falhe, exibe o erro e interrompe a execução
-    echo "Erro na conexão: " . $usuario->msgErro;
-    exit;
+// Função para registrar erros
+function logError($message) {
+    global $logFile;
+    error_log("[" . date("Y-m-d H:i:s") . "] $message\n", 3, $logFile);
 }
 
-// Verifica se a sessão já está ativa e se o usuário está autenticado
-if (!isset($_SESSION['id_usuario'])) {
-    echo "Usuário não autenticado.";
-    exit;
-}
-
-$id_usuario = $_SESSION['id_usuario'];
-
-// Consultar os dados do usuário
 try {
+    // Inicializando a conexão com o banco de dados
+    $usuario = new Usuario();
+    if (!$usuario->conectar('login_dableu', 'login_dableu.mysql.dbaas.com.br', 'login_dableu', 'Marua3902@')) {
+        logError("Erro na conexão: " . $usuario->msgErro);
+        echo "Erro ao conectar com o banco.";
+        exit;
+    }
+
+    // Verifica se o usuário está autenticado
+    if (!isset($_SESSION['id_usuario'])) {
+        logError("Usuário não autenticado. Acesso negado.");
+        echo "Usuário não autenticado.";
+        exit;
+    }
+
+    $id_usuario = $_SESSION['id_usuario'];
+
+    // Consultar os dados do usuário
     $pdo = $usuario->getPdo(); // Obtém a conexão PDO da classe
     $sql = $pdo->prepare("SELECT * FROM usuarios WHERE id_usuario = :id");
     $sql->bindValue(":id", $id_usuario, PDO::PARAM_INT);
@@ -31,20 +38,22 @@ try {
 
     $usuario_data = $sql->fetch(PDO::FETCH_ASSOC);
 
-    // Verifica se os dados foram encontrados
     if (!$usuario_data) {
+        logError("Nenhum dado encontrado para o usuário com ID: $id_usuario");
         echo "Nenhum dado encontrado para este usuário.";
         exit;
     }
+
 } catch (PDOException $e) {
-    echo "Erro ao buscar os dados do usuário: " . $e->getMessage();
+    logError("Erro ao buscar os dados do usuário: " . $e->getMessage());
+    echo "Erro ao buscar os dados do usuário.";
+    exit;
+} catch (Exception $e) {
+    logError("Erro geral: " . $e->getMessage());
+    echo "Erro inesperado.";
     exit;
 }
 
-// Exibe os dados do usuário
-// echo "<pre>";
-// print_r($usuario_data);
-// echo "</pre>";
 ?>
 
 <!DOCTYPE html>
@@ -66,8 +75,8 @@ try {
     </header>
     <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
       <div class="container-fluid justify-content-center" style="gap: 5rem;">
-        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html"><img src="IMG/NOME 10cm COM R.png" alt="logo da empresa" style="width: 7rem; padding-bottom: .2rem;"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
           <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
@@ -112,18 +121,44 @@ try {
           </div>
       </div>
     </nav>
+
+    <style>
+/* Estilo padrão da barra de navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinhamento centralizado em telas maiores */
+    gap: 5rem; /* Espaçamento padrão */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+    .nav-container {
+        justify-content: space-between; /* Distribui espaço entre logo e botão */
+        gap: 0; /* Remove espaçamento extra */
+    }
+
+    /* Logo alinhado à esquerda */
+    .navbar-brand {
+        margin-right: auto; /* Empurra o logo para a esquerda */
+    }
+
+    /* Botão de hambúrguer alinhado à direita */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+}
+      </style>
       <section class="infos1" style="margin-top: 3rem; margin-bottom: 3rem;">
         <div class="dados-user">
           <p>
           Bem-vindo(a) a ÁREA DO CLIENTE, <strong><?php echo $_SESSION['nome']; ?></strong>.
           </p>
-          <p>
-            <a href="classes/logout.php">Sair</a>
-          </p>
-        </div>
+          </div>
       </section>
       <!-- Seção de Dados Pessoais -->
       <section class="edit" style="gap: 1rem">
+        <button><a href="logout.php">Sair</a></button>
         <button><a href="meus-pedidos.php">Meus Pedidos</a></button>
         <button><a href="editar-dados.php">Editar Dados</a></button>
       </section>
@@ -190,8 +225,8 @@ try {
 
       <footer>
         
-        <div class="desenvolvedor">
-          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
+      <div class="desenvolvedor">
+          <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "classes/config.php"; // Inclui o arquivo de conexão com o banco de dados
+include "config.php"; // Inclui o arquivo de conexão com o banco de dados
 
 // Verifica se o usuário está logado
 if (!isset($_SESSION['id_usuario'])) {
@@ -56,54 +56,73 @@ if ($result->num_rows > 0) {
     <header>
         <p>FRETE GRÁTIS EM SP PARA COMPRAS À PARTIR DE R$250,00</p>
     </header>
-    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
-      <div class="container-fluid justify-content-center" style="gap: 5rem;">
-        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999; display: flex; align-items: center;">
+      <div class="container-fluid justify-content-center nav-container" style="gap: 5rem;">
+          <a class="navbar-brand" href="index.html">
+              <img src="IMG/NOME 10cm COM R.png" alt="logo da empresa" style="width: 7rem; padding-bottom: .2rem;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
               <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-masc.html" role="button" >
-                    MASCULINO
-                  </a>
-                  
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-fem.html" role="button">
-                    FEMININO
-                  </a>
-                  
-                </li> 
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-kits.html" role="button">
-                    KITS
-                  </a>
-                  
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link " href="cat-lan.html" role="button">
-                    LANÇAMENTOS
-                  </a>
-                  
-                </li>
-                <ul class="icons">
-                  <li>
-                    <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
-                    <a href="#busca"><i class="bi bi-search"></i></a>
-                    <a href="favoritos.html"><i class="bi bi-heart"></i></a>
-                    <a href="carrinho.html">
-                    <div id="cart-icon-container"></div>
-                    </a>
-                  </li>  
-                </ul> 
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-masc.html" role="button">MASCULINO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-fem.html" role="button">FEMININO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-kits.html" role="button">KITS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-lan.html" role="button">LANÇAMENTOS</a>
+                  </li>
+                  <ul class="icons">
+                      <li>
+                          <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
+                          <a href="#busca"><i class="bi bi-search"></i></a>
+                          <a href="favoritos.html"><i class="bi bi-heart"></i></a>
+                          <a href="carrinho.html">
+                              <div id="cart-icon-container"></div>
+                          </a>
+                      </li>
+                  </ul>
               </ul>
           </div>
       </div>
-    </nav>
+  </nav>
+
+    <style>
+/* Estilo padrão da barra de navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinhamento centralizado em telas maiores */
+    gap: 5rem; /* Espaçamento padrão */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+    .nav-container {
+        justify-content: space-between; /* Distribui espaço entre logo e botão */
+        gap: 0; /* Remove espaçamento extra */
+    }
+
+    /* Logo alinhado à esquerda */
+    .navbar-brand {
+        margin-right: auto; /* Empurra o logo para a esquerda */
+    }
+
+    /* Botão de hambúrguer alinhado à direita */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+}
+      </style>
     <div class="container">
         <h1>Verificação dos Produtos</h1>
         <table id="tabela-carrinho" class="tabela-carrinho">
@@ -129,11 +148,12 @@ if ($result->num_rows > 0) {
         <div class="resumo">
             <p><strong>Subtotal:</strong> R$ <span id="subtotal">0,00</span></p>
             <p><strong>Frete:</strong> R$ <span id="frete">0,00</span></p>
-            <p class="total"><strong>Total:</strong> R$ <span id="total">0,00</span></p><br>
+            <p class="total"><strong>Total:</strong> R$ <span id="total-credito">0,00</span></p>
+            <p class="total"><strong>Total Pix:</strong> R$ <span id="total-pix">0,00</span></p>
         </div>
         <div class="dados-cliente" id="dados">
         <form method="POST" action="">
-            <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente</h2>
+            <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente:</h2>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
 
@@ -151,77 +171,68 @@ if ($result->num_rows > 0) {
 
             <label for="cep">CEP:</label>
             <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly><br><br>
-        </form>
+
+            <!-- Opções de pagamento -->
+            <div>
+    <label for="metodo_pagamento">Método de Pagamento:</label><br>
+    <select id="metodo_pagamento">
+        <option value="credito">Crédito</option>
+        <option value="pix">Pix/Boleto</option>
+    </select>
+</div>
+          </form>
         
-      </div>
+      </div><br>
       
 
       <button id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
 
       <script>
-document.getElementById("finalizar-compra-btn").addEventListener("click", function (e) {
-    e.preventDefault(); // Evita a recarga padrão da página
-
-    // Obtém o carrinho do localStorage
+document.getElementById('finalizar-compra-btn').addEventListener('click', function () {
+    const metodoPagamento = document.getElementById('metodo_pagamento').value;
     const carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-    // Verifica se o carrinho está vazio
-    if (!Array.isArray(carrinho) || carrinho.length === 0) {
-        alert("O carrinho está vazio. Adicione itens antes de finalizar a compra.");
-        return;
-    }
-
-    // Mapeia os produtos para o formato esperado
-    const items = carrinho.map(produto => ({
-        title: produto.nome || "Produto sem nome",
-        quantity: produto.quantidade || 1, // Garante que a quantidade seja pelo menos 1
-        unit_price: produto.preco || 0.0 // Garante que o preço seja válido
+    
+    // Preparar os itens para enviar ao backend
+    const itens = carrinho.map(item => ({
+        title: item.nome,
+        quantity: item.quantidade,
+        unit_price: metodoPagamento === 'pix' ? item.preco - 4 : item.preco  // Desconto para Pix
     }));
 
-    // Verifica se todos os itens possuem dados válidos
-    if (items.some(item => item.unit_price <= 0 || item.quantity <= 0)) {
-        alert("Um ou mais itens do carrinho possuem dados inválidos. Verifique e tente novamente.");
-        return;
-    }
+    // Dados a serem enviados para o servidor
+    const dados = {
+        itens: itens,
+        metodo_pagamento: metodoPagamento  // Envia o método de pagamento escolhido
+    };
 
-    // Envia os dados para o servidor
-    fetch('./processar_pagamento.php', {
+    // Enviar os dados para o servidor processar o pagamento
+    fetch('processar_pagamento.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ itens: items })
+        body: JSON.stringify(dados),
     })
     .then(response => response.json())
-    .then(response => {
-        console.log("Resposta do servidor:", response);
-        if (response.success) {
-            if (response.redirect_url) {
-                // Abrir a URL do Mercado Pago em uma nova aba
-                window.open(response.redirect_url, '_blank');
-            } else {
-                alert("Não foi possível obter a URL de pagamento.");
-            }
+    .then(data => {
+        if (data.success) {
+            window.location.href = data.redirect_url;  // Redireciona para o Mercado Pago
         } else {
-            alert("Houve um erro ao processar a compra: " + response.message);
+            alert('Erro: ' + data.message);
         }
     })
-    .catch(error => {
-        console.error("Erro ao enviar a compra:", error);
-        alert("Houve um problema ao processar a compra. Tente novamente.");
-    });
+    .catch(error => console.error('Erro ao processar o pagamento:', error));
 });
+
 
 </script>
 
 </form>
 
       <footer>
-        <div class="desenvolvedor">
-            <p>© 2024 DableuPro LTDA | Todos os Direitos Reservados.</p>
-            <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer">
-                <img src="IMG/Sem título.png" alt="logo do desenvolvedor">
-            </a>
+      <div class="desenvolvedor">
+          <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
+          <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
         </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

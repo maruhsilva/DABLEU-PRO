@@ -336,7 +336,7 @@ section .dados-user {
     font-weight: bold;
 }
 
-.infos1 .dados-user a {
+.logout a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
@@ -344,7 +344,7 @@ section .dados-user {
     border: 1px solid red;
 }
 
-.infos1 .dados-user a:hover {
+.logout a:hover {
     background-color: #fff;
     color: red;
     transition: .2s all ease-in-out;
@@ -455,6 +455,13 @@ a:hover {
 
     .infos1 .dados-user strong {
         font-size: 18px;
+    }
+
+    .infos1  {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 }
 

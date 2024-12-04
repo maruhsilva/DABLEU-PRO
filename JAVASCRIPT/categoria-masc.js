@@ -30,7 +30,7 @@ function carregarProdutos() {
                     <ul>
                         <li>
                             <a href="produto.html?id=${produto.id}">
-                                <ul class="foto-like" style="background-image: url(${produto.imagem_principal}); background-size: contain;">
+                                <ul class="foto-like" style="background-image: url(${produto.imagem_principal}); background-size: cover;">
                                     <div class="heart"><i class="bi bi-heart"></i></div>
                                 </ul>
                             </a>
@@ -42,7 +42,7 @@ function carregarProdutos() {
                                 <p class="preco-produto-pix">R$${produto.preco_pix}</p>
                                 <p class="preco-pix">(NO PIX)</p>
                             </div>
-                            <p class="pagamento-produto">Ou R$${produto.preco_credito} no cartão de crédito em até 2x sem juros</p>
+                            <p class="pagamento-produto">Ou R$${produto.preco_credito} no cartão de crédito em até 3x sem juros</p>
                         </li>
                     </ul>
                 `;

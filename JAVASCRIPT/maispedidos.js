@@ -40,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
         produtosAleatorios.forEach(produto => {
             containerMaisVendidos.innerHTML += `
                 <div class="swiper-slide"> <!-- Classe necessária para Swiper -->
-                    <ul>
+                    <ul id="mais-pedidos">
                         <li>
                             <a href="produto.html?id=${produto.id}">
-                                <ul class="foto-like" style="background-image: url(${produto.imagem});">
+                                <ul class="foto-like" style="background-image: url(${produto.imagem}); background-size: cover;">
                                     
                                 </ul>
                             </a>
@@ -56,12 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <p class="preco-pix">(NO PIX)</p>
                             </div>
                             <p class="pagamento-produto">
-                                Ou R$${produto.preco_credito} no cartão de crédito<br> em até 2x sem juros
+                                Ou R$${produto.preco_credito} no cartão de crédito em até 3x sem juros
                             </p>
                         </li>
                     </ul>
-                </div>
-            `;
+                </div>            
+                `;
+
+
+
         });
 
         // <a href="produto.html?id=produto1">
@@ -87,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 1000: { slidesPerView: 3 },
                 768: { slidesPerView: 2 },
                 480: { slidesPerView: 1 },
+                200: { slidesPerView: 1 },
             },
             pagination: false, // Desabilita as bolinhas de paginação
         });

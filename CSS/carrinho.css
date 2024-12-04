@@ -393,7 +393,11 @@ button {
     .tabela-carrinho th {
         background-color: hsla(0, 0%, 0%, 0.4);
         font-weight: bold;
-        font-size: .65rem;
+        font-size: .55rem;
+    }
+
+    .remover-produto {
+        font-size: .5rem;
     }
 
 }

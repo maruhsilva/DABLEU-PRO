@@ -15,75 +15,136 @@
     <header>
         <p>FRETE GRÁTIS EM SP PARA COMPRAS À PARTIR DE R$250,00</p>
     </header>
-    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999;  display: flex; align-items: center;">
-      <div class="container-fluid justify-content-center" style="gap: 5rem;">
-        <a class="navbar-brand" href="index.html"><img src="IMG/NOME 8cm - BRANCO E PRETO (2).png" alt="logo da empresa" style="width: 10rem; padding-bottom: .2rem;"></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg bg-body-white nav-justified" style="position: sticky; top: 0; background-color: white; border-bottom: .5px solid hsl(0, 0%, 0%, .2); padding: .5rem; z-index: 9999; display: flex; align-items: center;">
+      <div class="container-fluid justify-content-center nav-container" style="gap: 5rem;">
+          <a class="navbar-brand" href="index.html">
+              <img src="IMG/NOME 10cm COM R.png" alt="logo da empresa" style="width: 7rem; padding-bottom: .2rem;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
           <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown" style="font-size: 1.05rem; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
               <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-masc.html" role="button" >
-                    MASCULINO
-                  </a>
-                  
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-fem.html" role="button">
-                    FEMININO
-                  </a>
-                  
-                </li> 
-                <li class="nav-item dropdown">
-                  <a class="nav-link" href="cat-kits.html" role="button">
-                    KITS
-                  </a>
-                  
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link " href="cat-lan.html" role="button">
-                    LANÇAMENTOS
-                  </a>
-                  
-                </li>
-                <ul class="icons">
-                  <li>
-                    <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
-                    <a href="#busca"><i class="bi bi-search"></i></a>
-                    <a href="favoritos.html"><i class="bi bi-heart"></i></a>
-                    <a href="carrinho.html">
-                      <div id="cart-icon-container"></div>
-                    </a>
-                  </li>  
-                </ul> 
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">HOME</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-masc.html" role="button">MASCULINO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-fem.html" role="button">FEMININO</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-kits.html" role="button">KITS</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cat-lan.html" role="button">LANÇAMENTOS</a>
+                  </li>
+                  <ul class="icons">
+                      <li>
+                          <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
+                          <a href="#busca"><i class="bi bi-search"></i></a>
+                          <a href="favoritos.html"><i class="bi bi-heart"></i></a>
+                          <a href="carrinho.html">
+                              <div id="cart-icon-container"></div>
+                          </a>
+                      </li>
+                  </ul>
               </ul>
           </div>
       </div>
-    </nav>
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner" >
-          <div class="carousel-item active" >
-            <img src="IMG/Remove background project.jpeg" class="d-block w-100" alt="..." style="max-height: 30rem; min-height: 20.65rem; object-fit: cover;">
+  </nav>
+
+    <style>
+/* Estilo padrão da barra de navegação */
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alinhamento centralizado em telas maiores */
+    gap: 5rem; /* Espaçamento padrão */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 800px) {
+    .nav-container {
+        justify-content: space-between; /* Distribui espaço entre logo e botão */
+        gap: 0; /* Remove espaçamento extra */
+    }
+
+    /* Logo alinhado à esquerda */
+    .navbar-brand {
+        margin-right: auto; /* Empurra o logo para a esquerda */
+    }
+
+    /* Botão de hambúrguer alinhado à direita */
+    .navbar-toggler {
+        margin-left: auto; /* Empurra o botão para a direita */
+    }
+}
+      </style>
+      
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+          <div class="carousel-item active slide-item-1 fotos">
+              <img src="IMG/Untitled (1).png" class="d-block w-100 slide-image" alt="..." style="background-color: black ;max-height: 30rem; min-height: 20.65rem; object-fit: contain;">
           </div>
-          <div class="carousel-item">
-            <img src="IMG/freepik__upload__77940.jpeg" class="d-block w-100" alt="..." style="max-height: 30rem; min-height: 20.65rem; object-fit: cover;">
+          <div class="carousel-item slide-item-2 fotos">
+              <img src="IMG/Untitled (6).png" class="d-block w-100 slide-image" alt="..." style="max-height: 30rem; min-height: 20.65rem; object-fit: cover;">
           </div>
-          <div class="carousel-item">
-            <img src="IMG/freepik__expand__27755.png" class="d-block w-100" style="max-height: 30rem; min-height: 20.65rem; object-fit: cover;" alt="...">
+          <div class="carousel-item slide-item-3 fotos">
+              <img src="IMG/Untitled (10).png" class="d-block w-100 slide-image" alt="..." style="max-height: 30rem; min-height: 20.65rem; object-fit: cover;">
           </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
           <span class="carousel-control-next" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
-        </button>
-      </div>
+      </button>
+    </div>
+
+    <style>
+      /* Estilo padrão */
+.fotos {
+    position: relative;
+    min-height: 20.65rem; /* Garante que o slide tenha uma altura mínima */
+    max-height: 30rem;
+}
+
+/* Ocultar as imagens e exibir apenas os backgrounds em telas menores */
+@media (max-width: 800px) {
+    .fotos img {
+        display: none !important; /* Força a ocultação da imagem */
+    }
+
+    .slide-item-1 {
+        background-image: url('IMG/Untitled\ \(4\).png'); /* Imagem alternativa para o primeiro slide */
+        background-size: cover;
+        background-position: center;
+        height: 100%; /* Define altura total do slide */
+        transition: .5s all ease-in-out;
+    }
+
+    .slide-item-2 {
+        background-image: url('IMG/Untitled\ \(9\).png'); /* Imagem alternativa para o segundo slide */
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        transition: .5s all ease-in-out;
+    }
+
+    .slide-item-3 {
+        background-image: url('IMG/Untitled\ \(12\).png'); /* Imagem alternativa para o terceiro slide */
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        transition: .5s all ease-in-out;
+    }
+}
+      </style>
+
       <section class="infos">
         <div class="infos0">
           <ul>
@@ -118,7 +179,7 @@
                   <i class="bi bi-truck"></i>
                   <li>
                     <h6>FRETE GRÁTIS</h6>
-                    <p>a partir de R$250 em compras </p>
+                    <p>a partir de R$250 </p>
                   </li>
                 </ul>
               </div>
@@ -127,7 +188,7 @@
                   <i class="bi bi-whatsapp"></i>
                   <li>
                     <h6>ATENDIMENTO</h6>
-                    <p>WhatApp (12) 99999-9999</p>
+                    <p>WhatApp (12) 99178-7590</p>
                   </li>
                 </ul>
               </div>
@@ -153,19 +214,19 @@
         </div>
       </section>
       <section class="promo">
-        <div class="promo-ctg">
+        <div class="promo-ctg" >
           <ul style="background-image: url(IMG/camiseta-preta-sem-estampa.png);">
             <li>
               <p class="titulo">CAMISETAS</p>
               <p>POR R$119,90</p>
-              <button><a href="categoria-masc.html" style="text-decoration: none; color: black;">COMPRAR</a></button>
+              <button><a href="camisetas-masc.html" style="text-decoration: none; color: black;">COMPRAR</a></button>
             </li>
           </ul>
           <ul style="background-image: url(IMG/short-fst-100-m-black-s1.png);">
             <li>
               <p class="titulo">BERMUDAS</p>
               <p>POR R$133,90</p>
-              <button><a href="categoria-masc.html" style="text-decoration: none; color: black;">COMPRAR</a></button>
+              <button><a href="bermudas-masc.html" style="text-decoration: none; color: black;">COMPRAR</a></button>
             </li>
 
           </ul>
@@ -173,7 +234,7 @@
             <li>
               <p class="titulo">KITS</p>
               <p>POR R$249,90</p>
-              <button><a href="categoria-masc.html" style="text-decoration: none; color: black;">COMPRAR</a></button>
+              <button><a href="kits-masc.html" style="text-decoration: none; color: black;">COMPRAR</a></button>
             </li>
           </ul>
         </div>
@@ -385,42 +446,42 @@
             <li>
               <p class="titulo">CAMISETAS <br> MASCULINAS</p>
               <!-- <p>POR R$99,90</p> -->
-              <button><a href="categoria-masc.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
+              <button><a href="camisetas-masc.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
             </li>
           </ul>
           <ul style="background-image: url(IMG/regata-feminina.png); background-size: contain; border-right: 2px solid gray;">
             <li>
               <p class="titulo">CAMISETAS <br> FEMININAS</p>
               <!-- <p>POR R$99,90</p> -->
-              <button>CONFIRA</button>
+              <button><a href="camisetas-fem.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
             </li>
           </ul>
           <ul style="background-image: url(IMG/shorts-mas.png); background-size: contain;">
             <li>
               <p class="titulo">SHORTS <br> MASCULINOS</p>
               <!-- <p>POR R$99,90</p> -->
-              <button>CONFIRA</button>
+              <button><a href="bermudas-masc.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
             </li>
           </ul>
           <ul style="background-image: url(IMG/shorts-fem.png); background-size: contain; border-right: 2px solid gray;">
             <li>
               <p class="titulo">SHORTS <br> FEMININOS</p>
               <!-- <p>POR R$99,90</p> -->
-              <button>CONFIRA</button>
+              <button><a href="shorts-fem.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
             </li>
           </ul>
           <ul style="background-image: url(IMG/kits-masc.png); background-size: contain; border-right: 2px solid gray;">
             <li>
               <p class="titulo">KITS <br> MASCULINOS</p>
               <!-- <p>POR R$99,90</p> -->
-              <button>CONFIRA</button>
+              <button><a href="kits-masc.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
             </li>
           </ul>
           <ul style="background-image: url(IMG/kit-fem.png); background-size: contain;">
             <li>
               <p class="titulo">KITS <br> FEMININOS</p>
               <!-- <p>POR R$99,90</p> -->
-              <button>CONFIRA</button>
+              <button><a href="kits-fem.html" style="text-decoration: none; color: black;">CONFIRA</a></button>
             </li>
           </ul>
         </div>
@@ -551,20 +612,20 @@
                     </div>
 
                     <div class="medias-socias">
-                        <a href="#"> <i class="fa fa-facebook"></i> </a>
-                        <a href="#"> <i class="fa fa-instagram"></i> </a>
-                        <a href="#"> <i class="fa fa-twitter"></i> </a>
-                        <a href="#"> <i class="fa fa-linkedin"></i> </a>
-                    </div>
+                      <a href="https://www.facebook.com/junior.physique.9/" target="_blank" rel="noopener noreferrer"> <i class="fa fa-facebook"></i> </a>
+                      <a href="https://www.instagram.com/roupa_wpro/" target="_blank" rel="noopener noreferrer"> <i class="fa fa-instagram"></i> </a>
+                      <a href="#"> <i class="fa fa-x" ></i> </a>
+                      <a href="https://www.youtube.com/@dable-upro" target="_blank" rel="noopener noreferrer"> <i class="fa fa-youtube"></i> </a>
+                  </div>
 
-                </div>
-                <!--end footer col-->
-            </div>
-        </div>
-        <div class="desenvolvedor">
-          <p>© 2024 DableuPro LTDA | CNPJ: XX.XXX.XXX/XXXX-XX | Rua Cliente, XXX - Jacareí - São Paulo | CEP: XX.XXX-XXX - Todos os Direitos Reservados.</p>
-          <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
-        </div>
+              </div>
+              <!--end footer col-->
+          </div>
+      </div>
+      <div class="desenvolvedor">
+        <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
+        <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.png" alt="logo do desenvolvedor"></a>
+      </div>
     </footer>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->

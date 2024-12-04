@@ -3,7 +3,7 @@
 function salvarPagamento($payment_data) {
     try {
         // Conectar ao banco de dados
-        $conn = new PDO('mysql:host=localhost;dbname=login_dableupro', 'root', '');
+        $conn = new PDO('mysql:host=login_dableu.mysql.dbaas.com.br;dbname=login_dableu', 'login_dableu', 'Marua3902@');
 
         // Definir o modo de erro PDO
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

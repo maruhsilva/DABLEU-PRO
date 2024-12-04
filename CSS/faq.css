@@ -54,6 +54,9 @@ header p {
 .icons li {
     list-style: none;
     flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .icons a {
@@ -61,7 +64,6 @@ header p {
     letter-spacing: 1rem;
     font-size: 1.2rem;
 }
-
 /* ACORDEÃO */
 
 .acordeao {
