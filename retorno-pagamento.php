@@ -1,98 +1,91 @@
 <?php
-// Inicia a sessão para acessar as variáveis de sessão
+// Inicia a sessão para acessar variáveis
 session_start();
-
-// Inclui o autoload do Mercado Pago
 require __DIR__ . '/vendor/autoload.php';
-
-// Configuração da API do Mercado Pago
 MercadoPago\SDK::setAccessToken('TEST-7557293504970150-111823-b70f77389318ae03320e08bd19dd8afa-50073279');
 
-// Recupera os parâmetros da URL (payment_id, collection_id e id_pedido)
-$payment_id = isset($_GET['payment_id']) ? $_GET['payment_id'] : null;
-$collection_id = isset($_GET['collection_id']) ? $_GET['collection_id'] : null;
-$id_pedido = isset($_GET['id_pedido']) ? $_GET['id_pedido'] : null;
+// Conecta ao banco de dados
+$host = 'login_dableu.mysql.dbaas.com.br';
+$db = 'login_dableu';
+$user = 'login_dableu';
+$password = 'Marua3902@';
+$pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+// Obtém os parâmetros da URL
+$payment_id = $_GET['payment_id'] ?? null;
+$collection_id = $_GET['collection_id'] ?? null;
+$id_pedido_temp = $_GET['id_pedido_temp'] ?? null;
 
-// Verifica se os parâmetros necessários estão presentes
-if (!$payment_id || !$collection_id) {
+// Verifica os parâmetros obrigatórios
+if (!$payment_id || !$collection_id || !$id_pedido_temp) {
     echo "<h1>Erro: Parâmetros de pagamento não encontrados.</h1>";
     exit;
 }
 
 try {
-    // Consulta o pagamento pelo payment_id
+    // Consulta o pagamento no Mercado Pago
     $payment = MercadoPago\Payment::find_by_id($payment_id);
 
-    // Conecta ao banco de dados
-    $host = 'login_dableu.mysql.dbaas.com.br';
-    $db = 'login_dableu';
-    $user = 'login_dableu';
-    $password = 'Marua3902@';
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // Define o status do pagamento
+    $status = match ($payment->status) {
+        'approved' => 'aprovado',
+        'pending' => 'pendente',
+        'rejected' => 'rejeitado',
+        default => 'erro',
+    };
 
-    // Inicializa a variável de resposta
-    $response = [
-        'success' => false,
-        'message' => 'Erro desconhecido.',
-        'payment_data' => []
-    ];
+    if ($status === 'aprovado') {
+        // Transfere os dados para as tabelas definitivas
+        $pdo->beginTransaction();
 
-    // Verifica o status do pagamento
-    switch ($payment->status) {
-        case 'approved':
-            // Se o pagamento foi aprovado
-            $status = 'aprovado';
-            $response['success'] = true;
-            $response['message'] = 'Pagamento aprovado!';
-            break;
-        case 'pending':
-            // Se o pagamento está pendente
-            $status = 'pendente';
-            $response['success'] = false;
-            $response['message'] = 'Pagamento pendente.';
-            break;
-        case 'rejected':
-            // Se o pagamento foi rejeitado
-            $status = 'rejeitado';
-            $response['success'] = false;
-            $response['message'] = 'Pagamento não aprovado ou falhou.';
-            break;
-        default:
-            $status = 'erro';
-            $response['success'] = false;
-            $response['message'] = 'Status de pagamento desconhecido.';
-            break;
+        // Copia o pedido para "pedidos_definitivo"
+        $stmtPedido = $pdo->prepare("
+            INSERT INTO pedidos (id_pedido, id_usuario, total, data_pedido, status, metodo_pagamento, email_payer)
+            SELECT id_pedido, id_usuario, total, NOW(), :status, :metodo_pagamento, :email_payer
+            FROM pedidos_temporarios
+            WHERE id_pedido = :id_pedido_temp
+        ");
+        $stmtPedido->execute([
+            'status' => $status,
+            'metodo_pagamento' => $payment->payment_method_id,
+            'email_payer' => $payment->payer->email,
+            'id_pedido_temp' => $id_pedido_temp
+        ]);
+
+        // Copia os itens para "itens_pedido_definitivo"
+        $stmtItens = $pdo->prepare("
+            INSERT INTO itens_pedido_definitivo (id_pedido, nome_produto, quantidade, preco, imagem_produto)
+            SELECT id_pedido, nome_produto, quantidade, preco, imagem_produto
+            FROM itens_pedido
+            WHERE id_pedido = :id_pedido_temp
+        ");
+        $stmtItens->execute(['id_pedido_temp' => $id_pedido_temp]);
+
+        // Remove o pedido e itens temporários
+        $stmtDeletePedido = $pdo->prepare("DELETE FROM pedidos_temporarios WHERE id_pedido = :id_pedido_temp");
+        $stmtDeletePedido->execute(['id_pedido_temp' => $id_pedido_temp]);
+
+        $stmtDeleteItens = $pdo->prepare("DELETE FROM itens_pedido WHERE id_pedido = :id_pedido_temp");
+        $stmtDeleteItens->execute(['id_pedido_temp' => $id_pedido_temp]);
+
+        $pdo->commit();
+        echo "Pagamento aprovado e dados transferidos para as tabelas definitivas.";
+    } elseif ($status === 'rejeitado') {
+        // Remove os dados temporários
+        $stmtDeletePedido = $pdo->prepare("DELETE FROM pedidos_temporarios WHERE id_pedido = :id_pedido_temp");
+        $stmtDeletePedido->execute(['id_pedido_temp' => $id_pedido_temp]);
+
+        $stmtDeleteItens = $pdo->prepare("DELETE FROM itens_pedido WHERE id_pedido = :id_pedido_temp");
+        $stmtDeleteItens->execute(['id_pedido_temp' => $id_pedido_temp]);
+
+        echo "Pagamento rejeitado e dados temporários removidos.";
+    } else {
+        echo "Pagamento pendente. Dados mantidos temporariamente.";
     }
-
-    // Atualizar informações do pagamento no banco
-    $stmt = $pdo->prepare("UPDATE pedidos SET 
-        status = :status, 
-        metodo_pagamento = :metodo_pagamento, 
-        email_payer = :email_payer 
-        WHERE id_pedido = :id_pedido");
-
-    $stmt->execute([
-        'status' => $status,
-        'metodo_pagamento' => $payment->payment_method_id,
-        'email_payer' => $payment->payer->email,
-        'id_pedido' => $id_pedido
-    ]);
-
-    // Preencher os dados de pagamento no array de resposta
-    $response['payment_data'] = [
-        'payment_id' => $payment->id,
-        'amount' => $payment->transaction_details->total_paid_amount,
-        'status' => $payment->status,
-        'payer_email' => $payment->payer->email,
-        'collection_id' => $collection_id
-    ];
-
 } catch (Exception $e) {
-    // Em caso de erro ao consultar o pagamento ou atualizar o banco
-    $response['success'] = false;
-    $response['message'] = 'Erro ao processar a consulta do pagamento ou atualizar o banco: ' . $e->getMessage();
+    $pdo->rollBack();
+    echo "Erro ao processar o pagamento: " . $e->getMessage();
 }
 
 // Esvaziar o carrinho da sessão
@@ -102,11 +95,13 @@ if (isset($_SESSION['carrinho'])) {
 
 // Incluir código JavaScript para esvaziar o carrinho no localStorage
 echo "
-    <script>
-        localStorage.removeItem('carrinho');  // Limpa o carrinho do localStorage
-    </script>
+<script>
+    localStorage.removeItem('carrinho');  // Limpa o carrinho do localStorage
+</script>
 ";
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">

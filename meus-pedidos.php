@@ -36,7 +36,7 @@ if ($id_pedido) {
     $pedido = $stmt_pedido->fetch(PDO::FETCH_ASSOC);
 
     // Buscar os itens do pedido
-    $stmt_items = $pdo->prepare("SELECT * FROM itens_pedido WHERE id_pedido = :id_pedido");
+    $stmt_items = $pdo->prepare("SELECT * FROM itens_pedido_definitivo WHERE id_pedido = :id_pedido");
     $stmt_items->execute(['id_pedido' => $id_pedido]);
     $itens = $stmt_items->fetchAll(PDO::FETCH_ASSOC);
 }

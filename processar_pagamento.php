@@ -41,13 +41,6 @@ if (!$id_usuario) {
 // Verifica o método de pagamento selecionado (Crédito/Boleto ou Pix)
 $metodo_pagamento = isset($data['metodo_pagamento']) ? $data['metodo_pagamento'] : 'credito';
 
-// Ajusta o valor de cada item caso o pagamento seja via Pix (aplica desconto de R$ 4 por produto)
-foreach ($data['itens'] as &$item) {
-    if ($metodo_pagamento == 'pix') {
-        // $item['unit_price'] -= 4;  // Aplicando o desconto de R$ 4 por produto no Pix
-    }
-}
-
 // Calcular o total do pedido
 $total = 0;
 foreach ($data['itens'] as $item) {
@@ -60,48 +53,14 @@ foreach ($data['itens'] as $item) {
 }
 
 try {
-    // Inserir o pedido na tabela "pedidos" com o status "pendente" e as informações de pagamento
-    $stmt = $pdo->prepare("INSERT INTO pedidos (id_usuario, total, data_pedido, status, metodo_pagamento, email_payer) 
-                           VALUES (:id_usuario, :total, NOW(), 'pendente', :metodo_pagamento, 'pendente@example.com')");
+    // Inserir o pedido temporário na tabela "pedidos_temporarios"
+    $stmt = $pdo->prepare("INSERT INTO pedidos_temporarios (id_usuario, total, metodo_pagamento, email_payer) 
+                           VALUES (:id_usuario, :total, :metodo_pagamento, 'pendente@example.com')");
     $stmt->execute([ 'id_usuario' => $id_usuario, 'total' => $total, 'metodo_pagamento' => $metodo_pagamento ]);
-    $id_pedido = $pdo->lastInsertId();  // Aqui o id_pedido é obtido
-
-    // Inserir os itens na tabela "itens_pedido"
-    $stmt_item = $pdo->prepare("INSERT INTO itens_pedido (id_pedido, nome_produto, quantidade, preco, imagem_produto) 
-    VALUES (:id_pedido, :nome_produto, :quantidade, :preco, :imagem_produto)");
-    foreach ($data['itens'] as $item) {
-        // A imagem está sendo passada corretamente
-        $imagemProduto = isset($item['imagem']) ? $item['imagem'] : null;  // A chave 'imagem' vem do JS
-    
-        $stmt_item->execute([
-            'id_pedido' => $id_pedido,
-            'nome_produto' => $item['title'],
-            'quantidade' => $item['quantity'],
-            'preco' => $item['unit_price'],
-            'imagem_produto' => $imagemProduto  // Aqui está a imagem que vem do localStorage
-        ]);
-    }
-
-    error_log(print_r([
-        'id_pedido' => $id_pedido,
-        'nome_produto' => $item['title'],
-        'quantidade' => $item['quantity'],
-        'preco' => $item['unit_price'],
-        'imagem_produto' => $imagemProduto,
-    ], true));
-
-    // Atualizar o pedido com os dados de pagamento antes de gerar a preferência
-    $stmt_update = $pdo->prepare("UPDATE pedidos SET id_pagamento = :id_pagamento, token_pagamento = :token_pagamento, metodo_pagamento = :metodo_pagamento, email_payer = :email_payer WHERE id_pedido = :id_pedido");
-    $stmt_update->execute([
-        'id_pagamento' => null, 
-        'token_pagamento' => null,
-        'metodo_pagamento' => $metodo_pagamento,
-        'email_payer' => 'pendente@example.com',
-        'id_pedido' => $id_pedido
-    ]);
+    $id_pedido_temp = $pdo->lastInsertId();  // ID do pedido temporário
 
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Erro ao salvar o pedido: ' . $e->getMessage()]);
+    echo json_encode(['success' => false, 'message' => 'Erro ao salvar o pedido temporário: ' . $e->getMessage()]);
     ob_end_flush();
     exit;
 }
@@ -122,52 +81,41 @@ $preference->items = $items;
 
 // URLs de retorno com base no status do pagamento
 $preference->back_urls = [
-    "success" => "https://dableupro.com.br/retorno-pagamento.php?id_usuario={$id_usuario}&id_pedido={$id_pedido}",
+    "success" => "https://dableupro.com.br/retorno-pagamento.php?id_usuario={$id_usuario}&id_pedido={$id_pedido_temp}",
     "failure" => "https://dableupro.com.br/retorno-intermediario.php?status=failure",
     "pending" => "https://dableupro.com.br/retorno-intermediario.php?status=pending"
 ];
 
 $preference->auto_return = "approved";
 
-// Configurar os métodos de pagamento permitidos com base no método escolhido
+// Configurar os métodos de pagamento permitidos
 if ($metodo_pagamento == 'credito') {
-    // Apenas Cartão de Crédito
     $preference->payment_methods = [
         'excluded_payment_types' => [
             ['id' => 'pix'],         // Exclui Pix
             ['id' => 'ticket'],      // Exclui Boleto
-            ['id' => 'debit_card'],  // Exclui Débito
-            ['id' => 'atm']          // Exclui ATM
         ],
         'default_payment_method' => 'credit_card',  // Define Cartão de Crédito como padrão
         'installments' => 12,                      // Permite até 12 parcelas
         'default_installments' => 3                // Configura 3 parcelas sem juros como padrão
     ];
 } elseif ($metodo_pagamento == 'pix') {
-    // Apenas Pix, Boleto e Débito
     $preference->payment_methods = [
         'excluded_payment_types' => [
             ['id' => 'credit_card'], // Exclui Cartão de Crédito
-            ['id' => 'atm']          // Exclui ATM
         ],
         'default_payment_method' => 'pix',  // Define Pix como padrão
-        'installments' => null              // Sem parcelamento
     ];
-} else {
-    // Caso nenhuma condição seja atendida, retorna um erro
-    echo json_encode(['success' => false, 'message' => 'Método de pagamento inválido.']);
-    ob_end_flush();
-    exit;
 }
 
 try {
     $preference->save();
 
-    // Atualizar o pedido com o ID de pagamento do Mercado Pago
-    $stmt_update = $pdo->prepare("UPDATE pedidos SET id_pagamento = :id_pagamento WHERE id_pedido = :id_pedido");
+    // Atualizar o pedido temporário com o ID de pagamento do Mercado Pago
+    $stmt_update = $pdo->prepare("UPDATE pedidos_temporarios SET id_pagamento = :id_pagamento WHERE id_pedido = :id_pedido");
     $stmt_update->execute([
-        'id_pagamento' => $preference->id, // Agora temos o ID de pagamento gerado pelo Mercado Pago
-        'id_pedido' => $id_pedido
+        'id_pagamento' => $preference->id, // ID de pagamento gerado pelo Mercado Pago
+        'id_pedido' => $id_pedido_temp
     ]);
     
     $response = [
@@ -184,4 +132,7 @@ try {
     echo json_encode($response);
     ob_end_flush();
 }
+
+// Limpeza de pedidos expirados (1 hora)
+$pdo->exec("DELETE FROM pedidos_temporarios WHERE status_temp = 1 AND data_criacao < NOW() - INTERVAL 1 HOUR");
 ?>
