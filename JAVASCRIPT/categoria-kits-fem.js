@@ -3,17 +3,17 @@ function carregarProdutos() {
     fetch('dados.json')
         .then(response => response.json())
         .then(data => {
-            const container = document.getElementById('produtos-container');
+            const container = document.getElementById('produtos-container7');
             container.innerHTML = ''; // Limpa o container antes de renderizar
 
             // Filtrar os produtos pela categoria Masculino e subcategoria Camisetas
             const produtosFiltrados = data.produtos.filter(produto => 
-                produto.categoria === 'Masculino' && produto.subcategoria === 'Camisetas'
+                produto.categoria === 'Feminino' && produto.subcategoria === 'Kits'
             );
 
             // Verificar se há produtos para exibir
             if (produtosFiltrados.length === 0) {
-                container.innerHTML = `<p>Nenhum produto encontrado na categoria "Masculino" e subcategoria "Camisetas".</p>`;
+                container.innerHTML = `<p>Nenhum produto encontrado na categoria "Feminino" e subcategoria "Kits".</p>`;
                 return;
             }
 
@@ -56,5 +56,3 @@ function carregarProdutos() {
 
 // Carregar produtos ao iniciar a página
 document.addEventListener('DOMContentLoaded', carregarProdutos);
-
-
