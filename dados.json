@@ -1355,20 +1355,20 @@
         "id": "produto26",
         "categoria": "Masculino",
         "subcategoria": "Kits Masculinos",
-        "nome": "Kit Regata Verde + Bermuda",
+        "nome": "Kit Regata Branca + Bermuda",
         "titulo": "Tshirt Dry Fit Pink",
-        "imagem": "IMG/regata-verde.png",
+        "imagem": "IMG/regata-branca.png",
         "preco_credito": "249,90",
         "parcelamento":"Ou R$249,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "245,90",
-        "cor": "Verde + Preto",
-        "imagem_principal": "IMG/regata-verde.png",
+        "cor": "Branco + Preto",
+        "imagem_principal": "IMG/regata-branca.png",
         "imagens_slider": [
-          "IMG/regata-verde.png",
+          "IMG/regata-branca.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/regata-verde.png",
+        "imagem_produto": "IMG/regata-branca.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -2388,18 +2388,18 @@
         "subcategoria": "Camisetas",
         "nome": "Camiseta Dry Fit Vinho",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/camiseta-fem-Vinho.png",
+        "imagem": "IMG/camiseta-fem-vinho.png",
         "preco_credito": "119,90",
         "parcelamento":"Ou R$119,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "115,90",
         "cor": "Vinho",              
-        "imagem_principal": "IMG/camiseta-fem-Vinho.png",
+        "imagem_principal": "IMG/camiseta-fem-vinho.png",
         "imagens_slider": [
-          "IMG/camiseta-fem-Vinho.png",
+          "IMG/camiseta-fem-vinho.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/camiseta-fem-Vinho.png",
+        "imagem_produto": "IMG/camiseta-fem-vinho.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -2443,18 +2443,18 @@
         "subcategoria": "Camisetas",
         "nome": "Regata Dry Fit Branca",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/regata-fem-Branca.png",
+        "imagem": "IMG/regata-fem-branca.png",
         "preco_credito": "99,90",
         "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "95,90",
         "cor": "Branca",              
-        "imagem_principal": "IMG/regata-fem-Branca.png",
+        "imagem_principal": "IMG/regata-fem-branca.png",
         "imagens_slider": [
-          "IMG/regata-fem-Branca.png",
+          "IMG/regata-fem-branca.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/regata-fem-Branca.png",
+        "imagem_produto": "IMG/regata-fem-branca.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -2498,18 +2498,18 @@
         "subcategoria": "Camisetas",
         "nome": "Regata Dry Fit Rosa",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/regata-fem-Rosa.png",
+        "imagem": "IMG/regata-fem-rosa.png",
         "preco_credito": "99,90",
         "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "95,90",
         "cor": "Rosa",              
-        "imagem_principal": "IMG/regata-fem-Rosa.png",
+        "imagem_principal": "IMG/regata-fem-rosa.png",
         "imagens_slider": [
-          "IMG/regata-fem-Rosa.png",
+          "IMG/regata-fem-rosa.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/regata-fem-Rosa.png",
+        "imagem_produto": "IMG/regata-fem-rosa.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -2553,18 +2553,18 @@
         "subcategoria": "Camisetas",
         "nome": "Regata Dry Fit Verde",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/regata-fem-Verde.png",
+        "imagem": "IMG/regata-fem-verde.png",
         "preco_credito": "99,90",
         "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "95,90",
         "cor": "Verde",              
-        "imagem_principal": "IMG/regata-fem-Verde.png",
+        "imagem_principal": "IMG/regata-fem-verde.png",
         "imagens_slider": [
-          "IMG/regata-fem-Verde.png",
+          "IMG/regata-fem-verde.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/regata-fem-Verde.png",
+        "imagem_produto": "IMG/regata-fem-verde.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -2608,18 +2608,18 @@
         "subcategoria": "Camisetas",
         "nome": "Regata Dry Fit Preta",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/regata-fem-Preta.png",
+        "imagem": "IMG/regata-fem-preta.png",
         "preco_credito": "99,90",
         "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "95,90",
         "cor": "Preta",              
-        "imagem_principal": "IMG/regata-fem-Preta.png",
+        "imagem_principal": "IMG/regata-fem-preta.png",
         "imagens_slider": [
-          "IMG/regata-fem-Preta.png",
+          "IMG/regata-fem-preta.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/regata-fem-Preta.png",
+        "imagem_produto": "IMG/regata-fem-preta.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -2772,14 +2772,14 @@
         "subcategoria": "Calças",
         "nome": "Calça Legging Cinza",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/legging-Cinza.png",
+        "imagem": "IMG/legging-cinza.png",
         "preco_credito": "119,90",
         "parcelamento":"Ou R$119,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "115,90",
         "cor": "Cinza",              
-        "imagem_principal": "IMG/legging-Cinza.png",
+        "imagem_principal": "IMG/legging-cinza.png",
         "imagens_slider": [
-          "IMG/legging-Cinza.png",
+          "IMG/legging-cinza.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
@@ -2881,18 +2881,18 @@
         "subcategoria": "Kits",
         "nome": "Kit Legging + Top Preto",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/kit-Preto.png",
+        "imagem": "IMG/kit-preto.png",
         "preco_credito": "249,90",
         "parcelamento":"Ou R$249,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "245,90",
         "cor": "Preto",              
-        "imagem_principal": "IMG/kit-Preto.png",
+        "imagem_principal": "IMG/kit-preto.png",
         "imagens_slider": [
-          "IMG/kit-Preto.png",
+          "IMG/kit-preto.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit-Preto.png",
+        "imagem_produto": "IMG/kit-preto.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",
@@ -3046,18 +3046,18 @@
         "subcategoria": "Kits",
         "nome": "Kit Legging + Top Vinho",
         "titulo": "Tshirt Dry Fit Black",
-        "imagem": "IMG/kit-Vinho.png",
+        "imagem": "IMG/kit-vinho.png",
         "preco_credito": "249,90",
         "parcelamento":"Ou R$249,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "245,90",
         "cor": "Vinho",              
-        "imagem_principal": "IMG/kit-Vinho.png",
+        "imagem_principal": "IMG/kit-vinho.png",
         "imagens_slider": [
-          "IMG/kit-Vinho.png",
+          "IMG/kit-vinho.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/kit-Vinho.png",
+        "imagem_produto": "IMG/kit-vinho.png",
         "descricao": {
         "detalhes": [
           "Tecido: Dry Fit",

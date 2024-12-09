@@ -1027,4 +1027,42 @@ footer {
   min-height: 420px;
 }
 
-          
+.busca p {
+    color: white;
+}
+
+#busca {
+    padding: 1rem;
+    position: relative;
+    max-width: 300px;
+    /* margin: 10px auto; */
+  }
+  
+  #campoBusca {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .resultados {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    display: none;
+    z-index: 1000;
+  }
+  
+  .resultados div {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  .resultados div:hover {
+    background-color: #f0f0f0;
+  }

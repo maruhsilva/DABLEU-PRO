@@ -173,3 +173,4 @@ $('.cards1').slick({
     input.type = input.type == 'text' ? 'password' : 'text';
   });
 
+

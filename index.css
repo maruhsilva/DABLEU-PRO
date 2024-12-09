@@ -947,7 +947,6 @@ footer {
     position: relative;
 }
 
-/* Galeria */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -956,7 +955,7 @@ footer {
     justify-items: center;
 }
 
-.gallery img, .gallery video {
+.gallery img {
     width: 100%;
     max-width: 200px;
     max-height: 200px;
@@ -965,11 +964,10 @@ footer {
     transition: transform 0.3s ease;
 }
 
-.gallery video:hover, .gallery img:hover {
+.gallery img:hover {
     transform: scale(1.1);
 }
 
-/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -982,30 +980,19 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
 }
 
-/* Conteúdo do Modal */
 .modal-content {
-    max-width: 95%;
-    max-height: 95%;
-    margin-inline: auto;
+    max-width: 80%;
+    max-height: 80%;
+    margin: auto;
     border-radius: 8px;
-    object-fit: contain; /* Ajusta o conteúdo proporcionalmente */
+    object-fit: contain; /* Garante que a imagem seja ajustada proporcionalmente */
+    display: block; /* Centraliza a imagem no modal */
     background-color: transparent;
     border: none;
-    overflow: hidden; /* Impede que o conteúdo ultrapasse os limites */
-    /* display: block; Garante que a imagem ou vídeo sejam centralizados */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.modal-content img {
-    width: 800px;
-}
-
-/* Fechar o Modal */
 .close {
     position: absolute;
     top: 15px;
@@ -1015,7 +1002,6 @@ footer {
     cursor: pointer;
 }
 
-/* Navegação */
 .navigation {
     position: absolute;
     top: 50%;
@@ -1033,10 +1019,9 @@ footer {
     padding: 15px;
 }
 
-/* Galeria Container */
 .gallery1 {
     max-width: 71.5%;
-    margin: 0 auto;
+    margin-inline: auto;
     padding: 2rem 0;
 }
 
@@ -1052,20 +1037,14 @@ footer {
     text-transform: uppercase;
 }
 
-/* Responsividade */
 @media (max-width: 800px) {
-    .gallery1 {
+
+    .gallery1{
         max-width: 100%;
         padding: .5rem;
     }
 
-    .gallery1 h2 {
+    .gallery1 h2  {
         text-align: center;
     }
-
-    .modal-content img {
-        width: 400px;
-    }
 }
-
-

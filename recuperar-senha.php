@@ -113,7 +113,7 @@ if (isset($_POST['email'])) {
                   <ul class="icons">
                       <li>
                           <a href="user-logado.php" style="font-size: 1.5rem;"><i class="bi bi-person"></i></a>
-                          <a href="#busca"><i class="bi bi-search"></i></a>
+                          <!-- <a href="#busca"><i class="bi bi-search"></i></a> -->
                           <a href="favoritos.html"><i class="bi bi-heart"></i></a>
                           <a href="carrinho.html">
                               <div id="cart-icon-container"></div>
