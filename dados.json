@@ -1031,25 +1031,25 @@
         "id": "produto20",
         "categoria": "Masculino",
         "subcategoria": "Calças",
-        "nome": "Calça de Treino",
+        "nome": "Calça de Treino Preta",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem":"IMG/calca-azul.png",
+        "imagem":"IMG/calca-masc-preta.png",
         "preco_credito": "169,90",
         "parcelamento":"Ou R$169,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "165,90",
-        "cor": "",
-        "imagem_principal": "IMG/calca-azul.png",
+        "cor": "Preto",
+        "imagem_principal": "IMG/calca-masc-preta.png",
         "imagens_slider": [
-          "IMG/calca-azul.png",
+          "IMG/calca-masc-preta.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/calca-azul.png",
+        "imagem_produto": "IMG/calca-masc-preta.png",
         "descricao": {
         "detalhes": [
           "Tecido: Moletom",
           "Modelagem: Jogger",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -1071,7 +1071,7 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/Untitled1.png"
+          "url": "IMG/amostra-calca.png"
         }
         
       ],
@@ -1085,25 +1085,25 @@
         "id": "produto21",
         "categoria": "Masculino",
         "subcategoria": "Calças",
-        "nome": "Calça de Treino Azul",
+        "nome": "Calça de Treino Verde",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem":"IMG/calca-azul.png",
+        "imagem":"IMG/calca-masc-verde.png",
         "preco_credito": "169,90",
         "parcelamento":"Ou R$169,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "165,90",
-        "cor": "Vermelho",
-        "imagem_principal": "IMG/calca-azul.png",
+        "cor": "Verde",
+        "imagem_principal": "IMG/calca-masc-verde.png",
         "imagens_slider": [
-          "IMG/calca-azul.png",
+          "IMG/calca-masc-verde.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/calca-azul.png",
+        "imagem_produto": "IMG/calca-masc-verde.png",
         "descricao": {
         "detalhes": [
           "Tecido: Moletom",
           "Modelagem: Jogger",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -1125,7 +1125,7 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/Untitled1.png"
+          "url": "IMG/amostra-calca.png"
         }
         
       ],
@@ -1139,25 +1139,25 @@
         "id": "produto22",
         "categoria": "Masculino",
         "subcategoria": "Calças",
-        "nome": "Calça de Treino",
+        "nome": "Calça de Treino Cinza",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem":"IMG/calca-azul.png",
+        "imagem":"IMG/calca-masc-cinza.png",
         "preco_credito": "169,90",
         "parcelamento":"Ou R$169,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "165,90",
-        "cor": "",
-        "imagem_principal": "IMG/calca-azul.png",
+        "cor": "Cinza",
+        "imagem_principal": "IMG/calca-masc-cinza.png",
         "imagens_slider": [
-          "IMG/calca-azul.png",
+          "IMG/calca-masc-cinza.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/calca-azul.png",
+        "imagem_produto": "IMG/calca-masc-cinza.png",
         "descricao": {
         "detalhes": [
           "Tecido: Moletom",
           "Modelagem: Jogger",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -1179,7 +1179,7 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/Untitled1.png"
+          "url": "IMG/amostra-calca.png"
         }
         
       ],
@@ -1193,25 +1193,25 @@
         "id": "produto23",
         "categoria": "Masculino",
         "subcategoria": "Calças",
-        "nome": "Calça de Treino",
+        "nome": "Calça de Treino Vinho",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem":"IMG/calca-azul.png",
+        "imagem":"IMG/calca-masc-vinho.png",
         "preco_credito": "169,90",
         "parcelamento":"Ou R$169,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "165,90",
-        "cor": "",
-        "imagem_principal": "IMG/calca-azul.png",
+        "cor": "Vinho",
+        "imagem_principal": "IMG/calca-masc-vinho.png",
         "imagens_slider": [
-          "IMG/calca-azul.png",
+          "IMG/calca-masc-vinho.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/calca-azul.png",
+        "imagem_produto": "IMG/calca-masc-vinho.png",
         "descricao": {
         "detalhes": [
           "Tecido: Moletom",
           "Modelagem: Jogger",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -1233,7 +1233,7 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/Untitled1.png"
+          "url": "IMG/amostra-calca.png"
         }
         
       ],
@@ -1247,25 +1247,25 @@
         "id": "produto24",
         "categoria": "Masculino",
         "subcategoria": "Calças",
-        "nome": "Calça de Treino",
+        "nome": "Calça de Treino Cinza",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem":"IMG/calca-azul.png",
+        "imagem":"IMG/calca-masc-cinza1.png",
         "preco_credito": "169,90",
         "parcelamento":"Ou R$169,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "165,90",
-        "cor": "",
-        "imagem_principal": "IMG/calca-azul.png",
+        "cor": "Cinza Escuro",
+        "imagem_principal": "IMG/calca-masc-cinza1.png",
         "imagens_slider": [
-          "IMG/calca-azul.png",
+          "IMG/calca-masc-cinza1.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/calca-azul.png",
+        "imagem_produto": "IMG/calca-masc-cinza1.png",
         "descricao": {
         "detalhes": [
           "Tecido: Moletom",
           "Modelagem: Jogger",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -1287,7 +1287,7 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/Untitled1.png"
+          "url": "IMG/amostra-calca.png"
         }
         
       ],
@@ -1301,25 +1301,25 @@
         "id": "produto25",
         "categoria": "Masculino",
         "subcategoria": "Calças",
-        "nome": "Calça de Treino",
+        "nome": "Calça de Treino Azul",
         "titulo": "Tshirt Dry Fit Red",
-        "imagem":"IMG/calca-azul.png",
+        "imagem":"IMG/calca-masc-azul.png",
         "preco_credito": "169,90",
         "parcelamento":"Ou R$169,90 no cartão de crédito em até 3x sem juros",
         "preco_pix": "165,90",
-        "cor": "",
-        "imagem_principal": "IMG/calca-azul.png",
+        "cor": "Azul",
+        "imagem_principal": "IMG/calca-masc-azul.png",
         "imagens_slider": [
-          "IMG/calca-azul.png",
+          "IMG/calca-masc-azul.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png",
           "IMG/BARRAS PRETAS - 4cm - 6cm.png"
         ],
-        "imagem_produto": "IMG/calca-azul.png",
+        "imagem_produto": "IMG/calca-masc-azul.png",
         "descricao": {
         "detalhes": [
           "Tecido: Moletom",
           "Modelagem: Jogger",
-          "Silk: Halteres e Marca",
+          "Silk: Halteres",
           
           "Composição: 100% Poliéster"
         ],
@@ -1341,7 +1341,7 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/Untitled1.png"
+          "url": "IMG/amostra-calca.png"
         }
         
       ],
@@ -1989,14 +1989,14 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/bone-preto.png"
+          "url": "IMG/amostra-bone.png"
         }
         
       ],
       "extras": {
         "titulo": "BONÉ DE TREINO",
         "subtitulo": "IDEAL PARA SUA PERFORMANCE",
-        "conteudo": "Não importa a sua atividade, essE BONÉ tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+        "conteudo": "Não importa a sua atividade, esse boné tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
       }
       },
       {
@@ -2043,14 +2043,14 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/bone-branco.png"
+          "url": "IMG/amostra-bone.png"
         }
         
       ],
       "extras": {
         "titulo": "BONÉ DE TREINO",
         "subtitulo": "IDEAL PARA SUA PERFORMANCE",
-        "conteudo": "Não importa a sua atividade, essE BONÉ tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+        "conteudo": "Não importa a sua atividade, esse boné tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
       }
       },
       {
@@ -2073,7 +2073,7 @@
         "imagem_produto": "IMG/bone-vinho.png",
         "descricao": {
         "detalhes": [
-          "Tecido: Dry Fit",
+          "Tecido: Padrão",
           "Modelagem: Padrão",
           "Silk: Halteres",
           
@@ -2097,14 +2097,14 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/bone-vinho.png"
+          "url": "IMG/amostra-bone.png"
         }
         
       ],
       "extras": {
         "titulo": "BONÉ DE TREINO",
         "subtitulo": "IDEAL PARA SUA PERFORMANCE",
-        "conteudo": "Não importa a sua atividade, essE BONÉ tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+        "conteudo": "Não importa a sua atividade, esse boné tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
       }
       },
       {
@@ -2151,14 +2151,14 @@
       "imagens": [
         {
           "descricao": "Detalhes da camiseta",
-          "url": "IMG/bone-verde.png"
+          "url": "IMG/amostra-bone.png"
         }
         
       ],
       "extras": {
         "titulo": "BONÉ DE TREINO",
         "subtitulo": "IDEAL PARA SUA PERFORMANCE",
-        "conteudo": "Não importa a sua atividade, essE BONÉ tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+        "conteudo": "Não importa a sua atividade, esse boné tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
       }
       },
 
@@ -3147,6 +3147,336 @@
         "titulo": "CALÇA LEGGING E TOP PARA TREINO",
         "subtitulo": "IDEAL PARA SUA PERFORMANCE",
         "conteudo": "Não importa a sua atividade, essa legging e esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto59",
+        "categoria": "Feminino",
+        "subcategoria": "Tops",
+        "nome": "Top Treino Preto",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/top-preto1.png",
+        "preco_credito": "99,90",
+        "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "95,90",
+        "cor": "Preto",              
+        "imagem_principal": "IMG/top-preto1.png",
+        "imagens_slider": [
+          "IMG/top-preto1.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/top-preto1.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Legging",
+          "Silk: Halteres",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "Confeccionada em tecido de alta elasticidade, macio, respirável e de secagem rápida, que oferece conforto e segurança durante exercícios de alta intensidade."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "Modelagem anatômica do top proporcionando excelente sustentação, liberdade de movimento e valorização da silhueta para diferentes tipos de corpo. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "Desenvolvida com tecnologia de compressão moderada, controle eficiente de umidade, proteção UV e resistência ao desgaste, garantindo máximo desempenho, durabilidade e conforto para treinos na academia ou ao ar livre."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "TOP PARA TREINO",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto60",
+        "categoria": "Feminino",
+        "subcategoria": "Tops",
+        "nome": "Top Treino Vinho",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/top-vinho.png",
+        "preco_credito": "99,90",
+        "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "95,90",
+        "cor": "Vinho",              
+        "imagem_principal": "IMG/top-vinho.png",
+        "imagens_slider": [
+          "IMG/top-vinho.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/top-vinho.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Legging",
+          "Silk: Halteres",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "Confeccionada em tecido de alta elasticidade, macio, respirável e de secagem rápida, que oferece conforto e segurança durante exercícios de alta intensidade."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "Modelagem anatômica do top proporcionando excelente sustentação, liberdade de movimento e valorização da silhueta para diferentes tipos de corpo. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "Desenvolvida com tecnologia de compressão moderada, controle eficiente de umidade, proteção UV e resistência ao desgaste, garantindo máximo desempenho, durabilidade e conforto para treinos na academia ou ao ar livre."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "TOP PARA TREINO",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto61",
+        "categoria": "Feminino",
+        "subcategoria": "Tops",
+        "nome": "Top Treino Rosa",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/top-rosa.png",
+        "preco_credito": "99,90",
+        "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "95,90",
+        "cor": "Rosa",              
+        "imagem_principal": "IMG/top-rosa.png",
+        "imagens_slider": [
+          "IMG/top-rosa.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/top-rosa.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Legging",
+          "Silk: Halteres",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "Confeccionada em tecido de alta elasticidade, macio, respirável e de secagem rápida, que oferece conforto e segurança durante exercícios de alta intensidade."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "Modelagem anatômica do top proporcionando excelente sustentação, liberdade de movimento e valorização da silhueta para diferentes tipos de corpo. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "Desenvolvida com tecnologia de compressão moderada, controle eficiente de umidade, proteção UV e resistência ao desgaste, garantindo máximo desempenho, durabilidade e conforto para treinos na academia ou ao ar livre."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "TOP PARA TREINO",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto62",
+        "categoria": "Feminino",
+        "subcategoria": "Tops",
+        "nome": "Top Treino Preto",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/top-alca-preto.png",
+        "preco_credito": "99,90",
+        "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "95,90",
+        "cor": "Preto",              
+        "imagem_principal": "IMG/top-alca-preto.png",
+        "imagens_slider": [
+          "IMG/top-alca-preto.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/top-alca-preto.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Legging",
+          "Silk: Halteres",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "Confeccionada em tecido de alta elasticidade, macio, respirável e de secagem rápida, que oferece conforto e segurança durante exercícios de alta intensidade."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "Modelagem anatômica do top proporcionando excelente sustentação, liberdade de movimento e valorização da silhueta para diferentes tipos de corpo. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "Desenvolvida com tecnologia de compressão moderada, controle eficiente de umidade, proteção UV e resistência ao desgaste, garantindo máximo desempenho, durabilidade e conforto para treinos na academia ou ao ar livre."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "TOP PARA TREINO",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto63",
+        "categoria": "Feminino",
+        "subcategoria": "Tops",
+        "nome": "Top Treino Preto",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/top-alca-cinza.png",
+        "preco_credito": "99,90",
+        "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "95,90",
+        "cor": "Cinza",              
+        "imagem_principal": "IMG/top-alca-cinza.png",
+        "imagens_slider": [
+          "IMG/top-alca-cinza.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/top-alca-cinza.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Legging",
+          "Silk: Halteres",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "Confeccionada em tecido de alta elasticidade, macio, respirável e de secagem rápida, que oferece conforto e segurança durante exercícios de alta intensidade."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "Modelagem anatômica do top proporcionando excelente sustentação, liberdade de movimento e valorização da silhueta para diferentes tipos de corpo. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "Desenvolvida com tecnologia de compressão moderada, controle eficiente de umidade, proteção UV e resistência ao desgaste, garantindo máximo desempenho, durabilidade e conforto para treinos na academia ou ao ar livre."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "TOP PARA TREINO",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
+      },
+
+      {
+        "id": "produto64",
+        "categoria": "Feminino",
+        "subcategoria": "Tops",
+        "nome": "Top Treino Azul",
+        "titulo": "Tshirt Dry Fit Black",
+        "imagem": "IMG/top-alca-azul.png",
+        "preco_credito": "99,90",
+        "parcelamento":"Ou R$99,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "95,90",
+        "cor": "Azul",              
+        "imagem_principal": "IMG/top-alca-azul.png",
+        "imagens_slider": [
+          "IMG/top-alca-azul.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.png"
+        ],
+        "imagem_produto": "IMG/top-alca-azul.png",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Legging",
+          "Silk: Halteres",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT",
+            "conteudo": "Confeccionada em tecido de alta elasticidade, macio, respirável e de secagem rápida, que oferece conforto e segurança durante exercícios de alta intensidade."
+          },
+          {
+            "titulo": "MODELAGEM",
+            "conteudo": "Modelagem anatômica do top proporcionando excelente sustentação, liberdade de movimento e valorização da silhueta para diferentes tipos de corpo. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "Desenvolvida com tecnologia de compressão moderada, controle eficiente de umidade, proteção UV e resistência ao desgaste, garantindo máximo desempenho, durabilidade e conforto para treinos na academia ou ao ar livre."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.png"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "TOP PARA TREINO",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
       }
       }
 

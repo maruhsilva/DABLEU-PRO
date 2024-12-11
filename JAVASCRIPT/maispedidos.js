@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 prevEl: '#arrow-left', // Referência ao ID do ícone da seta esquerda
             },
             breakpoints: {
-                1280: { slidesPerView: 4 },
+                1440: { slidesPerView: 4 },
+                1280: { slidesPerView: 3 },
                 1000: { slidesPerView: 3 },
                 768: { slidesPerView: 2 },
                 480: { slidesPerView: 1 },
