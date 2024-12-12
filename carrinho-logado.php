@@ -152,37 +152,36 @@ if ($result->num_rows > 0) {
             <p class="total"><strong>Total Pix:</strong> R$ <span id="total-pix">0,00</span></p>
         </div>
         <div class="dados-cliente" id="dados">
-        <form method="POST" action="">
-            <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente:</h2>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
+            <form method="POST" action="">
+                <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 1.3rem; padding: 0;">Dados do Cliente:</h2>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" value="<?= $nome_cliente ?>" readonly>
 
-            <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" value="<?= $cpf_cliente ?>" readonly>
 
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" value="<?= $telefone_cliente ?>" readonly>
 
-            <label for="endereco">Endereço:</label>
-            <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
+                <label for="endereco">Endereço:</label>
+                <input type="text" name="endereco" value="<?= $endereco_cliente ?>" readonly>
 
-            <label for="numero">Número:</label>
-            <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
+                <label for="numero">Número:</label>
+                <input type="text" name="numero" value="<?= $numero_cliente ?>" readonly>
 
-            <label for="cep">CEP:</label>
-            <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly><br><br>
+                <label for="cep">CEP:</label>
+                <input type="text" name="cep" value="<?= $cep_cliente ?>" readonly><br><br>
 
-            <!-- Opções de pagamento -->
-            <div>
-    <label for="metodo_pagamento">Método de Pagamento:</label><br>
-    <select id="metodo_pagamento">
-        <option value="credito">Crédito</option>
-        <option value="pix">Pix/Boleto</option>
-    </select>
-</div>
-          </form>
-        
-      </div><br>
+                <!-- Opções de pagamento -->
+                <div>
+                    <label for="metodo_pagamento">Método de Pagamento:</label><br>
+                    <select id="metodo_pagamento">
+                        <option value="credito">Crédito</option>
+                        <option value="pix">Pix/Boleto</option>
+                    </select>
+                </div>
+            </form>
+        </div><br>
       
 
       <button id="finalizar-compra-btn" class="btn btn-dark">Finalizar Compra</button>
@@ -205,29 +204,32 @@ document.getElementById('finalizar-compra-btn').addEventListener('click', functi
         metodo_pagamento: metodoPagamento  // Envia o método de pagamento escolhido
     };
 
-    // Enviar os dados para o servidor processar o pagamento
     fetch('processar_pagamento.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(dados),
-    })
-    .then(response => response.json())
-    .then(data => {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(dados),
+})
+.then(response => response.text())  // Usamos .text() para pegar a resposta como texto
+.then(text => {
+    console.log('Resposta recebida do servidor:', text);  // Verifique o conteúdo
+    try {
+        const data = JSON.parse(text);  // Tenta parsear o JSON
         if (data.success) {
             window.location.href = data.redirect_url;  // Redireciona para o Mercado Pago
         } else {
             alert('Erro: ' + data.message);
         }
-    })
-    .catch(error => console.error('Erro ao processar o pagamento:', error));
+    } catch (error) {
+        console.error('Erro ao parsear JSON:', error);
+    }
+})
+.catch(error => console.error('Erro ao processar o pagamento:', error));
 });
 
 
 </script>
-
-</form>
 
       <footer>
       <div class="desenvolvedor">

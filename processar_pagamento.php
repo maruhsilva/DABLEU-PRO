@@ -1,10 +1,10 @@
 <?php
 session_start();
-ob_start();
 header('Content-Type: application/json');
 
+// Carrega o autoload do Mercado Pago
 require __DIR__ . '/vendor/autoload.php';
-MercadoPago\SDK::setAccessToken('TEST-7557293504970150-111823-b70f77389318ae03320e08bd19dd8afa-50073279');
+MercadoPago\SDK::setAccessToken('APP_USR-4525847359606871-110209-03130e8734dacc38fe6f18a78a1a85f2-2059195423');
 
 // Configuração do banco de dados
 $host = 'login_dableu.mysql.dbaas.com.br';
@@ -17,8 +17,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Erro ao conectar ao banco de dados: ' . $e->getMessage()]);
-    ob_end_flush();
-    exit;
+    exit;  // Finaliza o script após o erro
 }
 
 $data = json_decode(file_get_contents('php://input'), true);
@@ -26,16 +25,14 @@ $data = json_decode(file_get_contents('php://input'), true);
 // Verifica se os itens foram enviados e se são válidos
 if (!isset($data['itens']) || !is_array($data['itens']) || empty($data['itens'])) {
     echo json_encode(['success' => false, 'message' => 'Itens não enviados ou inválidos.']);
-    ob_end_flush();
-    exit;
+    exit;  // Finaliza o script após o erro
 }
 
 // Verifica se o usuário está autenticado
 $id_usuario = isset($_SESSION['id_usuario']) ? $_SESSION['id_usuario'] : null;
 if (!$id_usuario) {
     echo json_encode(['success' => false, 'message' => 'Usuário não autenticado.']);
-    ob_end_flush();
-    exit;
+    exit;  // Finaliza o script após o erro
 }
 
 // Verifica o método de pagamento selecionado (Crédito/Boleto ou Pix)
@@ -46,8 +43,7 @@ $total = 0;
 foreach ($data['itens'] as $item) {
     if (!isset($item['title'], $item['quantity'], $item['unit_price']) || $item['quantity'] <= 0 || $item['unit_price'] <= 0) {
         echo json_encode(['success' => false, 'message' => 'Dados inválidos para um ou mais itens.']);
-        ob_end_flush();
-        exit;
+        exit;  // Finaliza o script após o erro
     }
     $total += $item['quantity'] * $item['unit_price'];
 }
@@ -61,8 +57,7 @@ try {
 
 } catch (Exception $e) {
     echo json_encode(['success' => false, 'message' => 'Erro ao salvar o pedido temporário: ' . $e->getMessage()]);
-    ob_end_flush();
-    exit;
+    exit;  // Finaliza o script após o erro
 }
 
 // Criar a preferência de pagamento com Mercado Pago
@@ -123,14 +118,12 @@ try {
         'redirect_url' => $preference->init_point  // URL de redirecionamento do Mercado Pago
     ];
     echo json_encode($response);
-    ob_end_flush();
 } catch (Exception $e) {
     $response = [
         'success' => false,
         'message' => 'Erro ao processar a compra: ' . $e->getMessage()
     ];
     echo json_encode($response);
-    ob_end_flush();
 }
 
 // Limpeza de pedidos expirados (1 hora)

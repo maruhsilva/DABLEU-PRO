@@ -2,7 +2,7 @@
 // Inicia a sessão para acessar variáveis
 session_start();
 require __DIR__ . '/vendor/autoload.php';
-MercadoPago\SDK::setAccessToken('TEST-7557293504970150-111823-b70f77389318ae03320e08bd19dd8afa-50073279');
+MercadoPago\SDK::setAccessToken('APP_USR-4525847359606871-110209-03130e8734dacc38fe6f18a78a1a85f2-2059195423');
 
 // Conecta ao banco de dados
 $host = 'login_dableu.mysql.dbaas.com.br';
