@@ -66,15 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         });
-
-        // <a href="produto.html?id=produto1">
-        //           <ul class="foto-like" style="background-image: url(IMG/camiseta-preta.jpg);">
-        //             <div class="heart">
-        //               <i class="fa-solid fa-heart"></i>
-        //             </div>
-        //           </ul>
-        //         </a>
-       
+        
         // Marca como renderizado
         containerMaisVendidos.setAttribute('data-renderizado', 'true');
 
