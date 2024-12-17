@@ -3478,6 +3478,60 @@
         "subtitulo": "IDEAL PARA SUA PERFORMANCE",
         "conteudo": "Não importa a sua atividade, esse top tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
       }
+      },
+      {
+        "id": "produto65",
+        "categoria": "Masculino",
+        "subcategoria": "Kits Masculinos",
+        "nome": "Kit Camiseta Verde + Bermuda + Boné",
+        "titulo": "Tshirt Dry Fit Pink",
+        "imagem": "IMG/kit-camiseta-verde.webp",
+        "preco_credito": "289,90",
+        "parcelamento":"Ou R$289,90 no cartão de crédito em até 3x sem juros",
+        "preco_pix": "285,90",
+        "cor": "Branco + Preto",
+        "imagem_principal": "IMG/kit-camiseta-verde.webp",
+        "imagens_slider": [
+          "IMG/kit-camiseta-verde.webp",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.webp",
+          "IMG/BARRAS PRETAS - 4cm - 6cm.webp"
+        ],
+        "imagem_produto": "IMG/kit-camiseta-verde.webp",
+        "descricao": {
+        "detalhes": [
+          "Tecido: Dry Fit",
+          "Modelagem: Raglan",
+          "Silk: Halteres e Marca",
+          
+          "Composição: 100% Poliéster"
+        ],
+        "textos": [
+          {
+            "titulo": "TECIDO DRY FIT + MOLETOM",
+            "conteudo": "O tecido dry fit e o moletom são ideais para treinos na academia, crossfit e outros esportes. Com eles você treina com conforto e segurança, mantendo a temperatura corporal ideal."
+          },
+          {
+            "titulo": "MODELAGENS",
+            "conteudo": "As camisetas Raglan são projetadas para proporcionar um conforto máximo, já que os cortes das mangas são feitos para permitir mais movimento e menos restrição de movimentos. E as bermudas tem acabamentos projetados para o conforto. Isso é especialmente útil para pessoas que praticam esportes ou outras atividades físicas."
+          },
+          {
+            "titulo": "TECNOLOGIA",
+            "conteudo": "O tecido Dryfit é altamente respirável, o que permite que o ar circule livremente através da roupa. Isso ajuda a manter a temperatura corporal regulada, evitando o superaquecimento e mantendo o corpo fresco."
+          }
+        ]
+      },
+      "imagens": [
+        {
+          "descricao": "Detalhes da camiseta",
+          "url": "IMG/Untitled1.webp"
+        }
+        
+      ],
+      "extras": {
+        "titulo": "KIT DE ACADEMIA DRY FIT + BERMUDA",
+        "subtitulo": "IDEAL PARA SUA PERFORMANCE",
+        "conteudo": "Não importa a sua atividade, essa camiseta e bermuda tem a funcionalidade de aumentar a sua performance nos treinos de alta e baixa intensidade. Prepare-se para um treino como você nunca viu."
+      }
       }
 
     ]
