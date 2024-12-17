@@ -1,50 +1,62 @@
 <?php
-include __DIR__ ."/config.php";
+include __DIR__ . "/config.php";
 
 session_start(); // Inicia a sessão
 
 $error_email = false;
 $error_senha = false;
 
-// Salva a URL de origem, se ainda não definida
-if (!isset($_SESSION['redirect_to']) && isset($_SERVER['HTTP_REFERER'])) {
-    $referer = $_SERVER['HTTP_REFERER'];
-    if (basename(parse_url($referer, PHP_URL_PATH)) !== 'user-login.php') {
-        $_SESSION['redirect_to'] = $referer;
+// Função para validar URLs internas
+function is_internal_url($url) {
+    $host = parse_url($url, PHP_URL_HOST);
+    return $host === null || $host === $_SERVER['HTTP_HOST'];
+}
+
+// Salva a URL de origem apenas se ela for válida e não for a página de login
+if (!isset($_SESSION['redirect_to']) && isset($_SERVER['REQUEST_URI'])) {
+    $current_page = basename(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+    if ($current_page !== 'user-login.php' && is_internal_url($_SERVER['REQUEST_URI'])) {
+        $_SESSION['redirect_to'] = $_SERVER['REQUEST_URI'];
     }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
         $error_email = true;
-    } else if (strlen($_POST["senha"]) == 0) {
+    } elseif (strlen($_POST["senha"]) === 0) {
         $error_senha = true;
     } else {
         // Proteção contra SQL Injection
         $email = $mysqli->real_escape_string($_POST["email"]);
-        $senha = ($_POST["senha"]); // Aplica md5 à senha informada
+        $senha = $_POST["senha"];
 
         // Verifica se o e-mail existe
         $sql_email = "SELECT * FROM usuarios WHERE email = '$email'";
         $query_email = $mysqli->query($sql_email);
 
-        if ($query_email->num_rows == 0) {
+        if ($query_email->num_rows === 0) {
             $error_email = true;
         } else {
             $usuario = $query_email->fetch_assoc();
 
             // Verifica a senha
-            if ($senha !== $usuario['senha']) {
-                $error_senha = true;
-            } else {
-                // Login bem-sucedido
-                $_SESSION['id_usuario'] = $usuario['id_usuario'];
-                $_SESSION['nome'] = $usuario['nome'];
-                $_SESSION['email'] = $usuario['email'];
+           if ($senha !== $usuario['senha']) {
+            $error_senha = true;
+        } else {
+            // Login bem-sucedido
+            $_SESSION['id_usuario'] = $usuario['id_usuario'];
+            $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['email'] = $usuario['email'];
 
-                // Redireciona para a página de origem ou padrão
+                // Redireciona para a página de origem ou página padrão
                 $redirect_to = $_SESSION['redirect_to'] ?? 'user-logado.php';
                 unset($_SESSION['redirect_to']);
+
+                // Valida o redirecionamento para garantir que a URL seja interna
+                if (!is_internal_url($redirect_to)) {
+                    $redirect_to = 'user-logado.php';
+                }
+
                 header("Location: $redirect_to");
                 exit;
             }
@@ -52,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
 
 
 <!DOCTYPE html>
@@ -82,40 +93,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <ul class="navbar-nav" style="gap: 2rem; display: flex; align-items: center;">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i></a>
-                    <!-- <ul class="icons">
-                      <div class="btn-group dropstart">
-                        <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" style="border: none; padding-right: 1rem; font-size: 1.5rem; align-items: center;">
-                          <i class="bi bi-person"></i>
-                        </button>
-                        <form class="dropdown-menu p-4">
-                          <div class="mb-3" style="min-width: 15rem;">
-                            <label for="exampleDropdownFormEmail2" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@exemplo.com">
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleDropdownFormPassword2" class="form-label">Senha</label>
-                            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Senha">
-                          </div>
-                          <div class="mb-3">
-                            <div class="form-check">
-                              <input type="checkbox" class="form-check-input" id="dropdownCheck2">
-                              <label class="form-check-label" for="dropdownCheck2">
-                                Lembre-me
-                              </label>
-                            </div>
-                          </div>
-                          <button type="submit" class="btn btn-dark">Entrar</button>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" style="letter-spacing: 0; font-size: .9rem; padding-left: 0;" href="#">Novo por aqui? Cadastre-se!</a>
-                          <a class="dropdown-item" style="letter-spacing: 0; font-size: .9rem; padding-left: 0;" href="#">Esqueceu sua senha?</a>
-                        </form>
-                      </div>
-                      <li>
-                        <a href=""><i class="bi bi-search"></i></a>
-                        <a href=""><i class="bi bi-heart"></i></a>
-                        <a href=""><i class="bi bi-bag"></i></a>
-                      </li>  
-                    </ul>   -->
                 </ul>
             </div>
         </div>
@@ -207,70 +184,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
       <footer>
-        <!-- <div class="container-footer">
-            <div class="row-footer">
-                
-                <div class="footer-col">
-                  <h4>Institucional</h4>
-                  <ul>
-                      <li><a href="quem-somos.html">Quem somos </a></li>
-                      <li><a href="nossos-servicos.html"> nossos serviços </a></li><br>
-
-                      <h4 style="margin: 0; margin-bottom: 1rem; padding: 0;">políticas</h4>
-                      <li><a href="trocas.html">trocas e devoluções</a></li>
-                      <li><a href="privacidade.html">termos de privacidade</a></li>
-                      <li><a href="entrega.html">Prazo e formas de pagamento</a></li>
-                  </ul>
-              </div>
-              
-              
-              <div class="footer-col">
-                  <h4>Atendimento</h4>
-                  <ul>
-                      <li><a href="faq.html">FAQ</a></li>
-                      <li><a href="contato.html">Contato</a></li>
-                  </ul>
-              </div>
-                
-                
-                <div class="footer-col">
-                    <h4>Categorias</h4>
-                    <ul>
-                        <li><a href="cat-masc.html">Masculino</a></li>
-                        <li><a href="cat-fem.html">Feminino</a></li>
-                        <li><a href="cat-kits.html">Kits</a></li>
-                        <li><a href="cat-lan.html">Lançamentos</a></li>
-                    </ul>
-                </div>
-                
-                
-                <div class="footer-col">
-                    <h4>Se inscreva!</h4>
-                    <div class="form-sub">
-                        <form>
-                            <input type="email" placeholder="Digite o seu e-mail">
-                            <button>Inscrever</button>
-                        </form>
-                    </div>
-
-                    <div class="medias-socias">
-                        <a href="https://www.facebook.com/junior.physique.9/" target="_blank" rel="noopener noreferrer"> <i class="fa fa-facebook"></i> </a>
-                        <a href="https://www.instagram.com/roupa_wpro/" target="_blank" rel="noopener noreferrer"> <i class="fa fa-instagram"></i> </a>
-                        <a href="#"> <i class="fa fa-x" ></i> </a>
-                        <a href="https://www.youtube.com/@dable-upro" target="_blank" rel="noopener noreferrer"> <i class="fa fa-youtube"></i> </a>
-                    </div>
-
-                </div>
-                <!--end footer col-->
-            </div>
-        </div>
         <div class="desenvolvedor">
           <p>© 2024 DableuPro LTDA | Jacareí - São Paulo | Todos os Direitos Reservados.</p>
           <a class="logo-desen" href="https://www.mswebwork.com.br" target="_blank" rel="noopener noreferrer"><img src="IMG/Sem título.webp" alt="logo do desenvolvedor"></a>
         </div>
     </footer>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
       <script src="JAVASCRIPT/bootstrap.bundle.js"></script>
       <script src="https://kit.fontawesome.com/43b36f20b7.js" crossorigin="anonymous"></script>
       <script src="JAVASCRIPT/slick.min.js"></script>

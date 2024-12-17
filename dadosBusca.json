@@ -5,9 +5,14 @@
       "url": "index.html"
     },
     {
-      "titulo": "Produtos",
+      "titulo": "Camisetas Masculinas",
       "descricao": "Veja todos os nossos produtos disponíveis.",
-      "url": "produtos.html"
+      "url": "camisetas-masc.html"
+    },
+    {
+      "titulo": "Camisetas Femininas",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "camisetas-fem.html"
     },
     {
       "titulo": "Carrinho",
@@ -18,6 +23,36 @@
       "titulo": "Contato",
       "descricao": "Entre em contato conosco!",
       "url": "contato.html"
+    },
+    {
+      "titulo": "Calças Masculinas",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "calcas-masc.html"
+    },
+    {
+      "titulo": "Calças Femininas",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "calcas-fem.html"
+    },
+    {
+      "titulo": "Acessórios Masculinos",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "acessorios-masc.html"
+    },
+    {
+      "titulo": "Kits Masculinos",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "kits-masc.html"
+    },
+    {
+      "titulo": "Kits Femininos",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "kits-fem.html"
+    },
+    {
+      "titulo": "Área do Cliente",
+      "descricao": "Veja todos os nossos produtos disponíveis.",
+      "url": "user-logado.php"
     }
   ]
   
