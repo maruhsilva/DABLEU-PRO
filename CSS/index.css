@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Impede o espaço vazio lateral */
+}
+
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -591,8 +597,17 @@ header p {
         text-align: center;
     }
 
+    .cards1.slick-slider {
+        padding-left: 3.5rem;
+    }
+
+    .cards2.slick-slider {
+        padding-left: 3.5rem;
+    }
+
     .categorias ul {
-        width: 400px;
+        max-width: 80%;
+        height: 250px;
     }
 
     .promo ul {
@@ -604,12 +619,18 @@ header p {
     }
 
     .promocoes1 {
-        width: 100%;
-        padding: 2rem;
+        max-width: 100%;
+        padding: 1rem;
+        margin: 0;
+    }
+
+    .promocoes1 ul {
+        gap: 0;
     }
 
     .mais-pedidos {
         padding: 0;
+        min-width: 100%;
     }
 
     .promo-ctg {
@@ -626,6 +647,7 @@ header p {
     #img-logo {
         background-image: url(/IMG/bone-masc.png);
     }
+
 }
 
 .top {
@@ -947,6 +969,10 @@ footer {
     position: relative;
 }
 
+body.gallery1 {
+    overflow-x: hidden !important;
+}
+
 /* Galeria */
 .gallery {
     display: grid;
@@ -1065,6 +1091,15 @@ footer {
 
     .modal-content img {
         width: 400px;
+    }
+
+    .modal-content video {
+        max-width: 370px;
+    }
+
+    body .modal {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
 
