@@ -55,8 +55,21 @@ try {
     $stmt->execute([ 'id_usuario' => $id_usuario, 'total' => $total, 'metodo_pagamento' => $metodo_pagamento ]);
     $id_pedido_temp = $pdo->lastInsertId();  // ID do pedido temporário
 
+    // Inserir os itens na tabela "itens_pedido"
+    foreach ($data['itens'] as $item) {
+        // Inserir cada item na tabela
+        $stmtItem = $pdo->prepare("INSERT INTO itens_pedido (id_pedido, nome_produto, quantidade, preco) 
+                                   VALUES (:id_pedido, :nome_produto, :quantidade, :preco)");
+        $stmtItem->execute([
+            'id_pedido' => $id_pedido_temp,
+            'nome_produto' => $item['title'],
+            'quantidade' => $item['quantity'],
+            'preco' => $item['unit_price']
+        ]);
+    }
+
 } catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => 'Erro ao salvar o pedido temporário: ' . $e->getMessage()]);
+    echo json_encode(['success' => false, 'message' => 'Erro ao salvar o pedido temporário ou itens: ' . $e->getMessage()]);
     exit;  // Finaliza o script após o erro
 }
 
@@ -76,7 +89,7 @@ $preference->items = $items;
 
 // URLs de retorno com base no status do pagamento
 $preference->back_urls = [
-    "success" => "https://dableupro.com.br/retorno-pagamento.php?id_usuario={$id_usuario}&id_pedido={$id_pedido_temp}",
+    "success" => "http://localhost/DABLEU-PRO/retorno-pagamento.php?id_usuario={$id_usuario}&id_pedido={$id_pedido_temp}",
     "failure" => "https://dableupro.com.br/retorno-intermediario.php?status=failure",
     "pending" => "https://dableupro.com.br/retorno-intermediario.php?status=pending"
 ];
